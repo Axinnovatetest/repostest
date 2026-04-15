@@ -30,6 +30,7 @@ Responsabilités par acteur
 
 Les utilisateurs finaux interviennent lors de la création de la commande et consultent les mises à jour via le dashboard.
 L’équipe technique est notifiée uniquement en cas d’erreur afin d’assurer le support et la maintenance du système.
+test
 ```mermaid
 graph TD
     A[Utilisateur crée une commande] --> B{Vérification Stock}
