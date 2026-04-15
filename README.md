@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A[Utilisateur crée une commande] --> B{Vérification Stock}
     B -- En Stock --> C[Validation Automatique]
@@ -18,3 +19,4 @@ graph TD
     A
     H
     end
+```
