@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>État du stock · Entrepôt central</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+            padding: 2rem 1rem;
+            color: #1a2c3e;
+        }
+
+        /* fiche stock simple */
+        .stock-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* entête */
+        .stock-header {
+            background: #1f3b4c;
+            color: white;
+            padding: 1.5rem 2rem;
+        }
+
+        .stock-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stock-header h1 i {
+            font-size: 1.8rem;
+        }
+
+        .stock-header p {
+            margin-top: 8px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* contenu */
+        .stock-content {
+            padding: 1.8rem 2rem 2rem 2rem;
+        }
+
+        /* indicateurs rapides */
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+
+        .stat-badge {
+            background: #f0f6fa;
+            border-radius: 60px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-badge span {
+            font-weight: 700;
+            color: #0f4c5f;
+        }
+
+        /* tableau stock */
+        .stock-table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem 0.5rem 0.75rem 0;
+            font-weight: 600;
+            color: #2c4b5e;
+            border-bottom: 2px solid #dce5ec;
+        }
+
+        td {
+            padding: 0.9rem 0.5rem 0.9rem 0;
+            border-bottom: 1px solid #ecf1f5;
+            vertical-align: middle;
+        }
+
+        .product-name {
+            font-weight: 500;
+        }
+
+        .stock-value {
+            font-weight: 600;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .low-stock {
+            color: #c2410c;
+            background: #fff4ed;
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .good-stock {
+            color: #2b6e3c;
+        }
+
+        /* pied de page simple */
+        .stock-footer {
+            background: #f9fbfd;
+            border-top: 1px solid #e6edf2;
+            padding: 1rem 2rem;
+            font-size: 0.75rem;
+            color: #5f7f9a;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 650px) {
+            .stock-content {
+                padding: 1.2rem;
+            }
+            .stock-header {
+                padding: 1.2rem;
+            }
+            th, td {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="stock-card">
+    <div class="stock-header">
+        <h1>
+            📦 État du stock
+        </h1>
+        <p>Entrepôt central · Mise à jour en temps réel (simulation)</p>
+    </div>
+
+    <div class="stock-content">
+        <!-- mini stats -->
+        <div class="stats-row">
+            <div class="stat-badge">📊 Références actives : <span>8</span></div>
+            <div class="stat-badge">📦 Total unités : <span>1 247</span></div>
+            <div class="stat-badge">⚠️ Alertes stock bas : <span>2</span></div>
+        </div>
+
+        <!-- tableau des produits en stock -->
+        <div class="stock-table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Référence</th>
+                    <th>Quantité</th>
+                    <th>Seuil d'alerte</th>
+                    <th>Statut</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="product-name">Écran LED 24"</td>
+                        <td>MON-24F</td>
+                        <td class="stock-value">142</td>
+                        <td>30</td>
+                        <td><span class="good-stock">✔️ Normal</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Clavier mécanique RGB</td>
+                        <td>KBD-MEC56</td>
+                        <td class="stock-value">87</td>
+                        <td>25</td>
+                        <td><span class="good-stock">✔️ Normal</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Souris sans fil</td>
+                        <td>MOU-WL02</td>
+                        <td class="stock-value">23</td>
+                        <td>20</td>
+                        <td><span class="low-stock">⚠️ Stock bas</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Casque audio studio</td>
+                        <td>AUDS-H700</td>
+                        <td class="stock-value">56</td>
+                        <td>15</td>
+                        <td><span class="good-stock">✔️ Normal</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Webcam 4K</td>
+                        <td>CAM-4K12</td>
+                        <td class="stock-value">9</td>
+                        <td>15</td>
+                        <td><span class="low-stock">⚠️ Réappro. urgent</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Station d'accueil USB-C</td>
+                        <td>DOCK-U3C</td>
+                        <td class="stock-value">34</td>
+                        <td>10</td>
+                        <td><span class="good-stock">✔️ OK</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Câble USB-C 2m</td>
+                        <td>CBL-CTC2M</td>
+                        <td class="stock-value">512</td>
+                        <td>100</td>
+                        <td><span class="good-stock">✔️ Large stock</span></td>
+                    </tr>
+                    <tr>
+                        <td class="product-name">Microphone cardioïde</td>
+                        <td>MIC-POD1</td>
+                        <td class="stock-value">18</td>
+                        <td>12</td>
+                        <td><span class="good-stock">✔️ Stable</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- note sur les mouvements -->
+        <div style="margin-top: 1.5rem; background: #fafcff; border-radius: 20px; padding: 0.8rem 1rem; border: 1px solid #e2edf5;">
+            <p style="font-size: 0.8rem; color: #2c5a6e;">📌 <strong>Mouvements récents :</strong> réception de 120 écrans LED (commande n°IN-452) · expédition de 45 claviers vers dépôt Lille.</p>
+        </div>
+    </div>
+
+    <div class="stock-footer">
+        <span>🔄 Dernière sync : 20/04/2026 - 14:32</span>
+        <span>🏭 Entrepôt principal — capacité utilisée 63%</span>
+    </div>
+</div>
+</body>
+</html>
