@@ -1,0 +1,21 @@
+# Automate review assignments for Axinnovate Projects
+
+#  SECTION FRONTEND
+# Toute modification sur les fichiers Angular (.ts, .html, .scss) 
+# requiert la validation de votre collègue expert Frontend.
+*.ts @nom_utilisateur_github_collegue
+*.html @nom_utilisateur_github_collegue
+*.scss @nom_utilisateur_github_collegue
+
+#  SECTION BACKEND
+# Toute modification sur les fichiers .NET (.cs) 
+# requiert la validation de votre collègue expert Backend.
+*.cs @nom_utilisateur_github_collegue
+appsettings.json @nom_utilisateur_github_collegue
+
+#  SECTION DOCUMENTATION
+# Vous (Hsan) restez le propriétaire de la documentation globale
+# pour assurer que les standards README/RELEASE sont respectés.
+README.md @hsan_aouiti
+RELEASE.md @hsan_aouiti
+/docs/ @hsan_aouiti
