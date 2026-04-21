@@ -1,15 +1,27 @@
-steps:
-      - uses: actions/checkout@v4
-      
+name: Quality Check
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        # Cette commande cherche automatiquement votre fichier .sln ou .csproj
-        run: dotnet restore **/*.sln 
+        # Cherche récursivement tous les fichiers de solution
+        run: dotnet restore $(find . -name "*.sln" | head -n 1)
 
-      - name: Build
-        # Idem pour la compilation
-        run: dotnet build **/*.sln --no-restore
+      - name: Build project
+        # Compile le premier fichier de solution trouvé
+        run: dotnet build $(find . -name "*.sln" | head -n 1) --no-restore
