@@ -20,7 +20,8 @@ jobs:
 
       - name: Restore dependencies
         # Cherche récursivement tous les fichiers de solution
-        run: dotnet restore $(find . -name "*.sln" | head -n 1)
+       
+        run: dotnet restore $(find . -maxdepth 3 -name "*.sln" ! -path "*/.*/*" | head -n 1)
 
       - name: Build project
         # Compile le premier fichier de solution trouvé
