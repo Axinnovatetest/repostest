@@ -15,7 +15,7 @@ builder.Configuration
 	.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true);
 
 builder.Host.UseWindowsService();
-builder.Services.AddWindowsService();
+builder.Services.AddWindowsService()
 
 // - activate memory cache for caching data in memory (e.g. for caching user permissions, etc.)
 builder.Services.AddMemoryCache();
