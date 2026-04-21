@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.3" />
+    <PackageReference Include="morelinq" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Psz.Core.BaseData\Psz.Core.BaseData.csproj" />
+    <ProjectReference Include="..\Psz.Core.Common\Psz.Core.Common.csproj" />
+    <ProjectReference Include="..\Psz.Core.Identity\Psz.Core.Identity.csproj" />
+    <ProjectReference Include="..\Psz.Core.SharedKernel\Psz.Core.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Services\Infrastructure.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Statistics\SqlFiles\1-Dashboard.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\Old1-Dashboard.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\2-CronFrozenProducts.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\3-ArticleFK.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\4-BedrafExtra.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\5-BedrafNonExtra.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Statistics\SqlFiles\6-CTSDashboard.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

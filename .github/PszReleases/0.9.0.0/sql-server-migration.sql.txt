@@ -1,0 +1,488 @@
+﻿/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.EDI_CustomerUser
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	CustomerId int NOT NULL,
+	UserId int NOT NULL,
+	IsPrimary bit NOT NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_CustomerUser ADD CONSTRAINT
+	PK_EDI_CustomerUser PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX IX_EDI_CustomerUser ON dbo.EDI_CustomerUser
+	(
+	CustomerId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX IX_EDI_CustomerUser_1 ON dbo.EDI_CustomerUser
+	(
+	UserId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_CustomerUser SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_CustomerUser', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_CustomerUser', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_CustomerUser', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo._AccessProfile
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	Name nvarchar(250) NOT NULL,
+	Description nvarchar(MAX) NULL,
+	CreationTime datetime NOT NULL,
+	CreationUserId int NOT NULL,
+	LastUpdateTime datetime NULL,
+	LastUpdateId int NULL,
+	IsArchived bit NOT NULL,
+	ArchiveTime datetime NULL,
+	ArchiveUserId int NULL
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE dbo._AccessProfile ADD CONSTRAINT
+	PK__AccessProfile PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo._AccessProfile SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo._AccessProfile', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo._AccessProfile', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo._AccessProfile', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.WPL_AccessProfile
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	MainAccessProfileId int NOT NULL,
+	ModuleActivated bit NOT NULL,
+	WorkPlan bit NOT NULL,
+	WorkPlanCreate bit NOT NULL,
+	WorkPlanUpdate bit NOT NULL,
+	WorkPlanDelete bit NOT NULL,
+	WorkPlanReporting bit NOT NULL,
+	WorkPlanReportingCreate bit NOT NULL,
+	WorkPlanReportingUpdate bit NOT NULL,
+	WorkPlanReportingDelete bit NOT NULL,
+	Country bit NOT NULL,
+	CountryCreate bit NOT NULL,
+	CountryUpdate bit NOT NULL,
+	CountryDelete bit NOT NULL,
+	Departement bit NOT NULL,
+	DepartementCreate bit NOT NULL,
+	DepartementUpdate bit NOT NULL,
+	DepartementDelete bit NOT NULL,
+	StandardOperation bit NOT NULL,
+	StandardOperationCreate bit NOT NULL,
+	StandardOperationUpdate bit NOT NULL,
+	StandardOperationDelete bit NOT NULL,
+	Hall bit NOT NULL,
+	HallCreate bit NOT NULL,
+	HallUpdate bit NOT NULL,
+	HallDelete bit NOT NULL,
+	WorkArea bit NOT NULL,
+	WorkAreaCreate bit NOT NULL,
+	WorkAreaUpdate bit NOT NULL,
+	WorkAreaDelete bit NOT NULL,
+	WorkStation bit NOT NULL,
+	WorkStationCreate bit NOT NULL,
+	WorkStationUpdate bit NOT NULL,
+	WorkStationDelete bit NOT NULL,
+	Access bit NOT NULL,
+	AccessUpdate bit NOT NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.WPL_AccessProfile ADD CONSTRAINT
+	PK_WPL_AccessProfile PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX IX_WPL_AccessProfile ON dbo.WPL_AccessProfile
+	(
+	MainAccessProfileId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE dbo.WPL_AccessProfile SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.WPL_AccessProfile', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.WPL_AccessProfile', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.WPL_AccessProfile', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.EDI_AccessProfile
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	MainAccessProfileId int NOT NULL,
+	ModuleActivated bit NOT NULL,
+	[Order] bit NOT NULL,
+	OrderUpdate bit NOT NULL,
+	OrderValidate bit NOT NULL,
+	OrderHistory bit NOT NULL,
+	OrderError bit NOT NULL,
+	OrderErrorValidate bit NOT NULL,
+	OrderErrorHistory bit NOT NULL,
+	Customer bit NOT NULL,
+	CustomerUpdate bit NOT NULL,
+	Access bit NOT NULL,
+	AccessUpdate bit NOT NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_AccessProfile ADD CONSTRAINT
+	PK_EDI_AccessProfile PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX IX_EDI_AccessProfile ON dbo.EDI_AccessProfile
+	(
+	MainAccessProfileId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_AccessProfile SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_AccessProfile', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_AccessProfile', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_AccessProfile', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.EDI_OrderExtension
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	OrderId int NOT NULL,
+	ValidationUserId int NOT NULL,
+	ValidationTime datetime NOT NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_OrderExtension ADD CONSTRAINT
+	PK_EDI_OrderExtension PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX IX_EDI_OrderExtension ON dbo.EDI_OrderExtension
+	(
+	OrderId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE dbo.EDI_OrderExtension SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderExtension', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderExtension', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderExtension', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.EDI_OrderError ADD
+	ValidationUserId int NOT NULL CONSTRAINT DF_EDI_OrderError_ValidationUserId DEFAULT -1,
+	ValidationTime datetime NOT NULL CONSTRAINT DF_EDI_OrderError_ValidationTime DEFAULT GETDATE()
+GO
+ALTER TABLE dbo.EDI_OrderError SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.EDI_OrderError
+	DROP CONSTRAINT DF_EDI_OrderError_ValidationUserId
+GO
+ALTER TABLE dbo.EDI_OrderError
+	DROP CONSTRAINT DF_EDI_OrderError_ValidationTime
+GO
+CREATE TABLE dbo.Tmp_EDI_OrderError
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	FileName varchar(MAX) NOT NULL,
+	Error varchar(MAX) NOT NULL,
+	ClientName varchar(50) NOT NULL,
+	Validated bit NOT NULL,
+	ClientId int NOT NULL,
+	ValidationUserId int NULL,
+	ValidationTime datetime NULL
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE dbo.Tmp_EDI_OrderError SET (LOCK_ESCALATION = TABLE)
+GO
+ALTER TABLE dbo.Tmp_EDI_OrderError ADD CONSTRAINT
+	DF_EDI_OrderError_ValidationUserId DEFAULT ((-1)) FOR ValidationUserId
+GO
+ALTER TABLE dbo.Tmp_EDI_OrderError ADD CONSTRAINT
+	DF_EDI_OrderError_ValidationTime DEFAULT (getdate()) FOR ValidationTime
+GO
+SET IDENTITY_INSERT dbo.Tmp_EDI_OrderError ON
+GO
+IF EXISTS(SELECT * FROM dbo.EDI_OrderError)
+	 EXEC('INSERT INTO dbo.Tmp_EDI_OrderError (Id, FileName, Error, ClientName, Validated, ClientId, ValidationUserId, ValidationTime)
+		SELECT Id, FileName, Error, ClientName, Validated, ClientId, ValidationUserId, ValidationTime FROM dbo.EDI_OrderError WITH (HOLDLOCK TABLOCKX)')
+GO
+SET IDENTITY_INSERT dbo.Tmp_EDI_OrderError OFF
+GO
+DROP TABLE dbo.EDI_OrderError
+GO
+EXECUTE sp_rename N'dbo.Tmp_EDI_OrderError', N'EDI_OrderError', 'OBJECT' 
+GO
+ALTER TABLE dbo.EDI_OrderError ADD CONSTRAINT
+	PK_EDI_OrderError PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.[User] ADD
+	AccessProfileId int NOT NULL CONSTRAINT DF_User_AccessProfileId DEFAULT -1
+GO
+ALTER TABLE dbo.[User] SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.[User]', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.[User]', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.[User]', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

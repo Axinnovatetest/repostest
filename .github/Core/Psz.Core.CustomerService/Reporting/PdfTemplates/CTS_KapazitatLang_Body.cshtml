@@ -1,0 +1,156 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.KapazitatLangReprotModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 50;
+            margin-bottom: 70;
+            margin-left: 20;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, tr,th {
+            padding: 5px 5px 0 0;
+            text-align: left;
+        }
+        .bold
+        {
+            font-weight:bold;
+        }
+        .normal
+        {
+            font-weight: normal;
+        }
+        .big
+        {
+            font-size: 16px !important;
+        }
+        .small
+        {
+            font-size: 10px !important;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: navy;
+            background-color: navy;
+        }
+        .max-wide
+        {
+           max-width:100px;        
+        }
+        .square {
+            width: 12px;
+            height: 12px;
+            border: 1px solid black;
+        }
+        .blank
+        {
+            color: transparent;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if (Model is not null)
+    {
+        <table style="width:100%">
+            <tr>
+                <th class="normal big">Kapazitätbedarf:</th>
+                <th class="bold big">@Model.Header.Lagerort</th>
+                <th class="normal big">von:</th>
+                <th class="bold big">@Model.Header.Von</th>
+                <th class="normal big">bis:</th>
+                <th class="bold big">@Model.Header.Bis</th>
+            </tr>
+            <tr>
+                <th class="normal big">Produktionstage:</th>
+                <th class="bold big">@Model.Header.Tage</th>
+                <th class="bold"></th>
+                <th class="bold"></th>
+                <th class="bold"></th>
+                <th class="bold"></th>
+            </tr>
+        </table>
+        <hr class='hr'>
+        <table style="width:100%">
+            <tr>
+                <th class="normal small">Wunstermin</th>
+                <th class="normal small">geplant</th>
+                <th class="normal small">Bezeichung</th>
+                <th class="normal small">FA#</th>
+                <th class="normal small">Bemerkung</th>
+                <th class="normal small">Artikel</th>
+                <th class="normal small">Anzahl</th>
+                <th class="normal small">Zeit/h</th>
+                <th class="normal small">MA</th>
+                <th class="normal small">EURO</th>
+            </tr>
+        </table>
+        <hr class='hr'>
+        @foreach(var client in Model.Clients)
+        {
+            <tr>
+                <td class="bold big">@client.Kunde</td>
+            </tr>
+            var details = Model.Details.Where(d => d.Kunde == client.Kunde).ToList();
+            <table style="width:100%">
+                @foreach (var detail in details)
+                {
+                    <tr>
+                        <td class="normal small">@detail.Termin_Fertigstellung</td>
+                        <td class="bold small">@detail.Termin_Bestatigt1</td>
+                        <td class="normal small">@detail.Bezeichnung_1</td>
+                        <td class="normal small">@detail.Fertigungsnummer</td>
+                        <td class="normal small max-wide">@detail.Bemerkung</td>
+                        <td class="normal small">@detail.Artikelnummer</td>
+                        <td class="normal small">@detail.Anzahl</td>
+                        <td class="normal small">@detail.Auftragszeit</td>
+                        <td class="normal small">@detail.MA</td>
+                        <td class="normal small">@detail.LohnkostLohnkosten €</td>
+                    </tr>
+                    <tr>
+                        <td class="normal small">Technikauftrag:</td>
+                        <td><div class="square">@detail.Technik</div></td>
+                        <td class="small">Inzenyr:</td>
+                        <td class="normal small">@detail.Techniker</td>
+                    </tr>
+                    <tr>
+                        <td class="normal small">Erstmusterauftrag:</td>
+                        <td><div class="square">@detail.Erstmuster</div></td>
+                        <td class="small">Status:</td>
+                        <td class="normal small">@detail.Freigabestatus</td>
+                    </tr>
+                }
+                    <tr><td colspan="10" style="border-bottom:1px dotted black"></td></tr>
+            </table>
+        }
+        <hr class='hr'>
+        <table style="width:100%">
+            <tr>
+                <th class="blank">xxxx</th>
+                <th class="blank">xxxx</th>
+                <th class="blank">xxxx</th>
+                <th class="blank">xxxx</th>
+                <th class="blank">xxxx</th>
+                <th class="blank">xxxx</th>
+                <th class="bold small">Gesamtsumme:</th>
+                <th class="bold small">@Model.Header.SumZeit</th>
+                <th class="bold small">@Model.Header.SumMA</th>
+                <th class="bold small">@Model.Header.SumEuro</th>
+            </tr>
+        </table>
+    }
+<pre></pre>
+</body>
+</html>

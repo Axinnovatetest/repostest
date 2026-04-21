@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\Item\**" />
+    <Compile Remove="Models\Settings\AdressContactPerson\**" />
+    <EmbeddedResource Remove="Handlers\Item\**" />
+    <EmbeddedResource Remove="Models\Settings\AdressContactPerson\**" />
+    <None Remove="Handlers\Item\**" />
+    <None Remove="Models\Settings\AdressContactPerson\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Handlers\Article\1rsul3xr.hql~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.3" />
+    <PackageReference Include="morelinq" Version="4.2.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Services\Infrastructure.Services.csproj" />
+    <ProjectReference Include="..\Psz.Core.Common\Psz.Core.Common.csproj" />
+    <ProjectReference Include="..\Psz.Core.Identity\Psz.Core.Identity.csproj" />
+    <ProjectReference Include="..\Psz.Core.MaterialManagement\Psz.Core.MaterialManagement.csproj" />
+    <ProjectReference Include="..\Psz.Core.SharedKernel\Psz.Core.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\Article\Configuration\ArticleEmplyeeAV\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="morelinq" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reporting\PdfTemplates\bsd_article_circulation_body.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reporting\PdfTemplates\bsd_article_kartons_body.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reporting\PdfTemplates\bsd_project_message_body.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reporting\PdfTemplates\BSD_Footer.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

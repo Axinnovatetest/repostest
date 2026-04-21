@@ -1,0 +1,13 @@
+create table __crp_Fertigungsnummer
+(
+Id int identity primary key,
+Fertigungsnummer int,
+[User] nvarchar(50)
+)
+
+ALTER TABLE __crp_Fertigungsnummer
+ADD CONSTRAINT UQ_Fertigungsnummer UNIQUE (Fertigungsnummer);
+
+
+ALTER TABLE __crp_Fertigungsnummer
+ADD CONSTRAINT UQ_angebotNr UNIQUE (angebotNr);

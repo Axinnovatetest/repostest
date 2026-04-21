@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[__BSD_ArticleLifeCyclePhases](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PhaseName] [nvarchar](100) NULL,
+	[PhaseDescription] [nvarchar](1000) NULL,
+	[CreateUserId] [int] NULL,
+	[CreateUserName] [nvarchar](150) NULL,
+	[CreateTime] [datetime] NULL,
+	[UpdateUserId] [int] NULL,
+	[UpdateUserName] [nvarchar](150) NULL,
+	[UpdateTime] [datetime] NULL
+)
+
+CREATE TABLE [dbo].[__BSD_ArticleLifeCycles](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ArticleId] [int] NULL,
+	[PhaseId] [int] NULL,
+	[PhaseName] [nvarchar](100) NULL,
+	[PhaseOrderInCycle] [int] NULL,
+	[CreateUserId] [int] NULL,
+	[CreateUserName] [nvarchar](150) NULL,
+	[CreateTime] [datetime] NULL,
+	[UpdateUserId] [int] NULL,
+	[UpdateUserName] [nvarchar](150) NULL,
+	[UpdateTime] [datetime] NULL
+)

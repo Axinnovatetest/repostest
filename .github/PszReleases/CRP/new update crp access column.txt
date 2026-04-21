@@ -1,0 +1,2 @@
+﻿alter table __CRP_AccessProfile
+add FAUpdateCRP bit null default 0

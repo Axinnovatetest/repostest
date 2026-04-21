@@ -1,0 +1,17 @@
+﻿alter table __CTS_AccessProfile
+add FACreateHorizon1 bit null
+
+alter table __CTS_AccessProfile
+add FACreateHorizon2 bit null
+
+alter table __CTS_AccessProfile
+add FACreateHorizon3 bit null
+
+alter table __CTS_AccessProfile
+add FAUpdateTerminHorizon1 bit null
+
+alter table __CTS_AccessProfile
+add FAUpdateTerminHorizon2 bit null
+
+alter table __CTS_AccessProfile
+add FAUpdateTerminHorizon3 bit null

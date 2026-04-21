@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Psz.Core.Identity.Models.UserModel">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Psz.Core.Identity.Models.AccessProfileModel">
+    <Position X="3.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Psz.Core.Identity.Models.PurchaseAccessModel">
+    <Position X="3.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Psz.Core.Identity.Models.SettingsAccessModel">
+    <Position X="0.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Psz.Core.Identity.Models.WorkPlanAccessModel">
+    <Position X="6.25" Y="0.75" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

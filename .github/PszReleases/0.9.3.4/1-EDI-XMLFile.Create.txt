@@ -1,0 +1,114 @@
+﻿
+DROP TABLE [dbo].[__EDI_XML_Message]
+DROP TABLE [dbo].[__EDI_XML_OrdersLineItem]
+DROP TABLE [dbo].[__EDI_XML_OrdersScheduleLine]
+DROP TABLE [dbo].[__EDI_XML_DeliveryLineItem]
+
+
+
+
+CREATE TABLE [dbo].[__EDI_XML_Message](
+	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[IdFile] [int] NOT NULL ,
+	[IdOrder] [int] NOT NULL ,
+	-- Header
+	[Message_Header_InterchangeHeader_Sender_id] [nvarchar](150) NULL,
+	[Message_Header_InterchangeHeader_Recipient_id] [nvarchar](150) NULL,
+	[Message_Header_InterchangeHeader_DateTime_date] [nvarchar](150) NULL,
+	[Message_Header_InterchangeHeader_DateTime_time] [nvarchar](150) NULL,
+	[Message_Header_InterchangeHeader_ControlRef] [nvarchar](150) NULL,
+	[Message_Header_InterchangeHeader_ApplicationRef] [nvarchar](150) NULL,
+
+	-- Document > Header
+	[Message_Document_Header_MessageHeader_MessageReferenceNumber] [nvarchar](150) NULL,
+	[Message_Document_Header_MessageHeader_MessageType] [nvarchar](150) NULL,
+	--
+	[Message_Document_Header_BeginningOfMessage_DocumentNameEncoded] [nvarchar](150) NULL,
+	[Message_Document_Header_BeginningOfMessage_DocumentNumber] [nvarchar](150) NULL,
+	[Message_Document_Header_BeginningOfMessage_MessageFunction] [nvarchar](150) NULL,
+	--
+	[Message_Document_Header_Dates_DocumentDate_DateQualifier] [nvarchar](150) NULL,
+	[Message_Document_Header_Dates_DocumentDate_DateTime] [nvarchar](150) NULL,
+	[Message_Document_Header_Dates_Date_DateQualifier] [nvarchar](150) NULL,
+	[Message_Document_Header_Dates_Date_DateTime] [nvarchar](150) NULL,
+	--
+	[Message_Document_Header_ReferenceCurrency] [nvarchar](150) NULL,
+	-- 
+	[Message_Document_Header_ReferencedDocuments_PurchaseOrderReferenceNumber_ReferenceQualifier] [nvarchar](150) NULL,
+	[Message_Document_Header_ReferencedDocuments_PurchaseOrderReferenceNumber_ReferenceNumber] [nvarchar](150) NULL,
+	[Message_Document_Header_ReferencedDocuments_PurchaseOrderReferenceNumber_Date_DateQualifier] [nvarchar](150) NULL,
+	[Message_Document_Header_ReferencedDocuments_PurchaseOrderReferenceNumber_Date_DateTime] [nvarchar](150) NULL,
+
+	-- Document > Footer
+	[Message_Document_Footer_InvoiceFooter_InvoiceTotals_TotalLineItemAmount] [nvarchar](150) NULL,
+	[Message_Document_Footer_InvoiceFooter_InvoiceTotals_CurrencyQualifier] [nvarchar](150) NULL,
+	[EditTime] datetime default getdate()
+
+ ) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[__EDI_XML_OrdersLineItem](
+	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[IdFile] [int] NOT NULL ,
+
+	-- Document > Details
+	[Message_Document_Details_OrdersData_OrdersLineItem_PositionNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_CustomersItemMaterialNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_SuppliersItemMaterialNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_ItemDescription] [nvarchar](500) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_OrderedQuantity] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_MeasureUnitQualifier] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_CurrentItemPriceCalculationNet] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_UnitPriceBasis] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_LineItemAmount] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_LineItemActionRequest] [nvarchar](150) NULL,
+	--
+	[Message_Document_Details_OrdersData_OrdersLineItem_FreeText_TextQualifier] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_FreeText_TextLanguage] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_FreeText_Text] [nvarchar](150) NULL,
+	--
+	[Message_Document_Details_OrdersData_OrdersLineItem_References_OrderReference_ReferenceQualifier] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_References_OrderReference_ReferenceNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_References_OrderReference_LineNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_References_OrderReference_Date_DateQualifier] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_References_OrderReference_Date_DateTime] [nvarchar](150) NULL,
+	--
+	[EditTime] datetime default getdate()
+
+ ) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[__EDI_XML_OrdersScheduleLine](
+	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[IdOrderElement] [int] NOT NULL,
+	[IdOrdersLineItem] [int] NOT NULL ,
+
+	[Message_Document_Details_OrdersData_OrdersLineItem_OrdersScheduleLine_ScheduledQuantity] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_OrdersScheduleLine_ScheduledQuantityDate_DateQualifier] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_OrdersScheduleLine_ScheduledQuantityDate_DateTime] [nvarchar](150) NULL,
+	[Message_Document_Details_OrdersData_OrdersLineItem_OrdersScheduleLine_PreviousScheduledQuantity] [nvarchar](150) NULL,
+	[CreateTime] [datetime] NULL,
+	[EditTime] datetime default getdate()
+
+ ) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[__EDI_XML_DeliveryLineItem](
+	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[IdFile] [int] NOT NULL ,
+
+	-- Document > Details
+	[Message_Document_Details_DispatchData_ConsignmentPackagingSequence_DeliveryLineItems_PositionNumber] [nvarchar](150) NULL,
+	[Message_Document_Details_DispatchData_ConsignmentPackagingSequence_DeliveryLineItems_ShippingMark] [nvarchar](150) NULL,
+	[Message_Document_Details_DispatchData_ConsignmentPackagingSequence_DeliveryLineItems_NetWeight] [nvarchar](150) NULL,
+	[Message_Document_Details_DispatchData_ConsignmentPackagingSequence_DeliveryLineItems_Weight] [nvarchar](150) NULL,
+	[EditTime] datetime default getdate()
+
+ ) ON [PRIMARY]
+GO
+
+
+
+SELECT CASE WHEN MAX([IdFile]) IS NULL THEN 0 ELSE MAX([IdFile]) END AS MaxId FROM [__EDI_XML_OrdersLineItem]

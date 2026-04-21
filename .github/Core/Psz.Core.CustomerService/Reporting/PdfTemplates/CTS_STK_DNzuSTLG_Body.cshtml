@@ -1,0 +1,181 @@
+@model Psz.Core.CustomerService.Reporting.Models.DeliveryNotesCompilationModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head meta charset="utf-8">
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 70;
+            margin-right: 70;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .invoiceHeaders {
+            vertical-align: top;
+            border: 0px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if(Model is not null)
+    {
+        var dataLS = Model.Deliveries.OrderBy(x => x.ANgeboteArtikel_Liefertermin).Select(x => x.Angebote_Angebot_Nr ?? 0).Distinct().OrderBy(x => x);
+
+        <div style="width:100%;text-align:right;">
+            <img style='height:70px;border:0px solid red;' src="@Model.Logo">
+        </div>
+            <div style="margin-top:0px;">
+            <span class='invoiceHeaders' style="font-size:10px; width:100%;display:block;">@Model.Header.TopHeader</span>
+            <hr style='margin-top:0;' class="hr">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:49%;">
+                        <table>
+                            <tr><td class="nobr">@Model.Header.LAnrede</td></tr>
+                            <tr><td class="nobr">@Model.Header.LName1</td></tr>
+                            <tr><td class="nobr">@Model.Header.LName2</td></tr>
+                            <tr><td class="nobr">@Model.Header.LStreet</td></tr>
+                            <tr><td class="nobr">@Model.Header.LCountry</td></tr>
+                        </table>
+                    </td>
+                    <td style="width:49%;">
+                        <b><i>@Model.Header.MessageHeader</i></b>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <hr class="hr">
+            <h1><u><b><i>@Model.Header.DocumentTitle</i></b></u></h1>
+        <table style="font-size:12px">
+            <tr><td class="nobr">Ihr Zeichen: &nbsp;&nbsp; @Model.Header.CustomerNumber</td></tr>
+            <tr><td>Versandart: &nbsp;&nbsp; @Model.Header.ShippingMethod</td></tr>
+            <tr><td>@Model.Header.VAT_ID</td></tr>
+        </table>
+        <span style="margin-top:15px;margin-bottom:2px;">@Model.Header.PosText</span>
+        <table class='pr-2' style='width: 100%;font-size:12px;table-layout:fixe-d;'>
+            <tr><td><hr class='hr'></td></tr>
+        </table>
+        <div>
+            @foreach (var item in dataLS)
+            {
+                <span class='nobr'>&nbsp;&nbsp;LS-Nummer:</span><b>@item</b>
+                <table class='pr-2' style='width: 100%;font-size:11px;table-layout:fixe-d;'>
+                    <tr><td colspan='6'><hr class='hr-2'></td></tr>
+                    <tr>
+                    <td><b>Artikelnummer</b></td>
+						<td><div class='nobr'><b>Bezeichnung 1</b></div></td>
+						<td><div class='nobr'><b>Bezeichnung 2</b></div></td>
+						<td><b>Einheit</b></td>
+						<td><b>Anzahl</b></td>
+						<td><div class='nobr'><b>Stk-Gew</b>.</div><div class='nobr'><b>Ges-Gew</b>.</div></td>
+					</tr>
+					<tr><td colspan='6'><hr class='hr-2'></td></tr>
+                    @foreach(var delivery in Model.Deliveries?.Where(x => x.Angebote_Angebot_Nr == item)?.OrderBy(x => x.Artikelnummer))
+                    {
+                        <tr>
+                            <td>@delivery.Artikelnummer<br /><span class='nobr'>Ihre Bestellung/PO#:</span> <b>@delivery.Angebote_Bezug</b></td>
+                            <td>@delivery.ANgeboteArtikel_Bezeichnung1</td>
+                            <td>@delivery.ANgeboteArtikel_Bezeichnung2<br />Lieferdatum:<b>@(delivery.ANgeboteArtikel_Liefertermin?.ToString("dd/MM/yyyy"))</b></td>
+                            <td class='nobr'>@delivery.ANgeboteArtikel_Einheit<br />Ursprungsland:<b>@delivery.Ursprungsland</b></td>
+                            <td class='nobr'>@delivery.ANgeboteArtikel_Anzahl<br />Zolltarif-Nr.:<b>@delivery.Zolltarif_nr</b></td>
+                            <td class='nobr' align='right'>@FormatHelper.FormatDecimal((decimal)delivery.ANgeboteArtikel_EinzelCu_Gewicht, 2) kg<br />@FormatHelper.FormatDecimal((decimal)delivery.ANgeboteArtikel_GesamtCu_Gewicht,2) kg</td>
+						</tr>
+						<tr><td colspan='6'><hr class='hr'></td></tr>
+                    }
+                </table>
+            }
+            <table class='pr-2' style='width: 100%;font-size:11px;table-layout:fixe-d;'>
+                <tr
+                    ><td align='right'>Gewicht: <b>@FormatHelper.FormatDecimal((decimal)Model.Deliveries.Select(x => x.ANgeboteArtikel_GesamtCu_Gewicht ?? 0).Sum(),2)</b>kg</td>
+                </tr>
+             </table>
+        </div>
+        <br />
+        <table>
+            <tr><td class="nobr"><b><u>Rechnungsadresse</u></b></td></tr>
+            <tr><td class="nobr">@Model.Header.Anrede</td></tr>
+            <tr><td class="nobr">@Model.Header.Name1</td></tr>
+            <tr><td class="nobr">@Model.Header.Name2</td></tr>
+            <tr><td class="nobr">@Model.Header.Street</td></tr>
+            <tr><td class="nobr">@Model.Header.Country</td></tr>
+        </table>
+        <pre></pre>
+        <br />
+    }
+</body>
+</html>

@@ -1,0 +1,247 @@
+﻿@model IEnumerable<Psz.Core.CRP.Reporting.Models.LaufkarteSchneidereiModel>
+@{
+    var _list = Model.ToList();
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @@page {
+            margin-top: 20;
+            margin-bottom: 0;
+            margin-left: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .table-cell {
+            color: black;
+            padding: 5px 5px;
+            text-align: left;
+            font-size:10px;
+        }
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .no-wrap
+        {
+            white-space: nowrap !important;
+        }
+        .left{
+            text-align: left !important;
+        }
+        .center{
+            text-align: center !important;
+        }
+        .left {
+            text-align: left !important;
+        }
+        .right{
+            text-align: right !important;
+        }
+        .big{
+            font-size: 18px !important;
+        }
+        .medium{
+            font-size: 14px !important;
+        }
+
+        .small {
+            font-size: 10px !important;
+        }
+        .blue{
+            color: #00006C;
+        }
+        .bold{
+            font-weight: bold !important;
+        }
+        .normal{
+            font-weight: normal !important;
+        }
+        .gray{
+            background-color:gainsboro
+        }
+        .border-bottom{
+            border-bottom: 1px solid black !important;
+        }
+        .max-80
+        {
+            max-width: 150px !important;
+        }
+        .vertival-top{
+            vertical-align: top !important;
+        }
+
+        .vertival-middle {
+            vertical-align: middle !important;
+        }
+
+        .blue-cell{
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            font-size:10px;
+        }
+        .bordered{
+            border: 1px solid black;
+        }
+        .bottom-dotted{
+            border-bottom: 1px dotted black !important;
+        }
+        .rectangle{
+            border: 1px solid black;
+            width: 200px;
+            height: 20px;
+            margin:auto;
+        }
+
+        .rectangle2 {
+            border: 1px solid black;
+            width: 40px;
+            height: 17px;
+        }
+        .square{
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+        .padding-10{
+            padding:10px;
+        }
+        .underline{
+            text-decoration: underline !important;
+        }
+        .green{
+            color: green !important;
+        }
+        .red {
+            color: red !important;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .tight-lines {
+            line-height: 0.2;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if (Model != null && Model.Count() > 0)
+    {
+        <div style="page-break-before: always;">
+            <div class="gray bordered" style="width:100%;padding:10px;">
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th class="normal medium left" colspan="3">
+                            P S Z Tunisie S.a.r.l<br />
+                            Prubezna karta Rezama<br />
+                            Laufkarte Schneiderei
+                        </th>
+                        <th class="medium bold center vertival-top">Plaunugssytem Laufkarte Schniederei:<br /><div class="rectangle"></div></th>
+                        <th class="bold small left vertival-top">
+                            Hambsat:<br /><br />
+                            Vzorek: <br /><br />
+                            Navrh:
+                        </th>
+                        <th class="left small vertival-top tight-lines">
+                            <div class="rectangle2"></div><br />
+                            <div class="rectangle2"></div><br />
+                            <div class="rectangle2"></div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+            <table style="width:100%">
+                <tr>
+                    <th class="bold medium left">FA #:</th>
+                    <th class="medium normal left">@_list[0].Fertigungsnummer</th>
+                    <th class="medium bold right">FA Menge:</th>
+                    <th class="medium normal left">@_list[0].Anzahl</th>
+                </tr>
+                <tr>
+                    <th class="bold medium left">PSZ #:</th>
+                    <th class="medium normal left">@_list[0].Artikelnummer</th>
+                    <th class="medium bold right">FA Termin:</th>
+                    <th class="medium normal left">@_list[0].Termin_Bestätigt1</th>
+                </tr>
+                <tr>
+                    <th class="bold medium left">Popis 1:</th>
+                    <th class="medium normal left">@_list[0].FGArtikelBZ1</th>
+                </tr>
+                <tr>
+                    <th class="bold medium left">Artikelfamille:</th>
+                    <th class="medium normal left">@_list[0].Artikelfamilie_Kunde</th>
+                </tr>
+            </table>
+            <tr><td colspan='9'><hr class='hr'></td></tr>
+            <br />
+            @foreach (var plan in Model)
+            {
+                <table style="width:100%">
+                    <tr>
+                        <th class="bold medium left vertical-top">
+                            @plan.Gewerk
+                            <br />
+                            <div class="no-wrap row">
+                                <span class="square"></span>
+                                <span class="normal">&nbsp;@plan.Bezeichnung</span>
+                            </div>
+                        </th>
+                        <th class="right normal medium">
+                            <table style="width:40%;margin-left:auto">
+                                <tr>
+                                    <th class="blue-cell bordered center no-wrap">Datum</th>
+                                    <th class="blue-cell bordered center no-wrap">Cislo</th>
+                                    <th class="blue-cell bordered center no-wrap">Misto</th>
+                                    <th class="blue-cell bordered center no-wrap">Mn. Boxy </th>
+                                </tr>
+                                <tr>
+                                    <td class="bordered padding-10"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bordered padding-10"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bordered padding-10"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                    <td class="bordered"></td>
+                                </tr>
+                            </table>
+                        </th>
+                    </tr>
+                </table>
+                <br /><br />
+            }
+        </div>
+    }
+    <pre></pre>
+</body>
+</html>

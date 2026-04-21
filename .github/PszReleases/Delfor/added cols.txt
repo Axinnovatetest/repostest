@@ -1,0 +1,6 @@
+﻿DelforCreate
+DelforReport
+DelforOrderConfirmation
+DelforProductionOrder
+DelforDeleteOrder
+DelforView

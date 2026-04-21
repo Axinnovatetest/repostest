@@ -1,0 +1,70 @@
+﻿//archiving
+			//*****Mahnwesen table
+			var _archive = Infrastructure.Data.Access.Tables.PRS.AngeboteAccess.GetForEinzelrechnung_Archives(HelpQuerys(insertedAngebotNrs).Key, HelpQuerys(insertedAngebotNrs).Value,
+				transaction.connection, transaction.transaction);
+			var _archivesToInsert = _archive?.Select(x => new Infrastructure.Data.Entities.Tables.CTS.MahnwesenEntity
+			{
+				Adress_id = x.Kunden_Nr,
+				Projekt_Nr = int.TryParse(x.Projekt_Nr, out var a) ? a : 0,
+				Belegnummer = x.Angebot_Nr,
+				Belegdatum = x.Datum,
+				Belegtyp = x.Typ,
+				Zahlungsfrist = x.Falligkeit,
+				Betrag = x.Betrag_MWSt,
+				Betrag_FW = 0,
+				Mahnstufe = 0,
+				Anrede = x.Anrede,
+				Vorname_NameFirma = x.Vorname_NameFirma,
+				Name2 = x.Name2,
+				Name3 = x.Name3,
+				Strasse_Postfach = x.Straße_Postfach,
+				Land_PLZ_Ort = x.Land_PLZ_Ort,
+			}).ToList();
+			Infrastructure.Data.Access.Tables.CTS.MahnwesenAccess.InsertWithTransaction(_archivesToInsert, transaction.connection, transaction.transaction);
+			//*****Mahnwesen_Archiv table
+			var _archivesToInsert2 = _archive?.Select(x => new Infrastructure.Data.Entities.Tables.CTS.Mahnwesen_ArchivEntity
+			{
+				Adress_id = x.Kunden_Nr,
+				Projekt_Nr = int.TryParse(x.Projekt_Nr, out var a) ? a : 0,
+				Belegnummer = x.Angebot_Nr,
+				Belegdatum = x.Datum,
+				Zahlungsfrist = x.Falligkeit,
+				Soll_DM = x.Betrag_MWSt,
+				Haben_DM = 0,
+				Datum = x.Datum,
+			}).ToList();
+			Infrastructure.Data.Access.Tables.CTS.Mahnwesen_ArchivAccess.InsertWithTransaction(_archivesToInsert2, transaction.connection, transaction.transaction);
+			//*****Mahnwesen_Zahlungen table
+			var _archives3 = Infrastructure.Data.Access.Joins.CTS.Divers.GetForEinzelrechnung_Archives3(HelpQuerys(insertedAngebotNrs).Key,
+				transaction.connection, transaction.transaction);
+			var _archivesToInsert3 = _archives3.Select(x => new Infrastructure.Data.Entities.Tables.CTS.Mahnwesen_ZahlungenEntity
+			{
+				Mahn_ID = x.ID,
+				Datum = x.Belegdatum,
+				Soll_DM = x.Betrag,
+				Soll_FW = x.Ausdr1,
+				Haben_DM = x.Ausdr2,
+				Haben_FW = x.Ausdr3,
+				Text = x.Ausdr4,
+				gebucht = x.Ausdr5,
+			}).ToList();
+			Infrastructure.Data.Access.Tables.CTS.Mahnwesen_ZahlungenAccess.InsertWithTransaction(_archivesToInsert3, transaction.connection, transaction.transaction);
+			//******Statistiken Angebote table
+			var _archives4 = Infrastructure.Data.Access.Joins.CTS.Divers.GetForEinzelrechnung_Archives4(transaction.connection, transaction.transaction);
+			var _archivesToInsert4 = _archives4?.Select(x => new Infrastructure.Data.Entities.Tables.CTS.Statistiken_AngeboteEntity
+			{
+				Adress_Nr = x.Kunden_Nr,
+				Typ = x.Typ,
+				Datum = x.Datum,
+				Personal_Nr = x.Personal_Nr,
+				Artikel_Nr = x.Artikel_Nr,
+				Anzahl = (float)x.Anzahl,
+				Gesamtpreis = x.gesamt,
+				Angebot_Nr = x.Angebot_Nr,
+				Projekt_Nr = int.TryParse(x.Projekt_Nr, out var n) ? n : 0,
+				USt = x.USt,
+				Lagerort_ID = x.Lagerort_id,
+				Liefertermin = x.Liefertermin,
+				Mandant = x.Mandant,
+			}).ToList();
+			Infrastructure.Data.Access.Tables.CTS.Statistiken_AngeboteAccess.InsertWithTransaction(_archivesToInsert4, transaction.connection, transaction.transaction);

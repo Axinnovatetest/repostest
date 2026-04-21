@@ -1,0 +1,165 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.RechnungEndkontrolleReportModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 20;
+            margin-bottom: 150;
+            margin-left: 20;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, tr {
+            padding: 10px 10px 0 0;
+        }
+
+        td {
+            font-size: 10px !important;
+        }
+        .big{
+            font-size: 14px !important;
+        }
+        .small{
+            font-size: 8px !important;
+        }
+        .bold{
+            font-weight: bold !important;
+        }
+        .medium
+        {
+            font-size: 10px !important;
+        }
+        .normal{
+            font-weight: normal !important;
+        }
+        .hr {
+            border: none;
+            border-top: 2px solid black;
+            padding: 5px;
+        }
+
+        .hr-dotted {
+            border: none;
+            border-top: 2px dotted black;
+            padding: 5px;
+        }
+        .underline{
+            text-decoration: underline !important;
+        }
+        .text-right{
+            text-align: right !important;
+        }
+
+        .text-left {
+            text-align: left !important;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+        .no-br{
+            white-space:nowrap;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if(Model is not null)
+    {
+      <table>
+          <tr>
+            <td class="normal small">Zertifiziert nach</td>
+          </tr>
+            <tr>
+                <td class="normal small">DIN EN ISO 9001:2008</td>
+            </tr>
+       </table>
+            <table style="width:100%">
+            <tr>
+                <td class="big bold">ENDKONTROLLE TN</td>
+                <td class="text-right">
+                    <img style='height:50px;border:0px solid red;' src="@Model.Header.Logo">
+                </td>
+            </tr>
+            </table>
+        <hr class="hr">
+      <table>
+          <tr>
+                <td class="medium normal">Odběratel:</td>
+          </tr>
+            <tr>
+                <td class="medium bold">PSZ electronic GmbH</td>
+            </tr>
+            <tr>
+                <td class="medium bold">Im Gstaudach 6</td>
+            </tr>
+            <tr>
+                <td class="medium bold">D-92648 Vohenstrauß</td>
+            </tr>
+            <tr>
+                <td class="medium bold">DE 813706578</td>
+            </tr>
+      </table>
+        <hr class="hr-dotted">
+        <table style="width:100%;">
+            <tr>
+                <td class="bold">FAKTURA–Daňový dokla číslo: @Model.Header.Rechnungnummer</td>
+                <td class="bold text-right">Datum vystavení: @Model.Header.RechnungDatum</td>
+            </tr>
+            <tr>
+                <td class="normal underline">Dodací a platební podmínky</td>
+                <td class="bold text-right"> Od: @Model.Header.From <br />Do: @Model.Header.To </td>
+            </tr>
+            <tr>
+                <td class="normal">Forma úhrady: Příkaz plátce</td>
+            </tr>
+            <tr>
+                <td class="normal">Datum splatnosti: @Model.Header.DatePlus10</td>
+            </tr>
+        </table>
+        <table style="width:100%;margin-top:20px;">
+            <tr>
+                <th class="normal medium no-br">Datum:</th>
+                <th class="normal medium no-br">Číslo zakázky:</th>
+                <th class="normal medium no-br">Množství:</th>
+                <th class="normal medium no-br">Číslo zboží:</th>
+                <th class="normal medium no-br">Zboží</th>
+                <th class="normal medium no-br">Cena:</th>
+                <th class="normal medium no-br">Suma:</th>
+            </tr>
+            <tr>
+                <td style="border-bottom:1px solid black" colspan="7"></td>
+            </tr>
+            @foreach(var detail in Model.Details)
+            {
+                <tr>
+                    <td class="normal medium text-center no-br">@detail.Datum</td>
+                    <td class="normal medium text-center no-br">@detail.Fertigungsnummer</td>
+                    <td class="normal medium text-center no-br">@detail.Anzahl</td>
+                    <td class="normal medium text-center no-br">@detail.Artikelnummer</td>
+                    <td class="normal medium text-center">@detail.Bemerkung</td>
+                    <td class="normal medium text-center no-br">@FormatHelper.FormatDecimal(detail.Preis, 2) €</td>
+                    <td class="normal medium text-center no-br">@FormatHelper.FormatDecimal(detail.Ausdr3, 2) €</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="7" style="border-bottom:1px solid black"></td>
+            </tr>
+            <tr>
+                <td colspan="6" class="bold big text-center">Dle smlouvy Vám účtujeme za montážní práce částku:</td>
+                <td class="bold big text-right no-br">@(FormatHelper.FormatDecimal(Model.Details.Sum(x => x.Ausdr3), 2)) €</td>
+            </tr>
+        </table>
+    }
+</body>
+<pre></pre>
+</html>

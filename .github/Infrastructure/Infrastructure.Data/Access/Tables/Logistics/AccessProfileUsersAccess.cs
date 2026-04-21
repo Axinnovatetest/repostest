@@ -1,0 +1,508 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+
+namespace Infrastructure.Data.Access.Tables.Logistics
+{
+	public class AccessProfileUsersAccess
+	{
+		public static List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> GetByUserId(List<int> ids)
+		{
+			if(ids == null || ids.Count <= 0)
+				return null;
+
+			var dataTable = new DataTable();
+			using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+			{
+				sqlConnection.Open();
+				string query = $"SELECT * FROM [__LGT_AccessProfileUsers] WHERE [UserId] IN ({(string.Join(", ", ids))})";
+				var sqlCommand = new SqlCommand(query, sqlConnection);
+
+				DbExecution.Fill(sqlCommand, dataTable);
+			}
+
+			if(dataTable.Rows.Count > 0)
+			{
+				return dataTable.Rows.Cast<DataRow>().Select(x => new Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity(x)).ToList();
+			}
+			else
+			{
+				return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+			}
+		}
+		public static List<Infrastructure.Data.Entities.Tables.CTS.AccessProfileUsersEntity> GetByUserId(int Id)
+		{
+			var dataTable = new DataTable();
+			using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+			{
+				sqlConnection.Open();
+				string query = "SELECT * FROM [__LGT_AccessProfileUsers] where UserId=@UserId";
+				var sqlCommand = new SqlCommand(query, sqlConnection);
+				sqlCommand.Parameters.AddWithValue("UserId", Id);
+				DbExecution.Fill(sqlCommand, dataTable);
+			}
+
+			if(dataTable.Rows.Count > 0)
+			{
+				return dataTable.Rows.Cast<DataRow>().Select(x => new Infrastructure.Data.Entities.Tables.CTS.AccessProfileUsersEntity(x)).ToList();
+			}
+			else
+			{
+				return new List<Infrastructure.Data.Entities.Tables.CTS.AccessProfileUsersEntity>();
+			}
+		}
+		public static List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> GetByAccessProfileIds(List<int> accessProfileIds)
+		{
+			if(accessProfileIds == null || accessProfileIds.Count <= 0)
+				return null;
+
+			var dataTable = new DataTable();
+			using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+			{
+				sqlConnection.Open();
+				string query = $"SELECT * FROM [__LGT_AccessProfileUsers] WHERE [AccessProfileId] IN ({(string.Join(", ", accessProfileIds))})";
+				var sqlCommand = new SqlCommand(query, sqlConnection);
+
+				DbExecution.Fill(sqlCommand, dataTable);
+			}
+
+			if(dataTable.Rows.Count > 0)
+			{
+				return dataTable.Rows.Cast<DataRow>().Select(x => new Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity(x)).ToList();
+			}
+			else
+			{
+				return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+			}
+		}
+		public static int Insert(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items)
+		{
+			if(items != null && items.Count > 0)
+			{
+				int maxParamsNumber = Settings.MAX_BATCH_SIZE / 8; // Nb params per query
+				int results = 0;
+				if(items.Count <= maxParamsNumber)
+				{
+					results = insert(items);
+				}
+				else
+				{
+					int batchNumber = items.Count / maxParamsNumber;
+					for(int i = 0; i < batchNumber; i++)
+					{
+						results += insert(items.GetRange(i * maxParamsNumber, maxParamsNumber));
+					}
+					results += insert(items.GetRange(batchNumber * maxParamsNumber, items.Count - batchNumber * maxParamsNumber));
+				}
+				return results;
+			}
+
+			return -1;
+		}
+		private static int insert(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items)
+		{
+			if(items != null && items.Count > 0)
+			{
+				int results = -1;
+				using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+				{
+					sqlConnection.Open();
+					string query = "";
+					var sqlCommand = new SqlCommand(query, sqlConnection);
+
+					int i = 0;
+					foreach(var item in items)
+					{
+						i++;
+						query += " INSERT INTO [__LGT_AccessProfileUsers] ([AccessProfileId],[AccessProfileName],[CreationTime],[CreationUserId],[UserEmail],[UserId],[UserName]) VALUES ( "
+
+							+ "@AccessProfileId" + i + ","
+							+ "@AccessProfileName" + i + ","
+							+ "@CreationTime" + i + ","
+							+ "@CreationUserId" + i + ","
+							+ "@UserEmail" + i + ","
+							+ "@UserId" + i + ","
+							+ "@UserName" + i
+							+ "); ";
+
+
+						sqlCommand.Parameters.AddWithValue("AccessProfileId" + i, item.AccessProfileId == null ? (object)DBNull.Value : item.AccessProfileId);
+						sqlCommand.Parameters.AddWithValue("AccessProfileName" + i, item.AccessProfileName == null ? (object)DBNull.Value : item.AccessProfileName);
+						sqlCommand.Parameters.AddWithValue("CreationTime" + i, item.CreationTime == null ? (object)DBNull.Value : item.CreationTime);
+						sqlCommand.Parameters.AddWithValue("CreationUserId" + i, item.CreationUserId == null ? (object)DBNull.Value : item.CreationUserId);
+						sqlCommand.Parameters.AddWithValue("UserEmail" + i, item.UserEmail == null ? (object)DBNull.Value : item.UserEmail);
+						sqlCommand.Parameters.AddWithValue("UserId" + i, item.UserId == null ? (object)DBNull.Value : item.UserId);
+						sqlCommand.Parameters.AddWithValue("UserName" + i, item.UserName == null ? (object)DBNull.Value : item.UserName);
+					}
+
+					sqlCommand.CommandText = query;
+
+					results = DbExecution.ExecuteNonQuery(sqlCommand);
+				}
+
+				return results;
+			}
+
+			return -1;
+		}
+		public static int DeleteUsers(int id, List<int> userIds)
+		{
+			if(userIds == null || userIds.Count <= 0)
+				return -1;
+
+			int results = -1;
+			using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+			{
+				sqlConnection.Open();
+				string query = $"DELETE FROM [__LGT_AccessProfileUsers] WHERE [AccessProfileId]=@Id AND [UserId] IN ({(string.Join(", ", userIds))})";
+				var sqlCommand = new SqlCommand(query, sqlConnection);
+				sqlCommand.Parameters.AddWithValue("Id", id);
+
+				results = DbExecution.ExecuteNonQuery(sqlCommand);
+			}
+
+			return results;
+		}
+		public static int DeleteForUsers(List<int> userIds)
+		{
+			if(userIds == null || userIds.Count <= 0)
+				return -1;
+
+			int results = -1;
+			using(var sqlConnection = new SqlConnection(Settings.ConnectionString))
+			{
+				sqlConnection.Open();
+				string query = $"DELETE FROM [__LGT_AccessProfileUsers] WHERE [UserId] IN ({(string.Join(", ", userIds))})";
+				var sqlCommand = new SqlCommand(query, sqlConnection);
+
+				results = DbExecution.ExecuteNonQuery(sqlCommand);
+			}
+
+			return results;
+		}
+		#region Methods with transaction
+		public static Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity GetWithTransaction(int id, SqlConnection connection, SqlTransaction transaction)
+		{
+			var dataTable = new DataTable();
+
+			string query = "SELECT * FROM [__LGT_AccessProfileUsers] WHERE [Id]=@Id";
+			var sqlCommand = new SqlCommand(query, connection, transaction);
+			sqlCommand.Parameters.AddWithValue("Id", id);
+			DbExecution.Fill(sqlCommand, dataTable);
+
+			if(dataTable.Rows.Count > 0)
+			{
+				return new Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity(dataTable.Rows[0]);
+			}
+			else
+			{
+				return null;
+			}
+		}
+		public static List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> GetWithTransaction(SqlConnection connection, SqlTransaction transaction)
+		{
+			var dataTable = new DataTable();
+
+			string query = "SELECT * FROM [__LGT_AccessProfileUsers]";
+			var sqlCommand = new SqlCommand(query, connection, transaction);
+
+			DbExecution.Fill(sqlCommand, dataTable);
+
+			if(dataTable.Rows.Count > 0)
+			{
+				return dataTable.Rows.Cast<DataRow>().Select(x => new Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity(x)).ToList();
+			}
+			else
+			{
+				return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+			}
+		}
+		public static List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> GetWithTransaction(List<int> ids, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(ids != null && ids.Count > 0)
+			{
+				int maxQueryNumber = Settings.MAX_BATCH_SIZE;
+				List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> results = null;
+				if(ids.Count <= maxQueryNumber)
+				{
+					results = getWithTransaction(ids, connection, transaction);
+				}
+				else
+				{
+					int batchNumber = ids.Count / maxQueryNumber;
+					results = new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+					for(int i = 0; i < batchNumber; i++)
+					{
+						results.AddRange(getWithTransaction(ids.GetRange(i * maxQueryNumber, maxQueryNumber), connection, transaction));
+					}
+					results.AddRange(getWithTransaction(ids.GetRange(batchNumber * maxQueryNumber, ids.Count - batchNumber * maxQueryNumber), connection, transaction));
+				}
+				return results;
+			}
+			return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+		}
+		private static List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> getWithTransaction(List<int> ids, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(ids != null && ids.Count > 0)
+			{
+				var dataTable = new DataTable();
+
+				var sqlCommand = new SqlCommand("", connection, transaction);
+				string queryIds = string.Empty;
+				for(int i = 0; i < ids.Count; i++)
+				{
+					queryIds += "@Id" + i + ",";
+					sqlCommand.Parameters.AddWithValue("Id" + i, ids[i]);
+				}
+				queryIds = queryIds.TrimEnd(',');
+
+				sqlCommand.CommandText = $"SELECT * FROM [__LGT_AccessProfileUsers] WHERE [Id] IN ({queryIds})";
+				DbExecution.Fill(sqlCommand, dataTable);
+
+				if(dataTable.Rows.Count > 0)
+				{
+					return dataTable.Rows.Cast<DataRow>().Select(x => new Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity(x)).ToList();
+				}
+				else
+				{
+					return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+				}
+			}
+			return new List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity>();
+		}
+
+		public static int InsertWithTransaction(Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity item, SqlConnection connection, SqlTransaction transaction)
+		{
+			int response = int.MinValue;
+
+
+			string query = "INSERT INTO [__LGT_AccessProfileUsers] ([AccessProfileId],[AccessProfileName],[CreationTime],[CreationUserId],[UserEmail],[UserId],[UserName]) OUTPUT INSERTED.[Id] VALUES (@AccessProfileId,@AccessProfileName,@CreationTime,@CreationUserId,@UserEmail,@UserId,@UserName); ";
+
+
+			var sqlCommand = new SqlCommand(query, connection, transaction);
+			sqlCommand.Parameters.AddWithValue("AccessProfileId", item.AccessProfileId == null ? (object)DBNull.Value : item.AccessProfileId);
+			sqlCommand.Parameters.AddWithValue("AccessProfileName", item.AccessProfileName == null ? (object)DBNull.Value : item.AccessProfileName);
+			sqlCommand.Parameters.AddWithValue("CreationTime", item.CreationTime == null ? (object)DBNull.Value : item.CreationTime);
+			sqlCommand.Parameters.AddWithValue("CreationUserId", item.CreationUserId == null ? (object)DBNull.Value : item.CreationUserId);
+			sqlCommand.Parameters.AddWithValue("UserEmail", item.UserEmail == null ? (object)DBNull.Value : item.UserEmail);
+			sqlCommand.Parameters.AddWithValue("UserId", item.UserId == null ? (object)DBNull.Value : item.UserId);
+			sqlCommand.Parameters.AddWithValue("UserName", item.UserName == null ? (object)DBNull.Value : item.UserName);
+
+			var result = DbExecution.ExecuteScalar(sqlCommand);
+			return result == null ? int.MinValue : int.TryParse(result.ToString(), out var insertedId) ? insertedId : int.MinValue;
+		}
+		public static int InsertWithTransaction(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(items != null && items.Count > 0)
+			{
+				int maxParamsNumber = Settings.MAX_BATCH_SIZE / 8; // Nb params per query
+				int results = 0;
+				if(items.Count <= maxParamsNumber)
+				{
+					results = insertWithTransaction(items, connection, transaction);
+				}
+				else
+				{
+					int batchNumber = items.Count / maxParamsNumber;
+					for(int i = 0; i < batchNumber; i++)
+					{
+						results += insertWithTransaction(items.GetRange(i * maxParamsNumber, maxParamsNumber), connection, transaction);
+					}
+					results += insertWithTransaction(items.GetRange(batchNumber * maxParamsNumber, items.Count - batchNumber * maxParamsNumber), connection, transaction);
+				}
+				return results;
+			}
+
+			return -1;
+		}
+		private static int insertWithTransaction(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(items != null && items.Count > 0)
+			{
+				string query = "";
+				var sqlCommand = new SqlCommand(query, connection, transaction);
+
+				int i = 0;
+				foreach(var item in items)
+				{
+					i++;
+					query += " INSERT INTO [__LGT_AccessProfileUsers] ([AccessProfileId],[AccessProfileName],[CreationTime],[CreationUserId],[UserEmail],[UserId],[UserName]) VALUES ( "
+
+						+ "@AccessProfileId" + i + ","
+						+ "@AccessProfileName" + i + ","
+						+ "@CreationTime" + i + ","
+						+ "@CreationUserId" + i + ","
+						+ "@UserEmail" + i + ","
+						+ "@UserId" + i + ","
+						+ "@UserName" + i
+							+ "); ";
+
+
+					sqlCommand.Parameters.AddWithValue("AccessProfileId" + i, item.AccessProfileId == null ? (object)DBNull.Value : item.AccessProfileId);
+					sqlCommand.Parameters.AddWithValue("AccessProfileName" + i, item.AccessProfileName == null ? (object)DBNull.Value : item.AccessProfileName);
+					sqlCommand.Parameters.AddWithValue("CreationTime" + i, item.CreationTime == null ? (object)DBNull.Value : item.CreationTime);
+					sqlCommand.Parameters.AddWithValue("CreationUserId" + i, item.CreationUserId == null ? (object)DBNull.Value : item.CreationUserId);
+					sqlCommand.Parameters.AddWithValue("UserEmail" + i, item.UserEmail == null ? (object)DBNull.Value : item.UserEmail);
+					sqlCommand.Parameters.AddWithValue("UserId" + i, item.UserId == null ? (object)DBNull.Value : item.UserId);
+					sqlCommand.Parameters.AddWithValue("UserName" + i, item.UserName == null ? (object)DBNull.Value : item.UserName);
+				}
+
+				sqlCommand.CommandText = query;
+
+				return DbExecution.ExecuteNonQuery(sqlCommand);
+			}
+
+			return -1;
+		}
+
+		public static int UpdateWithTransaction(Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity item, SqlConnection connection, SqlTransaction transaction)
+		{
+			int results = -1;
+
+			string query = "UPDATE [__LGT_AccessProfileUsers] SET [AccessProfileId]=@AccessProfileId, [AccessProfileName]=@AccessProfileName, [CreationTime]=@CreationTime, [CreationUserId]=@CreationUserId, [UserEmail]=@UserEmail, [UserId]=@UserId, [UserName]=@UserName WHERE [Id]=@Id";
+			var sqlCommand = new SqlCommand(query, connection, transaction);
+
+			sqlCommand.Parameters.AddWithValue("Id", item.Id);
+			sqlCommand.Parameters.AddWithValue("AccessProfileId", item.AccessProfileId == null ? (object)DBNull.Value : item.AccessProfileId);
+			sqlCommand.Parameters.AddWithValue("AccessProfileName", item.AccessProfileName == null ? (object)DBNull.Value : item.AccessProfileName);
+			sqlCommand.Parameters.AddWithValue("CreationTime", item.CreationTime == null ? (object)DBNull.Value : item.CreationTime);
+			sqlCommand.Parameters.AddWithValue("CreationUserId", item.CreationUserId == null ? (object)DBNull.Value : item.CreationUserId);
+			sqlCommand.Parameters.AddWithValue("UserEmail", item.UserEmail == null ? (object)DBNull.Value : item.UserEmail);
+			sqlCommand.Parameters.AddWithValue("UserId", item.UserId == null ? (object)DBNull.Value : item.UserId);
+			sqlCommand.Parameters.AddWithValue("UserName", item.UserName == null ? (object)DBNull.Value : item.UserName);
+
+			results = DbExecution.ExecuteNonQuery(sqlCommand);
+			return results;
+		}
+		public static int UpdateWithTransaction(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(items != null && items.Count > 0)
+			{
+				int maxParamsNumber = Settings.MAX_BATCH_SIZE / 8; // Nb params per query
+				int results = 0;
+				if(items.Count <= maxParamsNumber)
+				{
+					results = updateWithTransaction(items, connection, transaction);
+				}
+				else
+				{
+					int batchNumber = items.Count / maxParamsNumber;
+					for(int i = 0; i < batchNumber; i++)
+					{
+						results += updateWithTransaction(items.GetRange(i * maxParamsNumber, maxParamsNumber), connection, transaction);
+					}
+					results += updateWithTransaction(items.GetRange(batchNumber * maxParamsNumber, items.Count - batchNumber * maxParamsNumber), connection, transaction);
+				}
+
+				return results;
+			}
+
+			return -1;
+		}
+		private static int updateWithTransaction(List<Infrastructure.Data.Entities.Tables.Logistics.AccessProfileUsersEntity> items, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(items != null && items.Count > 0)
+			{
+				int results = -1;
+				string query = "";
+				var sqlCommand = new SqlCommand(query, connection, transaction);
+
+				int i = 0;
+				foreach(var item in items)
+				{
+					i++;
+					query += " UPDATE [__LGT_AccessProfileUsers] SET "
+
+					+ "[AccessProfileId]=@AccessProfileId" + i + ","
+					+ "[AccessProfileName]=@AccessProfileName" + i + ","
+					+ "[CreationTime]=@CreationTime" + i + ","
+					+ "[CreationUserId]=@CreationUserId" + i + ","
+					+ "[UserEmail]=@UserEmail" + i + ","
+					+ "[UserId]=@UserId" + i + ","
+					+ "[UserName]=@UserName" + i + " WHERE [Id]=@Id" + i
+						+ "; ";
+
+					sqlCommand.Parameters.AddWithValue("Id" + i, item.Id);
+					sqlCommand.Parameters.AddWithValue("AccessProfileId" + i, item.AccessProfileId == null ? (object)DBNull.Value : item.AccessProfileId);
+					sqlCommand.Parameters.AddWithValue("AccessProfileName" + i, item.AccessProfileName == null ? (object)DBNull.Value : item.AccessProfileName);
+					sqlCommand.Parameters.AddWithValue("CreationTime" + i, item.CreationTime == null ? (object)DBNull.Value : item.CreationTime);
+					sqlCommand.Parameters.AddWithValue("CreationUserId" + i, item.CreationUserId == null ? (object)DBNull.Value : item.CreationUserId);
+					sqlCommand.Parameters.AddWithValue("UserEmail" + i, item.UserEmail == null ? (object)DBNull.Value : item.UserEmail);
+					sqlCommand.Parameters.AddWithValue("UserId" + i, item.UserId == null ? (object)DBNull.Value : item.UserId);
+					sqlCommand.Parameters.AddWithValue("UserName" + i, item.UserName == null ? (object)DBNull.Value : item.UserName);
+				}
+
+				sqlCommand.CommandText = query;
+				return DbExecution.ExecuteNonQuery(sqlCommand);
+			}
+
+			return -1;
+		}
+
+		public static int DeleteWithTransaction(int id, SqlConnection connection, SqlTransaction transaction)
+		{
+			int results = -1;
+
+			string query = "DELETE FROM [__LGT_AccessProfileUsers] WHERE [Id]=@Id";
+			var sqlCommand = new SqlCommand(query, connection, transaction);
+			sqlCommand.Parameters.AddWithValue("Id", id);
+
+			results = DbExecution.ExecuteNonQuery(sqlCommand);
+
+
+			return results;
+		}
+		public static int DeleteWithTransaction(List<int> ids, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(ids != null && ids.Count > 0)
+			{
+				int maxParamsNumber = Settings.MAX_BATCH_SIZE;
+				int results = 0;
+				if(ids.Count <= maxParamsNumber)
+				{
+					results = deleteWithTransaction(ids, connection, transaction);
+				}
+				else
+				{
+					int batchNumber = ids.Count / maxParamsNumber;
+					for(int i = 0; i < batchNumber; i++)
+					{
+						results += deleteWithTransaction(ids.GetRange(i * maxParamsNumber, maxParamsNumber), connection, transaction);
+					}
+					results += deleteWithTransaction(ids.GetRange(batchNumber * maxParamsNumber, ids.Count - batchNumber * maxParamsNumber), connection, transaction);
+				}
+			}
+			return -1;
+		}
+		private static int deleteWithTransaction(List<int> ids, SqlConnection connection, SqlTransaction transaction)
+		{
+			if(ids != null && ids.Count > 0)
+			{
+				int results = -1;
+
+				var sqlCommand = new SqlCommand("", connection, transaction);
+
+				string queryIds = string.Empty;
+				for(int i = 0; i < ids.Count; i++)
+				{
+					queryIds += "@Id" + i + ",";
+					sqlCommand.Parameters.AddWithValue("Id" + i, ids[i]);
+				}
+				queryIds = queryIds.TrimEnd(',');
+
+				string query = "DELETE FROM [__LGT_AccessProfileUsers] WHERE [Id] IN (" + queryIds + ")";
+				sqlCommand.CommandText = query;
+
+				results = DbExecution.ExecuteNonQuery(sqlCommand);
+
+
+				return results;
+			}
+			return -1;
+		}
+		#endregion Methods with transaction
+
+	}
+}

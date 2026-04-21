@@ -1,0 +1,19 @@
+﻿-- USE [p3000datSQL]
+-- GO
+
+DELETE FROM dbo.[angebotene artikel] where [angebot-nr] IN (SELECT Nr FROM dbo.angebote where datum > '01-09-2020');
+DELETE FROM dbo.angebote where datum > '01-09-2020';
+
+DELETE FROM dbo.__EDI_OrderChange;
+DELETE FROM dbo.__EDI_OrderChangeItem;
+DELETE FROM dbo.__EDI_OrderElementExtension;
+DELETE FROM dbo.__EDI_XML_DeliveryLineItem;
+DELETE FROM dbo.__EDI_XML_Message;
+DELETE FROM dbo.__EDI_XML_OrdersLineItem;
+DELETE FROM dbo.__EDI_XML_OrdersScheduleLine;
+
+
+DELETE FROM dbo.EDI_OrderError;
+DELETE FROM dbo.EDI_OrderExtension;
+DELETE FROM dbo.EDI_OrderExtensionBuyer;
+DELETE FROM dbo.EDI_OrderExtensionConsignee;

@@ -1,0 +1,363 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.RechnungStatsReportModel
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 150;
+            margin-left: 50;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        td, tr {
+            border: 1px solid black;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-dotted {
+            height: 1px;
+            color: black;
+            background-color: black;
+            border: 1px dotted black;
+            border-style: none none dotted;
+            color: #fff;
+            background-color: #fff;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+
+        .end-text {
+            font-size: 12px;
+            padding-top: -10px;
+            text-align: justify;
+        }
+
+        tr.spaceUnder > td {
+            padding-bottom: 0.2em;
+            padding-top: 0.2em;
+            page-break-inside: avoid;
+        }
+
+        .top-bottom-cell {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            line-height: 2em
+        }
+
+        .span-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70px;
+        }
+
+            .span-container > span {
+                flex: 1;
+                text-align: left;
+            }
+
+        .table-title {
+            font-size: 10px;
+            font-weight: normal;
+            text-align: left;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .table-title-bold {
+            font-size: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .table-cell {
+            font-size: 11px;
+            padding: 1px;
+        }
+
+        .table-cell-bold {
+            font-size: 11px;
+            font-weight: bold
+        }
+
+        .no-wrap {
+            white-space: nowrap;
+        }
+
+        tr.spaceUnder > td {
+            padding-bottom: 1em;
+        }
+
+        tr.spaceUnderBig > th {
+            padding-bottom: 1.5em;
+        }
+
+        .top-bottom-header {
+            font-size: 12px;
+            text-align: left;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        tr.separated td {
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if (Model is not null)
+        @if (Model.ReportParameters.Lager == 6)
+        {
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <span>Zertifiziert nach</span><br />
+                        <span>DIN EN ISO 9001:2008</span>
+                    </td>
+                    <td>
+                        <div style="width:100%;text-align:right;">
+                            <img style='height:50px;border:0px solid red;' src="@Model.ReportParameters.Logo">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <div style="width:100%;text-align:right;">
+                <img style='height:50px;border:0px solid red;' src="@Model.ReportParameters.Logo">
+            </div>
+        }
+    <hr style='margin-top:0;' class="hr">
+    @if (Model.ReportParameters.Header1?.Contains("\\n") == true)
+    {
+        var lines = Model.ReportParameters.Header1.Split("\\n");
+        foreach (var line in lines)
+        {
+            <p style="font-size:10px;text-decoration-line: underline;">@line</p>
+        }
+    }
+    else
+    {
+        <p style="font-size:10px;text-decoration-line: underline;">@Model.ReportParameters.Header1</p>
+    }
+    <p style="font-weight:bold;font-size:10px;margin-bottom:2px;">@Model.ReportParameters.Header2</p>
+    <p style="font-weight:bold;font-size:10px;margin-bottom:2px;">@Model.ReportParameters.Header3</p>
+    <p style="font-weight:bold;font-size:10px;margin-bottom:2px;">@Model.ReportParameters.Header4</p>
+    <p style="font-weight:bold;font-size:10px;">@Model.ReportParameters.Header5</p>
+    <hr style='margin-top:0;' class="hr-dotted">
+    <table style="width:100%;">
+        <tr>
+            <th colspan="2" style="text-align:left;font-size:10px">@Model.ReportParameters.Title1  @Model.ReportParameters.RechnungNummer</th>
+            <th colspan="2" style="text-align:right;font-size:10px">@Model.ReportParameters.Title2  @Model.ReportParameters.RechnungDatum</th>
+        </tr>
+    </table>
+    <br />
+    <table style="width:100%;">
+        <tr>
+            <th colspan="2" style="text-decoration:underline;font-weight:normal;text-align:left">@Model.ReportParameters.Title3</th>
+            <th style="text-align:left;font-size:10px">@Model.ReportParameters.Title4 @Model.ReportParameters.From</th>
+            <th style="font-size:10px">@Model.ReportParameters.Title5 @Model.ReportParameters.To</th>
+        </tr>
+        <tr>
+            <th colspan="2" style="font-weight:normal;text-align:left">@Model.ReportParameters.Title6</th>
+        </tr>
+        <tr>
+            <th colspan="2" style="font-weight:normal;text-align:left">@Model.ReportParameters.Title7 @Model.ReportParameters.LimitDate</th>
+        </tr>
+        @if (Model.ReportParameters.Lager == 6)
+        {
+            <tr>
+                <th colspan="10" style="font-weight:normal;text-align:left">Steuerfreie - Dienstleistungen gem. §9 Abs. 1 Gesetz 235/2004 Sb. - Reverse Charge</th>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    <table style="width:100%;">
+        <thead>
+            <tr>
+                <th class="table-title no-wrap">@Model.ReportParameters.List1Column1</th>
+                <th class="table-title no-wrap" style="text-align:center;">@Model.ReportParameters.List1Column2</th>
+                <th class="table-title no-wrap">@Model.ReportParameters.List1Column3</th>
+                <th class="table-title no-wrap">@Model.ReportParameters.List1Column4</th>
+                <th class="table-title" style="text-align:center;max-width:100px">@Model.ReportParameters.List1Column5</th>
+                <th class="table-title no-wrap" style="text-align:left">@Model.ReportParameters.List1Column6<br />@Model.ReportParameters.List1Column7</th>
+                <th class="table-title-bold no-wrap" style="text-align:center;">@Model.ReportParameters.List1Column8
+            </tr>
+            <tr>
+                <th colspan="8">
+                    <hr style='margin-top:0;' class="hr">
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Details)
+            {
+                var grayStyle = item.Repeated == 1 && item.Zusatzkosten_FA_Basis_30_Min_Decimal > 0 ? "background-color:lightgray;font-weight:bold" : "";
+                var colorStyle = "";
+                if (item.Originalanzahl_Decimal >= 1 && item.Originalanzahl_Decimal <= 5)
+                    colorStyle = "background-color:red;font-weight:bold";
+                else if (item.Originalanzahl_Decimal >= 6 && item.Originalanzahl_Decimal <= 10)
+                    colorStyle = "background-color:orange;font-weight:bold";
+                else if (item.Originalanzahl_Decimal >= 10 && item.Originalanzahl_Decimal <= 15)
+                    colorStyle = "background-color:green;font-weight:bold";
+
+                <tr class="spaceUnder">
+                    <td class="table-cell">@item.Datum</td>
+                    <td class="table-cell" style="text-align:center">@item.Fertigungsnummer</td>
+                    <td class="table-cell" style="text-align:center">@item.Anzahl</td>
+                    <td class="table-cell" style="text-align:left">@item.Artikelnummer</td>
+                    <td class="table-cell" style="text-align:center;max-width:100px">@item.Bezfeld</td>
+                    <td class="table-cell" style="text-align:center">@item.Preis €<br />@item.Material1 €</td>
+                    <td class="table-cell" style="text-align:right;font-weight:bold">@item.Ausdr3_decimal €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table style="width:100%; page-break-inside: avoid;border-top:1px solid black;border-bottom:1px solid black">
+        <tr class="spaceUnderBig">
+            <th colspan="6" style="text-align:right;font-size:12px">
+                @Model.ReportParameters.SumTitle1
+            </th>
+            <th colspan="2" style="text-align:right;font-size:12px">
+                @(Model.TotalAusdr3) €
+            </th>
+        </tr>
+        <tr class="spaceUnderBig">
+            <th colspan="8" style="text-align:left;font-size:12px">
+                @(Model.ReportParameters.SumTitle4 + Model.ReportParameters.RechnungNummer + " vom " + Model.ReportParameters.RechnungDatum)
+            </th>
+        </tr>
+        <tr class="spaceUnderBig">
+            <th colspan="8" style="text-align:left;font-size:12px">
+                @(Model.ReportParameters.SumTitle5 + Model.ReportParameters.From + " bis " + Model.ReportParameters.To)
+            </th>
+        </tr>
+    </table>
+    <table style="width:100%;page-break-before: always;">
+        <tr class="spaceUnder">
+            <th class="top-bottom-header"></th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column1</th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column2</th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column3</th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column4</th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column6</th>
+            <th class="top-bottom-header">@Model.ReportParameters.List2Column7</th>
+        </tr>
+        @foreach (var item in Model.Zollatarif)
+        {
+            <tr class="spaceUnder">
+                <td class="table-cell-bold">Nr.:</td>
+                <td class="table-cell-bold">@item.Zolltarif_nummer</td>
+                <td class="table-cell-bold">@item.Gewicht</td>
+                <td class="table-cell-bold">@item.Positionen</td>
+                <td class="table-cell-bold">@item.Lohnleistun €</td>
+                <td class="table-cell-bold">@item.Material €</td>
+                <td class="table-cell-bold">@item.Stat_Wert €</td>
+            </tr>
+        }
+        <tr class="separated">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="separated">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="font-size: 12px;text-align: left;font-weight:bold">@Model.ReportParameters.List2Sum</td>
+            <td></td>
+            <td class="table-cell-bold">@Model.TotalGewecht</td>
+            <td class="table-cell-bold">@Model.TotalPositionen</td>
+            <td class="table-cell-bold">@Model.TotalLohnleistun  €</td>
+            <td class="table-cell-bold">@Model.TotalMaterial  €</td>
+            <td class="table-cell-bold">@Model.TotalStatWert  €</td>
+        </tr>
+    </table>
+    <pre></pre>
+    <br />
+    }
+
+</body>
+</html>

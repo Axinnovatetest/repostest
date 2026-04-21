@@ -1,0 +1,240 @@
+﻿/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelCheckStatus
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	Status nvarchar(150) NULL,
+	Description nvarchar(250) NULL,
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelCheckStatus ADD CONSTRAINT
+	DF___BSD_ArtikelCheckStatus_CreateTime DEFAULT getdate() FOR CreateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelCheckStatus ADD CONSTRAINT
+	DF___BSD_ArtikelCheckStatus_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelCheckStatus ADD CONSTRAINT
+	PK___BSD_ArtikelCheckStatus PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelCheckStatus SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelCheckStatus', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelCheckStatus', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelCheckStatus', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelInternalStatus
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	Status nvarchar(150) NULL,
+	Description nvarchar(250) NULL,
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelInternalStatus ADD CONSTRAINT
+	DF___BSD_ArtikelInternalStatus_CreateTime DEFAULT getdate() FOR CreateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelInternalStatus ADD CONSTRAINT
+	DF___BSD_ArtikelInternalStatus_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelInternalStatus ADD CONSTRAINT
+	PK___BSD_ArtikelInternalStatus PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelInternalStatus SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelInternalStatus', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelInternalStatus', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelInternalStatus', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelExternalStatus
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	Status nvarchar(150) NULL,
+	Description nvarchar(250) NULL,
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelExternalStatus ADD CONSTRAINT
+	DF___BSD_ArtikelExternalStatus_CreateTime DEFAULT getdate() FOR CreateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelExternalStatus ADD CONSTRAINT
+	DF___BSD_ArtikelExternalStatus_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelExternalStatus ADD CONSTRAINT
+	PK___BSD_ArtikelExternalStatus PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelExternalStatus SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelExternalStatus', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelExternalStatus', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelExternalStatus', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelMHD_Tag
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	Tag nvarchar(150) NULL,
+	Description nvarchar(250) NULL,
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelMHD_Tag ADD CONSTRAINT
+	DF_CheckStatus_CreateTime DEFAULT getdate() FOR CreateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelMHD_Tag ADD CONSTRAINT
+	DF_CheckStatus_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelMHD_Tag ADD CONSTRAINT
+	PK___BSD_ArtikelMHD_Tag PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelMHD_Tag SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelMHD_Tag', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelMHD_Tag', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelMHD_Tag', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelQualityExtension
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	ArticleId int NOT NULL,
+	PackagingRegulation_Available bit NULL,
+    PackagingRegulation_Available_AttachmentId int NULL,
+	TSP_Available bit NULL,
+    TSP_Available_AttachmentId int NULL,
+	QSV bit NULL,
+    QSV_AttachmentId int NULL,
+	PurchasingArticleInspection__SpecialArticlesCustomerSpecific bit NULL,
+    PurchasingArticleInspection__SpecialArticlesCustomerSpecific_AttachmentId int NULL,
+	SpecialCustomerReleases__DeviationReleases bit NULL,
+    SpecialCustomerReleases__DeviationReleases_AttachmentId int NULL,
+	
+	UL_zertifiziert_AttachmentId int NULL,
+	UL_Etikett_AttachmentId  int NULL,
+    LLE_AttachmentId int NULL,
+    ESD_AttachmentId int NULL,
+    HM_AttachmentId int NULL,
+    ROHS_EEE_Confirmity_AttachmentId int NULL,
+    MineralsConfirmity_AttachmentId int NULL,
+    REACH_SVHC_Confirmity_AttachmentId int NULL,
+    Dienstleistung_AttachmentId int NULL,
+    MHD_AttachmentId int NULL,
+    CoC_Pflichtig_AttachmentId int NULL,
+    EMPB_AttachmentId int NULL,
+    EMPB_Freigegeben_AttachmentId int NULL,
+		
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelQualityExtension ADD CONSTRAINT
+	DF___BSD_ArtikelQualityExtension_CreateTime DEFAULT getdate() FOR CreateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelQualityExtension ADD CONSTRAINT
+	DF___BSD_ArtikelQualityExtension_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelQualityExtension ADD CONSTRAINT
+	PK___BSD_ArtikelQualityExtension PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelQualityExtension SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelQualityExtension', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelQualityExtension', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelQualityExtension', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+

@@ -1,0 +1,4 @@
+﻿
+
+ALTER Table dbo.Artikel ALTER COLUMN [Bezeichnung 2] NVARCHAR(MAX);
+ALTER Table dbo.Artikel ALTER COLUMN [Bezeichnung 3] NVARCHAR(MAX)

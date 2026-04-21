@@ -1,0 +1,93 @@
+﻿CREATE TABLE [dbo].[__bsd_pm_Projects](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProjectName] [nvarchar](max) NULL,
+	[CustomerNumber] [int] NULL,
+	[CustomerName] [nvarchar](max) NULL,
+	[Status] [nvarchar](max) NULL,
+	[StatusId] [int] NULL,
+	[PMManagerUserId] [int] NULL,
+	[PMManagerUsername] [nvarchar](max) NULL,
+	[PMManagerFactoryUserId] [int] NULL,
+	[PMManagerFactoryUsername] [nvarchar](max) NULL,
+	[CSManagerUserId] [int] NULL,
+	[CSManagerUsername] [nvarchar](max) NULL,
+	[OfferNumber] [nvarchar](max) NULL,
+	[QuantityKS] [decimal](18, 0) NULL,
+	[Factory] [int] NULL,
+	[Type] [nvarchar](max) NULL,
+	[TypeId] [int] NULL,
+	[CreationUserId] [int] NULL,
+	[CreationTime] [datetime] NULL,
+	[DeliveryDate] [datetime] NULL,
+	[CustomerRefrence] [nvarchar](max) NULL
+)
+
+CREATE TABLE [dbo].[__bsd_pm_Cables](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProjectId] [int] NULL,
+	[ArticleId] [int] NULL,
+	[ArticleNumber] [nvarchar](max) NULL,
+	[ArticleCustomerNumber] [nvarchar](max) NULL,
+	[ResponsibleUserId] [int] NULL,
+	[ResponsibleUsername] [nvarchar](max) NULL,
+	[CreationUserId] [int] NULL,
+	[CreationUsername] [nvarchar](max) NULL,
+	[Status] [nvarchar](max) NULL,
+	[StatusId] [int] NULL,
+)
+
+CREATE TABLE [dbo].[__bsd_pm_CurrentTask](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CurrentTaskName] [nvarchar](max) NULL,
+	[ProjectId] [int] NULL,
+	[StartDate] [datetime] NULL,
+	[Deadline] [datetime] NULL,
+	[Comment] [nvarchar](max) NULL,
+	[Status] [nvarchar](20) NULL,
+	[StatusId] [nvarchar](20) NULL,
+	[CreationUserId] [int] NULL,
+	[CreationUsername] [nvarchar](max) NULL,
+	[CreationDate] [datetime] NULL
+) 
+
+CREATE TABLE [dbo].[__bsd_pm_MileStones](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[StartDate] [datetime] NULL,
+	[EndDate] [datetime] NULL,
+	[Comment] [nvarchar](max) NULL,
+	[CreationUserId] [int] NULL,
+	[CreationTime] [datetime] NULL,
+)
+
+CREATE TABLE [dbo].[__bsd_pm_TasksMileStones](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdTask] [int] NULL,
+	[TaskName] [nvarchar](max) NULL,
+	[IdMileStone] [int] NULL,
+)
+
+create table __bsd_pm_logs
+(
+Id int identity primary key,
+ProjectId int,
+LogText nvarchar(255),
+UserId int,
+Username nvarchar(255),
+LogTime datetime
+)
+
+alter table __BSD_AccessProfile
+add 
+PMModule bit null,
+PMViewProjectsCompact bit null,
+PMViewProjectsMedium bit null,
+PMViewProjectsDetail bit null,
+PMAddProject bit null,
+PMEditProject bit null,
+PMDeleteProject bit null,
+PMAddMileStone bit null,
+PMEditMileStone bit null,
+PMDeleteMileStone bit null,
+PMAddCable bit null,
+PMEditCable bit null,
+PMDeleteCable bit null

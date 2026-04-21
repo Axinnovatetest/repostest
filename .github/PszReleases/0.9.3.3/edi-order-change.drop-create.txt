@@ -1,0 +1,42 @@
+﻿
+/****** Object:  Table [dbo].[__EDI_OrderChange]    Script Date: 8/12/2020 7:02:51 PM ******/
+DROP TABLE [dbo].[__EDI_OrderChange]
+GO
+
+/****** Object:  Table [dbo].[__EDI_OrderChange]    Script Date: 8/12/2020 7:02:51 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[__EDI_OrderChange](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[Reference] [nvarchar](50) NOT NULL,
+	[GlobalStatus] [int] NOT NULL,
+	[DocumentName] [nvarchar](250) NOT NULL,
+	[DocumentNumber] [nvarchar](150) NOT NULL,
+	[Duns] [nvarchar](100) NOT NULL,
+	[Notes] [nvarchar](max) NULL,
+	[CustomerContactName] [nvarchar](250) NULL,
+	[CustomerName] [nvarchar](250) NULL,
+	[CustomerPurchasingDepartment] [nvarchar](250) NULL,
+	[CustomerStreetPostalCode] [nvarchar](250) NULL,
+	[CustomerStreetCityPostalCode] [nvarchar](250) NULL,
+	[ConsigneeContactName] [nvarchar](250) NULL,
+	[ConsigneeName] [nvarchar](250) NULL,
+	[ConsigneePurchasingDepartment] [nvarchar](250) NULL,
+	[ConsigneeStreetPostalCode] [nvarchar](250) NULL,
+	[ConsigneeUnloadingPoint] [nvarchar](250) NULL,
+	[CreationTime] [datetime] NOT NULL,
+	[ActionTime] [datetime] NULL,
+	[ActionUserId] [int] NULL,
+	[ActionUserName] [nvarchar](150) NULL,
+	[MessageReferenceNumber] [nvarchar](150) NULL,
+ CONSTRAINT [PK___EDI_OrderChange] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

@@ -1,0 +1,8 @@
+﻿alter table WPL_AccessProfile
+add isDefault bit null
+
+alter table [__BSD_AccessProfile]
+add isDefault bit null
+
+alter table __LGT_AccessProfile
+add isDefault bit null

@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Areas\AP\**" />
+		<Compile Remove="Areas\EDI\Data\**" />
+		<Compile Remove="Areas\EDI\Views\**" />
+		<Compile Remove="Areas\Main\**" />
+		<Compile Remove="Areas\Purchase\Data\**" />
+		<Compile Remove="Areas\Purchase\Views\**" />
+		<Compile Remove="Areas\Sells\**" />
+		<Compile Remove="Areas\Settings\Data\**" />
+		<Compile Remove="Areas\Settings\Views\**" />
+		<Compile Remove="Areas\WorkPlan\**" />
+		<Content Remove="Areas\AP\**" />
+		<Content Remove="Areas\EDI\Data\**" />
+		<Content Remove="Areas\EDI\Views\**" />
+		<Content Remove="Areas\Main\**" />
+		<Content Remove="Areas\Purchase\Data\**" />
+		<Content Remove="Areas\Purchase\Views\**" />
+		<Content Remove="Areas\Sells\**" />
+		<Content Remove="Areas\Settings\Data\**" />
+		<Content Remove="Areas\Settings\Views\**" />
+		<Content Remove="Areas\WorkPlan\**" />
+		<EmbeddedResource Remove="Areas\AP\**" />
+		<EmbeddedResource Remove="Areas\EDI\Data\**" />
+		<EmbeddedResource Remove="Areas\EDI\Views\**" />
+		<EmbeddedResource Remove="Areas\Main\**" />
+		<EmbeddedResource Remove="Areas\Purchase\Data\**" />
+		<EmbeddedResource Remove="Areas\Purchase\Views\**" />
+		<EmbeddedResource Remove="Areas\Sells\**" />
+		<EmbeddedResource Remove="Areas\Settings\Data\**" />
+		<EmbeddedResource Remove="Areas\Settings\Views\**" />
+		<EmbeddedResource Remove="Areas\WorkPlan\**" />
+		<None Remove="Areas\AP\**" />
+		<None Remove="Areas\EDI\Data\**" />
+		<None Remove="Areas\EDI\Views\**" />
+		<None Remove="Areas\Main\**" />
+		<None Remove="Areas\Purchase\Data\**" />
+		<None Remove="Areas\Purchase\Views\**" />
+		<None Remove="Areas\Sells\**" />
+		<None Remove="Areas\Settings\Data\**" />
+		<None Remove="Areas\Settings\Views\**" />
+		<None Remove="Areas\WorkPlan\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Areas\FinanceControl\Data\" />
+		<Folder Include="Areas\FinanceControl\Views\" />
+		<Folder Include="Areas\ManagementOverview\Controllers\" />
+		<Folder Include="Areas\SalesDistribution\Data\" />
+		<Folder Include="Areas\SalesDistribution\Models\" />
+		<Folder Include="Areas\SalesDistribution\Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hangfire" Version="1.8.17" />
+		<PackageReference Include="Hangfire.Dashboard.Authorization" Version="3.1.0" />
+		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.2" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+		<PackageReference Include="OpenTelemetry" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Api" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.InfluxDB" Version="1.0.0-alpha.2" />
+		<PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.5.1" />
+		<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.11.2-beta.1" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.11.0-beta.2" />
+		<PackageReference Include="prometheus-net.AspNetCore" Version="8.2.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Core\Psz.Core.BaseData\Psz.Core.BaseData.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.CapitalRequests\Psz.Core.CapitalRequests.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.Common\Psz.Core.Common.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.CustomerService\Psz.Core.CustomerService.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.FinanceControl\Psz.Core.FinanceControl.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.Identity\Psz.Core.Identity.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.Logistics\Psz.Core.Logistics.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.ManagementOverview\Psz.Core.ManagementOverview.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.MaterialManagement\Psz.Core.MaterialManagement.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.SharedKernel\Psz.Core.SharedKernel.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.Support\Psz.Core.Support.csproj" />
+		<ProjectReference Include="..\Infrastructure\Infrastructure.Services\Infrastructure.Services.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.CRP\Psz.Core.CRP.csproj" />
+		<ProjectReference Include="..\Core\Psz.Core.Purchase\Psz.Core.Purchase.csproj" />
+		<ProjectReference Include="..\Psz.Core\Psz.Core.csproj" />
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio><UserProperties /></VisualStudio>
+	</ProjectExtensions>
+
+</Project>
