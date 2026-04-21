@@ -9,52 +9,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1F7CDE88-833E-45C2-9792-5255A2D905E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Services", "Infrastructure\Infrastructure.Services\Infrastructure.Services.csproj", "{1415AD1C-280E-42B9-A0B5-E564705B9F7B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data", "Infrastructure\Infrastructure.Data\Infrastructure.Data.csproj", "{3F6D21BD-9B7F-4A9A-8A4F-CAD6AACD16CE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.SharedKernel", "Core\Psz.Core.SharedKernel\Psz.Core.SharedKernel.csproj", "{4299624D-7875-4C6B-9975-3957C6177791}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.Identity", "Core\Psz.Core.Identity\Psz.Core.Identity.csproj", "{712DAD32-1001-48D3-A741-47EFFE6AB8E4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.Common", "Core\Psz.Core.Common\Psz.Core.Common.csproj", "{E16984BF-96DB-4D41-BB7F-B8338699BC6A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.BaseData", "Core\Psz.Core.BaseData\Psz.Core.BaseData.csproj", "{B59B63FC-3300-4591-BB68-1BA0CB9C0EC2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A3026705-510D-434F-9232-42A6E7583A77}"
-EndProject
+
+
+
+
+
+
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docs", "_Docs", "{D8B69C7C-2B53-44FE-A88A-9EA755A6AC7C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Releases", "_Releases", "{6853024C-28F9-4195-A87A-CDFD5AD7ED35}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.FinanceControl", "Core\Psz.Core.FinanceControl\Psz.Core.FinanceControl.csproj", "{9A07B746-F9AE-4DCC-9F69-A5D39344878D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.SalesDistribution", "Core\Psz.Core.SalesDistribution\Psz.Core.SalesDistribution.csproj", "{D52F0E14-5246-424F-A967-2B2C03811EEA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PszReleases", "PszReleases\PszReleases.csproj", "{CFCFB0E4-1A20-4244-B32C-C6F5248EB37C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.MaterialManagement", "Core\Psz.Core.MaterialManagement\Psz.Core.MaterialManagement.csproj", "{143CAA53-376D-44A2-AA33-6AAA4E0D38CB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.CustomerService", "Core\Psz.Core.CustomerService\Psz.Core.CustomerService.csproj", "{570EDFDB-CEF3-4B63-8748-AA3BBB80AB23}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.ManagementOverview", "Core\Psz.Core.ManagementOverview\Psz.Core.ManagementOverview.csproj", "{C1AB43CA-2992-4B1B-971B-38E08A6A627C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.Logistics", "Core\Psz.Core.Logistics\Psz.Core.Logistics.csproj", "{94B2F1F7-D414-4AEE-A2EF-19018E7C191A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.CapitalRequests", "Core\Psz.Core.CapitalRequests\Psz.Core.CapitalRequests.csproj", "{D781FA64-D024-4E1E-B7F2-5BFE2286EA87}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.CRP", "Core\Psz.Core.CRP\Psz.Core.CRP.csproj", "{43B7EF97-932F-4B40-A6E2-3F42EC950422}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.Support", "Core\Psz.Core.Support\Psz.Core.Support.csproj", "{52F8AB80-DB2A-41A8-9E13-070B071C4CA4}"
-EndProject
+
+
+
+
+
+
+
+
+
+
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSZLogService", "PSZLogService\PSZLogService.csproj", "{87E455B4-CB30-4FF8-945D-1BB25D9265DA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsService", "WindowsService", "{C71A49BE-F6F6-4C4F-BC55-A4E9B33BA80B}"
-EndProject
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Api", "Psz.Api\Psz.Api.csproj", "{56BB5858-0E15-4412-A299-7F9D5904D76F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Psz.Core.Purchase", "Core\Psz.Core.Purchase\Psz.Core.Purchase.csproj", "{799A984C-8B97-43DC-BAE9-CE2481E9EA0B}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
