@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Psz.Api;
 using Psz.Api.Extensions;
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseWindowsService();
+builder.Host.UseWindowsService()
 builder.Services.AddWindowsService();
 var startup = new Startup(builder.Configuration, builder.Environment);
 startup.ConfigureServices(builder.Services);
