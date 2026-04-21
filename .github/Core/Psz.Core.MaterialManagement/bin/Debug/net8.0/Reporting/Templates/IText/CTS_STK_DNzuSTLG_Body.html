@@ -1,0 +1,143 @@
+﻿<html>
+<head>
+    <style>
+        @page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 70;
+            margin-right: 70;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .invoiceHeaders {
+            vertical-align: top;
+            border: 0px;
+            /*background-color: lightgray;*/
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /*text-align:left;*/
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    <div style="width:100%;text-align:right;">
+        <img style='height:70px;border:0px solid red;' src="<%bodyLogo%>">
+    </div>
+    <div style="margin-top:0px;">
+        <span class='invoiceHeaders' style="font-size:10px; width:100%;display:block;"><%bodyPSZAddress%></span>
+        <hr style='margin-top:0;' class="hr">
+        <table style="width:100%;">
+            <tr>
+                <td style="width:49%;">
+                    <table>
+                        <tr><td class="nobr"><%bodyLAnrede%></td></tr>
+                        <tr><td class="nobr"><%bodyLName1%></td></tr>
+                        <tr><td class="nobr"><%bodyLName2%></td></tr>
+                        <tr><td class="nobr"><%bodyLStreet%></td></tr>
+                        <tr><td class="nobr"><%bodyLCountry%></td></tr>
+                    </table>
+                </td>
+                <td style="width:49%;">
+                    <b><i><%bodyMessageHeader%></i></b>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr class="hr">
+    <h1><u><b><i><%bodyDocumentTitle%></i></b></u></h1>
+
+    <table style="font-size:12px">
+        <tr><td class="nobr"><%bodyCustomerNumberLabel%>&nbsp;&nbsp;<%bodyCustomerNumberValue%></td></tr>
+		<tr><td><%bodyShippingMethodLabel%>&nbsp;&nbsp;<%bodyShippingMethodValue%></td></tr>
+		<tr><td><%bodyVAT_ID%></td></tr>
+    </table>
+    <span style="margin-top:15px;margin-bottom:2px;"><%bodyPosText%></span>
+    <table class='pr-2' style='width: 100%;font-size:12px;table-layout:fixe-d;'>
+        <tr><td><hr class='hr'></td></tr>
+    </table>
+    <div><%positionItems%></div><br />
+    
+	<table>
+		<tr><td class="nobr"><b><u><%bodyRGAddress%></u></b></td></tr>
+		<tr><td class="nobr"><%bodyAnrede%></td></tr>
+		<tr><td class="nobr"><%bodyName1%></td></tr>
+		<tr><td class="nobr"><%bodyName2%></td></tr>
+		<tr><td class="nobr"><%bodyStreet%></td></tr>
+		<tr><td class="nobr"><%bodyCountry%></td></tr>
+	</table>
+    <pre></pre>
+    <br />
+</body>
+</html>

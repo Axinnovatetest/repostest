@@ -1,6 +1,0 @@
-﻿alter table __CRP_AccessProfile
-add 
-FAPlannungHistory bit null,
-FAPlannungHistoryXLSImport bit null,
-FAPlannungHistoryXLSExport bit null,
-FAPlannungHistoryForceAgent bit null

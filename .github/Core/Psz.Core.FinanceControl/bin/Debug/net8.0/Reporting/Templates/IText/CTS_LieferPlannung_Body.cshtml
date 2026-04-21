@@ -1,0 +1,122 @@
+﻿@model Infrastructure.Services.Reporting.Models.CTS.LieferPlannungReportModel
+<html>
+<head>
+    <style>
+         @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 50;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        td, tr {
+            padding: 10px 10px 0 0;
+        }
+        .year-label{
+            background-color: orange;
+            font-weight: bold;
+            font-size: 14px;
+            border-bottom: 2px solid black;
+            color:green;
+            width:40%;
+            padding:5px;
+        }
+        .week-label{
+            background-color: #D4D4D4;
+            font-weight: bold;
+            font-size: 16px;
+            color:red;
+            width:20%;
+            padding:5px;
+            display:inline-block;
+        }
+        .header-cell{
+            color:#000080;
+            font-weight:bold;
+            white-space: nowrap;
+        }
+        .adress-cell{
+            color:green;
+            font-weight:bold;
+        }
+        .nobr {
+            white-space: nowrap;
+        }
+         .bez-col {
+        max-width: 120px;
+        word-wrap: break-word;
+        white-space: normal; 
+    }
+    hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    </head>
+    <body style="font-size:14px;">
+        <br/><br/>
+        <p style="font-weight:bold;color:red">Angezeigt werden nur bestätigte Liefertermine für Positionen die noch als erledigt markiert wurden.</p>
+        <p style="font-weight:bold;color:red">Liefertermine sind beschränkt auf die nächten drei kalenderwochen</p>
+         @if (Model is not null)
+         {
+             @foreach (var itemData in Model.Data)
+             {
+                 <p class="year-label">@itemData.Year</p>
+                     @foreach(var week in itemData.Items)
+                     {
+                     <div>
+                     <p style="font-weight: bold;display: inline-block;">KW:</p> 
+                     <p class="week-label">@week.Week</p>
+                     </div>
+                     <br/>
+                     <table style="width: 100%;font-size:10px;margin-top:-10px">
+                         <tr style="margin-bottom:5px">
+                             <td class="header-cell">Wunshtermin</td>
+                             <td class="header-cell">Liefertermin</td>
+                             <td class="header-cell">Angobot Nr</td>
+                             <td class="header-cell">PSZ#</td>
+                             <td class="header-cell bez-col">Bez 1</td>
+                             <td class="header-cell bez-col">Int. Bemerkung</td>
+                             <td class="header-cell">Offen</td>
+                             <td class="header-cell">Bestand</td>
+                             <td class="header-cell">Preis</td>
+                         </tr>
+                         @if(week.Details != null && week.Details.Count > 0)
+                        {
+                            foreach (var line in week.Details)
+                            {
+                                <tr>
+                                    <td class="adress-cell" colspan="9">
+                                        @line.Vorname_NameFirma , @line.LName2 @line.LLand_PLZ_Ort
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nobr">@line.Wunschtermin</td>
+                                    <td class="nobr">@line.Liefertermin</td>
+                                    <td class="nobr">@line.Angebot_Nr</td>
+                                    <td class="nobr">@line.Artikelnummer</td>
+                                    <td class="bez-col">@line.Bezeichnung_1</td>
+                                    <td class="bez-col">@line.CSInterneBemerkung</td>
+                                    <td class="nobr">@line.Menge_Offen</td>
+                                    <td class="nobr">@line.Bestand</td>
+                                    <td class="nobr">@line.Gesamtpreis</td>
+                                </tr>
+                            }
+                        }
+                     </table>
+                     <hr>
+                     }              
+                 }
+             }
+        <pre></pre>
+</body>
+</html>

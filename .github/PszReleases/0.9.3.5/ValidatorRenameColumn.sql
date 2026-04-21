@@ -1,1 +1,0 @@
-﻿EXEC sp_rename 'Validators_Project.Id_Validator_Project', 'ID', 'COLUMN';

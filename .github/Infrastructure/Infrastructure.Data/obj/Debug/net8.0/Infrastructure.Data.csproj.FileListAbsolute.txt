@@ -1,0 +1,13 @@
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\bin\Debug\net8.0\Infrastructure.Data.deps.json
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\bin\Debug\net8.0\Infrastructure.Data.dll
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\bin\Debug\net8.0\Infrastructure.Data.pdb
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.csproj.AssemblyReference.cache
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.AssemblyInfo.cs
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.sourcelink.json
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.dll
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\refint\Infrastructure.Data.dll
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\Infrastructure.Data.pdb
+C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Infrastructure\Infrastructure.Data\obj\Debug\net8.0\ref\Infrastructure.Data.dll

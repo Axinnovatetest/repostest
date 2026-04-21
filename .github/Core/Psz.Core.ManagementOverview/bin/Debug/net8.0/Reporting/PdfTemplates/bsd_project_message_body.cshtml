@@ -1,0 +1,126 @@
+﻿@model Psz.Core.BaseData.Reporting.Models.StatisticsProjectMessage
+<html>
+<head>
+    <style>
+       @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 30;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        .header-cell{
+            background-color: whitesmoke;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px;
+            white-space: nowrap;
+            font-size: 10px;
+        }
+        .top-border{
+            border-top: 1px solid darkblue;
+        }
+        .bottom-border{
+            border-bottom: 1px solid darkblue;
+        }
+        table td, table td * {
+            padding: 3px;
+            font-size: 10px;
+            white-space: nowrap;
+            vertical-align: top;
+            border-width: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+<table style="width:100%">
+    <tr>
+        <th class="header-cell top-border" colspan="15" style="text-align: left !important;">Kunde</th>
+    </tr>
+    <tr>
+        <th class="header-cell">Artikel PSZ</th>
+        <th class="header-cell">EAU</th>
+        <th class="header-cell">Proj. Betreuung</th>
+        <th class="header-cell">R.Prototyp</th>
+        <th class="header-cell">Projekt Start</th>
+        <th class="header-cell">Muster</th>
+        <th class="header-cell">Summe Kappa</th>
+        <th class="header-cell">Kontakt CS</th>
+        <th class="header-cell">Termin Kunde</th>
+        <th class="header-cell">Menge</th>
+        <th class="header-cell">FA Datum</th>
+        <th class="header-cell">EMPB</th>
+        <th class="header-cell">Zuschlag</th>
+        <th class="header-cell">Krimp WKZ <br> vorh.</th>
+        <th class="header-cell">Termin <br> abgesprochen</th>
+    </tr>
+        <tr>
+        <th class="header-cell bottom-border">Projekt-Nr</th>
+        <th class="header-cell bottom-border">MOQ</th>
+        <th class="header-cell bottom-border">A.zeit Serie/KS</th>
+        <th class="header-cell bottom-border">UL VP.</th>
+        <th class="header-cell bottom-border">Serie PSZ?</th>
+        <th class="header-cell bottom-border">Serie</th>
+        <th class="header-cell bottom-border">Kontakt Kunde</th>
+        <th class="header-cell bottom-border">Kontakt AV</th>
+        <th class="header-cell bottom-border">Kontakt Technik</th>
+        <th class="header-cell bottom-border">Typ</th>
+        <th class="header-cell bottom-border">AB Datum</th>
+        <th class="header-cell bottom-border"></th>
+        <th class="header-cell bottom-border">Kosten</th>
+        <th class="header-cell bottom-border">KSG WKZ voh.</th>
+        <th class="header-cell bottom-border">TSP Kunden</th>
+    </tr>
+    @foreach(var item in Model.Items)
+    {
+        <tr>
+           <td colspan="15" style="font-weight:bold;text-align:left !important">@item.Kunde</td>
+        </tr>
+        <tr>
+           <td>@item.Artikelnummer</td>
+           <td>@item.EAU</td>
+           <td>@item.Projekt_betreung</td>
+           <td>@item.Rapid_Prototyp</td>
+           <td>@item.Projekt_Start</td>
+           <td>@item.Standort_Muster</td>
+           <td>@item.Summe_Arbeitszeit</td>
+           <td>@item.Kontakt_CS_PSZ</td>
+           <td>@item.Wunschtermin_Kunde</td>
+           <td>@item.Menge</td>
+           <td>@item.FA_Datum</td>
+           <td>@item.EMPB</td>
+           <td>@item.Zuschlag</td>
+           <td>@item.Krimp_WKZ</td>
+           <td>@item.Termin_mit_Technik_abgesprochen</td>
+        </tr>
+        <tr>
+           <td>@item.Projekt_Nr</td>
+           <td>@item.MOQ</td>
+           <td>@item.Arbeitszeit_Serien_Pro_Kabesatz</td>
+           <td>@item.UL_Verpackung</td>
+           <td>@item.Standort_Serie</td>
+           <td>@item.Standort_Serie</td>
+           <td>@item.Kontakt_Technik_Kunde</td>
+           <td>@item.Kontakt_AV_PSZ</td>
+           <td>@item.Kontakt_Technik_PSZ</td>
+           <td>@item.Typ</td>
+           <td>@item.AB_Datum</td>
+           <td></td>
+           <td>@item.Kosten</td>
+           <td>@item.SG_WKZ</td>
+           <td>@item.TSP_Kunden</td>
+        </tr>
+        <tr><td style="border-bottom:1px solid black" colspan="15"></td></tr>
+    }
+</table>
+<pre></pre>
+</body>
+</html>

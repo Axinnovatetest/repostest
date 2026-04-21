@@ -1,0 +1,317 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.CTS_LSReportModel
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 70;
+            margin-right: 70;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .invoiceHeaders {
+            vertical-align: top;
+            border: 0px;
+            /*background-color: lightgray;*/
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /*text-align:left;*/
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        td, tr {
+            border: 1px solid black;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+
+        .end-text {
+            font-size: 12px;
+            padding-top: -10px;
+            text-align: justify;
+        }
+
+        tr.spaceUnder > td {
+            padding-bottom: 0.2em;
+            padding-top: 0.5em;
+            page-break-inside: avoid;
+        }
+
+        .top-bottom-cell {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            line-height: 2em;
+            font-weight: bold;
+        }
+
+        .span-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            padding-bottom: 0.5em;
+        }
+
+        td > .span-container {
+            width: 100%;
+        }
+
+        .span-container > span {
+            flex: 1;
+            text-align: left;
+        }
+
+        .keep-together {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if (Model is not null)
+    {
+        <div style="width:100%;text-align:right;">
+            <img style='height:50px;border:0px solid red;' src="@Model.Logo">
+        </div>
+        <div style="margin-top:0px;">
+            <span class='invoiceHeaders' style="font-size:10px; width:100%;display:block;background-color:lightgray;font-weight:bold">&nbsp;&nbsp;@Model.InvoiceHeader</span>
+            <hr style='margin-top:0;' class="hr">
+            <table style="width:100%;margin-top:20px">
+                <tr>
+                    <td>
+                        <table>
+                            <tr><td class="nobr">@Model.LAnrede</td></tr>
+                            <tr><td class="nobr">@Model.LVorname</td><td style="font-size:12px;font-weight:bold;width:500px" align="right">@Model.Textbausteine_LS</td></tr>
+                            <tr><td class="nobr">@Model.LName2</td></tr>
+                            <tr><td class="nobr">@Model.LName3</td></tr>
+                            <tr><td class="nobr">@Model.Lansprechpartner</td></tr>
+                            <tr><td class="nobr">@Model.Labteilung</td></tr>
+                            <tr><td class="nobr">@Model.LStrabe</td></tr>
+                            <tr><td class="nobr">@Model.LLand</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-top:10px;">
+            <hr style='margin-top:0;' class="hr">
+            <div style="color:darkblue;font-size:26px;font-weight:bold"><u><i>@Model.DocumentType</i></u></div><br />
+            <div style="display: flex;">
+                <div style="font-size:15px">@Model.OrderNumberTitle</div>
+                <div style="font-size:15px;font-weight:bold;margin-left:2rem">@Model.OrderNumberValue</div>
+                <img src="@Model.Barcode" style="margin-top:-10px" />
+            </div>
+            <tr><td colspan='9'></td></tr>
+        </div>
+        <div style="margin-top:5px;">
+            <div style="display: flex;">
+                <div style="font-size:18px;font-weight:bold;margin-right:2rem">@Model.OrderNumberPOTitle @Model.OrderNumberPOValue</div>
+                <img src="@Model.BarcodeDocumentNumber" style="margin-top:-10px" />
+            </div>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width:70%;">
+                        <div class="span-container">
+                            <span>@Model.ClientNumberTitle</span>
+                            <span>@Model.ClientNumberValue</span>
+                        </div>
+                        <div class="span-container">
+                            <span>@Model.OrderDateTitle</span>
+                            <span>@Model.OrderDateValue</span>
+                        </div>
+                        <div class="span-container">
+                            <span>@Model.ShippingMethodTitle</span>
+                            <span>@Model.ShippingMethodValue</span>
+                        </div>
+                        <div class="span-container">
+                            <span>@Model.Freitext</span>
+                        </div>
+                    </td>
+                    <td style="width:30%;" align="right">
+                        <img src="@Model.QrCodeDocLsNumberDatum" style="height:70px;" />
+                    </td>
+                </tr>
+            </table>
+            <div>@Model.ItemsHeaderTitle @Model.ItemsHeaderValue @Model.AbladestelleValue</div>
+
+        </div>
+        <table class="pr-2" style="width: 100%;font-size:10px;">
+            <tr style="background-color:lightgray">
+                <td class='smCell nobr top-bottom-cell'>@Model.PositionTitle<br />@Model.CustomerDateTitle</td>
+                <td class="nobr top-bottom-cell">@Model.ArticleTitle</td>
+                <td class="nobr top-bottom-cell">@Model.Designation1Title<br />@Model.CustomerNumberTitle</td>
+                <td class="nobr top-bottom-cell"><br />@Model.ArtikelCountryTitle</td>
+                <td class="nobr top-bottom-cell">@Model.Designation2Title<br />@Model.Footer24Title</td>
+                <td class="nobr top-bottom-cell"><br />@Model.ArtikelStockTitle</td>
+                <td class="nobr top-bottom-cell">@Model.ArtikelPriceTitle<br />@Model.ArtikelWeightTitle</td>
+                <td class="nobr top-bottom-cell">@Model.ArtikelQuantityTitle</td>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                if (!string.IsNullOrEmpty(item.Postext) && !string.IsNullOrWhiteSpace(item.Postext))
+                {
+                    <tr>
+                        <td style="max-width: 400px;font-weight:bold" colspan="2">@item.Postext</td>
+                    </tr>
+                }
+                <tr class="spaceUnder">
+                    <td class="nobr">@item.PositionValue</td>
+                    <td class="nobr">@item.ArticleValue</td>
+                    <td style="max-width:100px;">@item.Designation1Value</td>
+                    <td></td>
+                    <td style="max-width:100px;">@item.Designation2Value</td>
+                    <td></td>
+                    <td class="nobr">@item.ArtikelPriceValue</td>
+                    <td class="nobr" align="center">@item.ArtikelQuantityValue</td>
+                </tr>
+                <tr class="spaceUnder">
+                    <td class="nobr">@item.CustomerDateValue</td>
+                    <td></td>
+                    <td class="nobr">@item.CustomerNumberValue</td>
+                    <td class="nobr">@item.ArtikelCountryValue</td>
+                    <td class="nobr">@item.ZolltarifnummerValue</td>
+                    <td class="nobr">@item.ArtikelStockValue</td>
+                    <td class="nobr" align="left">@item.ArtikelWeightValue</td>
+                </tr>
+                if (!string.IsNullOrEmpty(item.DeliveryNoteCustomerComments) && !string.IsNullOrWhiteSpace(item.DeliveryNoteCustomerComments))
+                {
+                    <tr>
+                        <td style="max-width: 400px;font-weight:bold" colspan="8">@item.DeliveryNoteCustomerComments</td>
+                    </tr>
+                }
+                <tr><td colspan='9'><hr class='hr'></td></tr>
+            }
+            <tr class="spaceUnder">
+                <td align='right' class='pt-2' style='font-weight:bold' colspan="7">@Model.SummaryWeightValue</td>
+            </tr>
+        </table>
+        <div style="page-break-before:always;">
+            <p>@Model.Text</p>
+            <p>Werksbescheinigung 2.1 </p>
+            <p>Hiermit bestätigen wir, dass das oben genannte Produkt den Vereinbarungen und Spezifikationen dem durch dem Kunden freigegebenen Stand zum Zeitpunkt der Bestellung entspricht.</p>
+            <p>@Model.LastPageText4</p>
+            <a href='https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf' style="font-size:9.25px;" class='nobr'>
+                https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf
+            </a>
+            <br /><br /><br />
+            @* <p style="text-decoration:underline;  margin-bottom:0;"><i>Auszeichnungen:</i></p>
+            <p><i>@Model.Top100Description</i></p>
+            <div style="display:flex">
+                <img style='height:6cm; margin-right:0.5cm;' src="@Model.Top100Logo" />
+                <img style='height:6cm; margin-right:0.5cm;' src="@Model.Top100_2026Logo" />
+            </div> *@
+            <div class="keep-together">
+                <div>
+                    <span><u><i>@Model.LastPageText10</i></u></span>
+                </div>
+                <p><i>@Model.Top100Description</i></p>
+                <div style="display:flex">
+                    <img style='height:9cm; margin-right:0.5cm;' src="@Model.Top100Logo" />
+                    <img style='height:9cm; margin-right:0.5cm;' src="@Model.Top100_2026Logo" />
+                </div>
+            </div>
+            <br />
+            <br />
+            <sapn style="font-size:12px;text-decoration:underline">Rechnungsadresse</sapn><br />
+            @if (!string.IsNullOrWhiteSpace(Model.Address1))
+            {
+                <span style="font-size:10px; margin-bottom:0;">@Model.Address1</span>
+                <br />
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Name2))
+            {
+                <span style="font-size:10px; margin-bottom:0;">@Model.Name2</span>
+                <br />
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Address2))
+            {
+                <span style="font-size:10px; margin-bottom:0;">@Model.Address2</span>
+                <br />
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Unser_Zeichen1))
+            {
+                <span style="font-size:10px; margin-bottom:0;">@Model.Unser_Zeichen1</span>
+                <br />
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Address3))
+            {
+                <span style="font-size:10px; margin-bottom:0;">@Model.Address3</span>
+            }
+        </div>
+        <pre></pre>
+        <br />
+    }
+</body>
+</html>

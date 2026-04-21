@@ -1,0 +1,88 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.AuswertungSchneidereiReportModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head meta charset="utf-8">
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 50;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        .red-text{
+            font-weight: bold;
+            color: red;
+            font-size:12px;
+        }
+        .header-text{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+        .green-header{
+            padding: 5px;
+            background-color:green;
+            font-size: 12px;
+            color: yellow;
+            width:40%;
+        }
+        .table-header{
+            border-top:1px solid navy ;
+            border-bottom:1px solid navy;
+            color:navy;
+            font-weight: bold;
+            font-size:12px;
+            padding:5px 5px;
+            text-align: center;
+        }
+
+        .table-cell {
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 5px 5px;
+            white-space: nowrap;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if(Model is not null)
+    {
+        <p class="header-text">Produktionsort: @Model.Header.Lager</p>
+        <p class="red-text">Bemerkung: Diese Auswertung beinhaltet nur Fertigungsaufträage, bei dened in der <br /> stückliste Artikel vorhanden sind, die geshnitten werden müssen.</p>
+        @foreach(var item in Model.Details){
+            <p class="green-header">@item.Woche</p>
+            <table style="width:100%">
+                <tr>
+                    <th class="table-header">Datum bis</th>
+                    <th class="table-header">Offene FA</th>
+                    <th class="table-header">Gischnittene FA</th>
+                    <th class="table-header">Gesamt</th>
+                    <th class="table-header">Prozentsatz</th>
+                </tr>
+                <tr>
+                    <td class="table-cell">@item.Datum_Bis</td>
+                    <td class="table-cell">@item.KNG</td>
+                    <td class="table-cell">@item.KG</td>
+                    <td class="table-cell">@item.KGesamt</td>
+                    <td class="table-cell">@FormatHelper.FormatDecimal(item.Percent,1) %</td>
+                </tr>
+            </table>
+        }
+    <pre></pre>
+    }
+</body>
+</html>

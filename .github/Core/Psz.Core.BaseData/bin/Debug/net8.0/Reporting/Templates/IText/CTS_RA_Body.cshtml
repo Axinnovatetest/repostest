@@ -1,0 +1,340 @@
+﻿@model Infrastructure.Services.Reporting.Models.Itext.RahmenModel
+@using Infrastructure.Services
+@{
+    var sum = Model.Positions?.Sum(x => x.Total) ?? 0;
+    var ust = Model.Positions?.Sum(x => x.Total * (decimal.TryParse(x.VAT.ToString(), out var _u) ? _u : 0)) ?? 0;
+}
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 70;
+            margin-right: 70;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .invoiceHeaders {
+            vertical-align: top;
+            border: 0px;
+            /*background-color: lightgray;*/
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /*text-align:left;*/
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+
+        .end-text {
+            font-size: 12px;
+            padding-top: -10px;
+            text-align: justify;
+        }
+
+        .keep-together {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if (Model is not null)
+    {
+        <div style="width:100%;text-align:left;">
+            <img style='height:70px;border:0px solid red;' src="@Model.Logo">
+        </div>
+        <div style="margin-top:0px;">
+            <span class='invoiceHeaders' style="font-size:10px; width:100%;display:block;">PSZ electronic GmbH • Im Gstaudach 6 • 92648 Vohenstrauß</span>
+            <hr style='margin-top:0;' class="hr">
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <table>
+                            <tr><td class="nobr">@Model.Adress1</td></tr>
+                            <tr><td class="nobr">@Model.Adress2</td></tr>
+                            <tr><td class="nobr">@Model.Adress3</td></tr>
+                            <tr><td class="nobr">@Model.Adress4</td></tr>
+                            <tr><td class="nobr">@Model.Adress5</td></tr>
+                            <tr><td class="nobr">@Model.Adress9</td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr><td align='right' class="nobr mdCell">@Model.Adress7</td><td>- Kontakt</td></tr>
+                            <tr><td align='right' class="nobr mdCell">@Model.Adress8</td><td>- Telefon</td></tr>
+                            <tr><td align='right' class="nobr mdCell">@Model.Adress9</td><td>- Fax</td></tr>
+                            <tr><td align='right' class="nobr mdCell">@Model.Adress10</td><td>- Email</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr class="hr">
+        <table style="font-size:12px">
+            <tr>
+                <td colspan=2><h2>Rahmenbestellung</h2>
+                <td>
+                <td colspan=4 align='center' style="vertical-align:middle"><span style="font-weight:bold;font-size:20px">Nr.:&nbsp;&nbsp;</span><span style="padding:6px 60px; border:2px solid #9e9e9e;font-weight:bold;font-size:20px">@Model.Nr<span>
+                <td>
+            </tr>
+            <tr>
+                <td colspan=2 style="vertical-align:middle"><span style="padding:6px 60px;">-  nicht beliefern! -</span>
+                <td>
+            </tr>
+            <tr><td colspan=8 align='center' style="padding-bottom:10px;"><b><u>Komplette Bestellnummer muß auf Auftragsbestätigung / Lieferschein / Rechnung immer angegeben werden!</u></b></td></tr>
+            <tr>
+                <td align='right' class="nobr">Ihr Zeichen/Customer # :
+                <td>
+                <td>@Model.Customer
+                <td>
+                <td align='right' class="nobr">Versandart/ Trading Term :
+                <td>
+                <td>@Model.TradingTerm
+                <td>
+            </tr>
+            <tr>
+                <td align='right' class="nobr">Unser Zeichen/Supplier # :
+                <td>
+                <td>@Model.Supplier
+                <td>
+                <td align='right' class="nobr">Zahlungsweise/Payment :
+                <td>
+                <td>@Model.Payement
+                <td>
+            </tr>
+            <tr>
+                <td align='right' class="nobr">Datum/Date :
+                <td>
+                <td>@Model.Date
+                <td>
+                <td align='right' class="nobr">Zahlungsziel/ Payment Term :
+                <td>
+                <td>@Model.PayementTerm
+                <td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <table class='pr-2' style='width: 100%;font-size:12px;table-layout:fixe-d;'>
+            <tr><b style="font-size:12px">Wir bestellen wie folgt:</b></tr>
+            <tr><td><hr class='hr-2'></td></tr>
+        </table>
+        <div>
+            <table class='pr-2' style='width: 100%;font-size:10px;table-layout:fixe-d;'>
+                <tr>
+                    <td class='smCell'>Pos<br /></td>
+                    <td>Artikelnummer<br />Part Number</td>
+                    <td>Bezeichnung<br />Description</td>
+                    <td>Anzahl<br />Quantity</td>
+                    <td>Einheit<br />UOM</td>
+                    <td>Preiseinheit<br />Price UOM</td>
+                    <td class='smCell'>UST<br />VAT</td>
+                    <td>Einzelpreis/PE<br />Price/UOM</td>
+                    <td align='right'>Gesamt<br />Total</td>
+                </tr>
+                <tr><td colspan='9'><hr class='hr-2'></td></tr>
+                @foreach (var itemData in Model.Positions)
+                {
+                    <tr>
+                        <td class='smCell'>@itemData.Position</td>
+                        <td>@itemData.Artikel</td>
+                        <td>@itemData.Description</td>
+                        <td>@itemData.Quantity.FormatDecimal(2)</td>
+                        <td>@itemData.UOM</td>
+                        <td>@itemData.Price?.FormatDecimal(2) €</td>
+                        <td class='smCell'>@((itemData.VAT * 100).FormatDecimal(2))%</td>
+                        <td>@itemData.Price_UOM.FormatDecimal(3) €</td>
+                        <td align='right'>@itemData.Total.FormatDecimal(3) €</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan='8'>
+                            <p>@(!string.IsNullOrWhiteSpace(itemData.Bestellnummer) ? $"Ihr Artikel-Nr/ Your Part Number : {itemData.Bestellnummer}" : "")</p>
+                            <p>@(!string.IsNullOrWhiteSpace(itemData.LT) ? $" Laufzeit bis {itemData.LT}" : "")</p>
+                            @(itemData.MengeImSicherheitslager > 0 ? $"Zu führendes Sicherheitsalger : {itemData.MengeImSicherheitslager} {itemData.UOM}" : "")
+                        </td>
+                    </tr>
+                    <tr><td colspan='9'><hr class='hr'></td></tr>
+                }
+                <tr>
+                    <td colspan='7'></td>
+                    <td align='right'>Summe:</td>
+                    <td align='right' class='nobr'>@sum.FormatDecimal(3) €</td>
+                </tr>
+                <tr>
+                    <td colspan='7'></td>
+                    <td align='right'>Ust:</td>
+                    <td align='right'>@ust.FormatDecimal(3) €</td>
+                </tr>
+                <tr><td colspan='8'></td><td class='hr-2'></td></tr>
+                <tr>
+                    <td colspan='7'></td>
+                    <td align='right' class='pt-2'><b>Gesamtpreis:</b></td>
+                    <td align='right' class='pt-2' style='font-weight:bold;width:100%'>@((sum + ust).FormatDecimal(3)) €</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td align='right'>Wir bitten um eine Auftragsbestätigung bis:<br />Please send us your Order Acknowledgement latest till:</td>
+                    <td style="vertical-align:middle">&nbsp;&nbsp;<b>@Model.ExtensionDate</b></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <br />
+        <div style="page-break-before: always;">
+            <div>
+                <span style='text-decoration:underline;font-weight:bold'>Bitte beachten Sie außerdem folgende Punkte, welche unbedingt einzuhalten sind:</span><br /><br />
+                <span style='font-weight:bold'>Rahmenvertrag mit Abrufvereinbarung</span>
+
+                <h4>§1 Vertragsgegenstand</h4>
+                <p class="end-text">
+                    PSZ electronic GmbH (im Folgenden Besteller genannt) hat einen voraussichtlichen Jahresbedarf von
+                    der o.g. Menge bei dem o.g. Lieferanten. Die genaue Spezifikation ergibt sich aus der
+                    Artikelnummer/Zeichnung des Bestellers. Der Lieferer verpflichtet sich, diesen Jahresbedarf zu
+                    decken. Zudem ist ein Sicherheitslager über die oben festgelegte Menge zu führen.
+                    Die Lieferungen erfolgen in Einzelabrufen, zu jedem Einzelabruf muss binnen 24h eine
+                    Auftragsbestätigung geschickt werden.
+                    Die festgelegte Laufzeit beginnt mit der ersten Anlieferung beim Besteller. Eine Abnahmeverpflichtung
+                    der prognostizierten Menge besteht nur, wenn diese dem Lieferer ausdrücklich zugesichert wurde. Alle
+                    Bedingungen sind auf der Webseite psz electronic.com unter den allg. Rahmenbedingungen
+                    einsehbar. Den Rahmenbedingungen des Besteller ist binnen 5 Tagen schriftlich zu widersprechen,
+                    ansonsten gelten diese als akzeptiert.
+                </p>
+                <h4>§2 Leistungspflicht</h4>
+                <p class="end-text">
+                    Zur Abnahme nicht vereinbarter Teil-, Mehr-, oder Minderlieferungen ist der Besteller nicht verpflichtet.
+                    Höhere Gewalt berechtigt den Besteller, ganz oder teilweise vom Vertrag zurückzutreten. Der Besteller
+                    gibt dem Lieferer eine Freigabe für die Disposition von 50% des Materials, zudem behält sich dieser
+                    vor, die Rahmenmenge nachträglich um 20% zu ändern. Der Besteller kann bei Nichtabnahme der
+                    Rahmenmenge die Laufzeit beliebig ändern, ansonsten wird die Restmenge storniert.
+                    Ein Anspruch auf Schadensersatz steht dem Lieferanten in diesen Fällen nicht zu. Der Lieferer ist
+                    dazu verpflichtet bei einem Erschöpfungsgrad von 75% des Rahmens dies beim Besteller anzuzeigen.
+                </p>
+                <h4>§3 Lieferung</h4>
+                <p class="end-text">
+                    Die Lieferung erfolgt in Einzelabrufen mit einer Lieferfrist von 3 Tagen ab Datum des jeweiligen
+                    Abrufes, oder einem von einem Einzelabruf bestimmten Fixtermin. Die Mengen und der Einzelabrufe
+                    werden nur durch den Besteller festgelegt.
+                    Sollten die Abrufe aus dem Sicherheitslager erfolgen, ist der Besteller zu informieren und das
+                    Sicherheitslager umgehend wieder aufzufüllen. Die Lieferungen aus dem Sicherheitslager sind binnen
+                    24h beim Besteller anzuliefern. Sollten nach der ersten Anlieferung Lieferverzögerungen auftreten,
+                    kann der Besteller Schadensersatz geltend machen. Lieferungen dürfen weder zu früh, noch zu spät
+                    erfolgen. Eine verfrühte Lieferung führt nicht zur früheren Fälligkeit des Lieferpreises und kann auf
+                    Wahl und Kosten des Lieferanten entweder zurückgesandt oder bis zum Liefertermin eingelagert
+                    werden. Lieferungen sind so auf den Weg zu bringen, dass diese zum Liefertermin am Leistungsort
+                    zur Verfügung stehen. Leistungsort ist die in den Einzelabrufen angegebene Lieferadresse. Der
+                    Besteller hat das Recht die Einzelabrufe zu ändern, ansonsten gelten die vereinbarten
+                    Anlieferkonditionen. Jeder Lieferung ist ein Lieferschein beizufügen; auf ihm, sowie auf Rechnungen
+                    und im sonstigen Schriftverkehr sind stets die PSZ electronic Bestellnummer und das Datum des
+                    Auftrages, sowie die weiter erforderlichen Daten anzugeben. Jedes Stück ist deutlich mit Menge und
+                    Bestellnummer zu kennzeichnen.
+                </p>
+                <h4>§4 Preis</h4>
+                <p class="end-text">
+                    Die in der Bestellung angegebenen Preise sind über die komplette Laufzeit Festpreise. Sind bei
+                    Bestellung die Preise noch nicht festgelegt,so sind diese vom Lieferanten in der zurückzusendenden
+                    Kopie der Bestellung einzutragen. Ein Vertrag kommt erst dann zustande, wenn wir die Preise
+                    akzeptiert haben. Der Lieferant hat zur Berechnung von Minderkosten oder zur Begründung von
+                    Mehrkosten ursprüngliche Kalkulation offen zu legen, sofern uns diese bei Vertragsabschluss nicht
+                    vorlag.
+                </p>
+                <h4>§5 technische Änderungen</h4>
+                <p class="end-text">
+                    Werden technische Änderungen vom Besteller angezeigt müssen diese innerhalb von 3 Monaten
+                    umgesetzt werden.Technische Änderungen des Lieferer können vom Besteller abgelehnt werden.
+                    Während der Umsetzung wird die Laufzeit ausgesetzt. Soweit Bescheinigungen über
+                    Materialprüfungen vereinbart sind, sind diese wesentlicher Bestandteil der Leistung. Zur Abnahme der
+                    Ware ohne Bescheinigung sind wir nicht verpflichtet, außer eine Abweich-Erlaubnis liegt vor.
+                </p>
+                <p class="end-text">
+                    Bestellung wurde elektronisch erstellt und ist ohne Unterschrift gültig -
+                    Für unsere Bestellungen gelten ausschließlich unsere allgemeinen Einkaufsbedingungen.
+                    Einsicht möglich unter www.psz-eletronic.com
+                </p>
+                <br />
+                <p class="end-text" style="margin-top:-10px">
+                    Wir sind gemäß Art.13 DSGVO verpflichtet, Sie als Geschäftskunde über unsere Datenschutzmaßnahmen
+                    zu informieren. Unsere Datenschutzerklärung finden Sie auf unserer Website unter folgenden Link:
+                </p>
+            </div>
+            <a href='https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf' style="font-size:9.25px;" class='nobr'>
+                https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf
+            </a>
+        </div>
+        <pre></pre>
+        <br />
+    }
+</body>
+</html>

@@ -1,6 +1,0 @@
-﻿create table __BSD_AccessProfileLager(
-Id int identity primary key,
-AccessProfileId int,
-AccessProfileName varchar(500),
-LagerId int
-);

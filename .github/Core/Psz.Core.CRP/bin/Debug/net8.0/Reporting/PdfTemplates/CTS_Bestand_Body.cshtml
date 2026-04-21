@@ -1,0 +1,152 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.BestandReportModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head meta charset="utf-8">
+    <style>
+        @@page {
+            margin-top: 20;
+            margin-bottom: 100;
+            margin-left: 50;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+            table td, table td * {
+                vertical-align: top;
+                border-width: 0px;
+            }
+        .header-text
+        {
+            width:100%;
+            text-align: center;
+            font-size:18px;
+            font-weight: bold;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        .top-title
+        {
+            font-size:16px;
+            font-weight: bold;
+        }
+
+        .client-title {
+            font-size: 10px;
+            font-weight: normal;
+            border-bottom:1px dotted black;
+            width:60%;
+            margin-left:50px;
+        }
+
+        .lager-title {
+            font-size: 10px;
+            font-weight: normal;
+            width: 60%;
+            margin-left: 100px;
+            font-weight: bold;
+        }
+        .details-header-table
+        {
+            text-decoration: underline;
+            font-weight:normal;
+            text-align: left;
+            font-size:10px;
+        }
+
+        .hr {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+        .font-normal{
+            font-weight: normal;
+            font-size: 10px;
+        }
+
+        .font-bold {
+            font-weight: bold;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    <p class="header-text">Bestand Fertigwaren pro Customer Service Mitarbeiter</p>
+    @if(Model is not null)
+    {
+        foreach (var contact in Model.Contact)
+        {
+            <p class="top-title">@contact.Contact</p>
+            var clients = Model.Clients.Where(c => c.Contact == contact.Contact).ToList();
+            @foreach(var client in clients)
+            {
+                <p class="client-title">@client.Kunde</p>
+                var lagers = Model.Lager.Where(l => l.Kunde == client.Kunde && l.Contact == client.Contact).ToList();
+                foreach(var lager in lagers)
+                {
+                    <p class="lager-title">@lager.Lager</p>
+                    var details = Model.Details.Where(d => d.Kunde == client.Kunde && d.Lagerort == lager.Lager && d.CS_Kontakt == client.Contact).ToList();
+                    <table style="width:100%;margin-left:50px">
+                        <tr>
+                            <th class="details-header-table">Kosten</th>
+                            <th class="details-header-table">CK-Wert</th>
+                            <th class="details-header-table">Artikel</th>
+                            <th class="details-header-table">Bestand</th>
+                        </tr>
+                        @foreach(var detail in details)
+                        {
+                            <tr>
+                                <td class="font-normal">@FormatHelper.FormatDecimal(detail.Wert,0) €</td>
+                                <td class="font-normal">@FormatHelper.FormatDecimal(detail.VK, 0) €</td>
+                                <td class="font-normal">@detail.Artikelnummer</td>
+                                <td class="font-normal">@detail.Bestand</td>
+                            </tr>
+                        }
+                    </table>
+                    <hr class='hr'>
+                    <table style="width:100%">
+                        <tr>
+                            <th class="font-normal">@FormatHelper.FormatDecimal(lager.SumWert,0) €</th>
+                            <th class="font-normal">@FormatHelper.FormatDecimal(lager.SumVK,0) €</th>
+                            <th class="font-normal">Summe @lager.Lager</th>
+                        </tr>
+                    </table>
+                }
+                <hr class='hr'>
+                <table style="width:100%">
+                    <tr>
+                        <th class="font-normal">@FormatHelper.FormatDecimal(client.SumWert, 0) €</th>
+                        <th class="font-normal">@FormatHelper.FormatDecimal(client.SumVK, 0) €</th>
+                        <th class="font-normal">Summe @client.Kunde</th>
+                    </tr>
+                </table>
+            }
+            <hr class='hr'>
+            <table style="width:100%">
+                <tr>
+                    <th class="font-bold">@FormatHelper.FormatDecimal(contact.SumWert, 0) €</th>
+                    <th class="font-bold">@FormatHelper.FormatDecimal(contact.SumVK, 0) €</th>
+                    <th class="font-bold">Summe @contact.Contact</th>
+                </tr>
+            </table>
+            <hr class='hr'>
+            <table style="width:100%">
+                <tr>
+                    <th class="font-bold">@FormatHelper.FormatDecimal(Model.Contact.Sum(c=>c.SumWert), 0) €</th>
+                    <th class="font-bold">@FormatHelper.FormatDecimal(Model.Details.Sum(c => c.VK), 0) €</th>
+                    <th class="font-bold">Gesamtsumme Alle Metarbeiter</th>
+                </tr>
+            </table>
+        }
+    }
+    <pre></pre>
+</body>
+</html>

@@ -1,0 +1,135 @@
+2026-01-26 13:47:27.5997 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:47:27.6132 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:47:27.6132 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 13:47:27.6132 Debug FileTarget(Name=allfile): DirectoryNotFoundException - Attempting to create directory for FileName: C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log
+2026-01-26 13:56:00.4038 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:56:00.4153 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:56:00.4153 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 13:57:53.6093 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:57:53.6093 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 13:57:53.6093 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:02:35.2994 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:02:35.2994 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:02:35.2994 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:04:39.5081 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:04:39.5152 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:04:39.5152 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:09:07.0618 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:09:07.0618 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:09:07.0618 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:10:04.4128 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:10:04.4213 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:10:04.4213 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:19:57.8906 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:19:57.9029 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:19:57.9029 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:47:31.3793 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:47:31.3793 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:47:31.3793 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:48:59.0803 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:48:59.0803 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:48:59.0803 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:52:15.0335 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:52:15.0335 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:52:15.0335 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 14:53:36.5852 Info AppDomain Shutting down. LogFactory closing...
+2026-01-26 14:53:36.5875 Debug Stop watching file-filter 'NLog.config' in directory: C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0
+2026-01-26 14:53:36.5875 Trace Flushing all 2 targets...
+2026-01-26 14:53:36.5875 Trace ForEachItemInParallel() 2 items
+2026-01-26 14:53:36.5875 Trace FileTarget(Name=allfile): FlushAsync
+2026-01-26 14:53:36.5875 Trace Continuation invoked: 
+2026-01-26 14:53:36.5875 Trace Continuation invoked: 
+2026-01-26 14:53:36.5875 Trace Parallel task completed. 1 items remaining
+2026-01-26 14:53:36.5875 Trace Parallel task completed. 0 items remaining
+2026-01-26 14:53:36.5875 Debug Flush completed
+2026-01-26 14:53:36.5875 Trace FileTarget(Name=allfile): FlushAsync Done
+2026-01-26 14:53:36.5875 Debug Closing logging configuration...
+2026-01-26 14:53:36.5875 Trace Closing FileTarget(Name=allfile)
+2026-01-26 14:53:36.5875 Debug FileTarget(Name=allfile): Closing...
+2026-01-26 14:53:36.5875 Trace FileTarget(Name=allfile): FinalizeFile 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log, isArchiving: False'
+2026-01-26 14:53:36.6035 Debug FileTarget(Name=allfile): FileAppender Invalidate Closing File: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:53:36.6035 Trace FileTarget: Closing 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:53:36.6035 Debug FileTarget(Name=allfile): Closed.
+2026-01-26 14:53:36.6035 Trace Closing ${basedir}/Logs/nlog-all-${shortdate}.log
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${shortdate}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6035 Trace Closing ${longdate}|${event-properties:item=EventId.Id}|${logger}|${uppercase:${level}}|${message} ${exception}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${longdate}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${event-properties}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${loggername}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${uppercase}
+2026-01-26 14:53:36.6035 Trace Closing ${level}
+2026-01-26 14:53:36.6035 Trace Closing Layout Renderer: ${level}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${message}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${exception}
+2026-01-26 14:53:36.6180 Trace Closing NullTarget(Name=blackhole)
+2026-01-26 14:53:36.6180 Debug NullTarget(Name=blackhole): Closing...
+2026-01-26 14:53:36.6180 Debug NullTarget(Name=blackhole): Closed.
+2026-01-26 14:53:36.6180 Trace Closing ${longdate}|${level:uppercase=true}|${logger}|${message:withexception=true}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${longdate}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${level}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${loggername}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${literal}
+2026-01-26 14:53:36.6180 Trace Closing Layout Renderer: ${message}
+2026-01-26 14:53:36.6180 Debug Finished closing logging configuration.
+2026-01-26 14:53:36.6180 Info LogFactory has been closed.
+2026-01-26 14:57:06.4381 Debug FileTarget(Name=allfile): Preparing for new file: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:57:06.4381 Debug FileTarget(Name=allfile): Creating file appender: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 14:57:06.4381 Trace FileTarget(Name=allfile): Opening C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log with allowFileSharedWriting=False
+2026-01-26 16:29:14.6061 Info AppDomain Shutting down. LogFactory closing...
+2026-01-26 16:29:14.6234 Debug Stop watching file-filter 'NLog.config' in directory: C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0
+2026-01-26 16:29:14.6234 Trace Flushing all 2 targets...
+2026-01-26 16:29:14.6234 Trace ForEachItemInParallel() 2 items
+2026-01-26 16:29:14.6234 Trace FileTarget(Name=allfile): FlushAsync
+2026-01-26 16:29:14.6234 Trace Continuation invoked: 
+2026-01-26 16:29:14.6234 Trace Continuation invoked: 
+2026-01-26 16:29:14.6234 Trace Parallel task completed. 1 items remaining
+2026-01-26 16:29:14.6234 Trace Parallel task completed. 0 items remaining
+2026-01-26 16:29:14.6469 Debug Flush completed
+2026-01-26 16:29:14.6469 Trace FileTarget(Name=allfile): FlushAsync Done
+2026-01-26 16:29:14.6469 Debug Closing logging configuration...
+2026-01-26 16:29:14.6469 Trace Closing FileTarget(Name=allfile)
+2026-01-26 16:29:14.6533 Debug FileTarget(Name=allfile): Closing...
+2026-01-26 16:29:14.6533 Trace FileTarget(Name=allfile): FinalizeFile 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log, isArchiving: False'
+2026-01-26 16:29:14.6533 Debug FileTarget(Name=allfile): FileAppender Invalidate Closing File: 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 16:29:14.6533 Trace FileTarget: Closing 'C:\Users\haouiti\Git-Sources\back-v8\ebas-back-v8\Psz.Api\bin\Debug\net8.0\Logs\nlog-all-2026-01-26.log'
+2026-01-26 16:29:14.6533 Debug FileTarget(Name=allfile): Closed.
+2026-01-26 16:29:14.6533 Trace Closing ${basedir}/Logs/nlog-all-${shortdate}.log
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${shortdate}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6533 Trace Closing ${longdate}|${event-properties:item=EventId.Id}|${logger}|${uppercase:${level}}|${message} ${exception}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${longdate}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${event-properties}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${loggername}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6533 Trace Closing Layout Renderer: ${uppercase}
+2026-01-26 16:29:14.6533 Trace Closing ${level}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${level}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${message}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${exception}
+2026-01-26 16:29:14.6789 Trace Closing NullTarget(Name=blackhole)
+2026-01-26 16:29:14.6789 Debug NullTarget(Name=blackhole): Closing...
+2026-01-26 16:29:14.6789 Debug NullTarget(Name=blackhole): Closed.
+2026-01-26 16:29:14.6789 Trace Closing ${longdate}|${level:uppercase=true}|${logger}|${message:withexception=true}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${longdate}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${level}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${loggername}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${literal}
+2026-01-26 16:29:14.6789 Trace Closing Layout Renderer: ${message}
+2026-01-26 16:29:14.6789 Debug Finished closing logging configuration.
+2026-01-26 16:29:14.6789 Info LogFactory has been closed.

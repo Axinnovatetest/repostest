@@ -1,0 +1,204 @@
+﻿@model Psz.Core.Reporting.Models.DelforRepotModel
+
+<html>
+<head>
+<style>
+    @@page {
+            margin-bottom: 90;
+            margin-left: 50;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        no-border {
+            border: none !important;
+        }
+        .label-cell{
+            font-size:10px;
+            font-weight:bold;
+            text-align:left;
+            padding:5px;
+        }
+        .value-cell{
+            font-size:10px;
+            font-weight:normal;
+            text-align:left;
+            padding:5px;
+        }
+        .table-data-header{
+            background-color:whitesmoke;
+            font-size:10px;
+            font-weight:bold;
+            white-space: nowrap;
+            border-bottom:1px solid black;
+            border-top:1px solid black;
+        }
+        .table-data-cell{
+            text-align:center;
+            font-size:10px;
+            white-space: nowrap;
+            border-bottom:1px solid lightgrey;
+            padding:5px 5px;
+        }
+</style>
+</head>
+<body style="font-size:14px;">
+    @if (Model is not null)
+    {
+        <p style="font-size:18px;font-weight:bold">@Model.HeaderLabel.BuyerPartyName</p>
+        <p style="font-size:12px;font-weight:bold">@Model.Header.BuyerPartyName</p>
+
+        <table style="width:100%;margin-top:20px">
+            <tr>
+            <th style="text-align:left;font-size:16px" class="no-border">@Model.HeaderLabel.SupplierPartyName</th>
+            <th style="text-align:right;font-size:16px" class="no-border">@Model.Header.MessageType</th>
+            </tr>
+        </table>
+        <table>
+            <tr><td style="text-align:left;font-size:12px;font-weight:bold" class="no-border">@Model.Header.SupplierPartyName</td></tr>
+            <tr><td style="text-align:left;font-size:10px;" class="no-border">@Model.Header.SupplierStreet</td></tr>
+            <tr><td style="text-align:left;font-size:10px;" class="no-border">@Model.Header.SupplierPostCode</td></tr>
+            <tr><td style="text-align:left;font-size:10px;" class="no-border">@Model.Header.SupplierCountryName</td></tr>
+            <tr><td style="text-align:left;font-size:10px;" class="no-border">@Model.Header.SupplierPartyIdentification</td></tr>
+        </table>
+
+        <table style="width:50%;margin-top:20px">
+            <tr>
+                <th class="value-cell">@Model.HeaderLabel.DocumentNumber</th>
+                <th class="value-cell">@Model.Header.DocumentNumber</th>
+                <th class="value-cell">@Model.HeaderLabel.ReceivingDate</th>
+                <th class="value-cell">@Model.Header.ReceivingDate</th>
+            </tr>
+            <tr>
+                <th class="value-cell">@Model.HeaderLabel.HorizonStartDate</th>
+                <th class="value-cell">@Model.Header.HorizonStartDate</th>
+            </tr>
+             <tr>
+                <th class="value-cell">@Model.HeaderLabel.HorizonEndDate</th>
+                <th class="value-cell">@Model.Header.HorizonEndDate</th>
+            </tr>
+            <tr>
+                <th class="value-cell">@Model.HeaderLabel.HorizonStartDate</th>
+                <th class="value-cell">@Model.Header.HorizonStartDate</th>
+            </tr>
+        </table>
+
+        <table style="width:100%;margin-top:10px;background-color:lightgrey;">
+            <tr>
+                <th class="label-cell">@Model.HeaderLabel.ReferenceVersionNumber</th>
+                <th class="value-cell">@Model.Header.ReferenceVersionNumber</th>
+                <th class="label-cell">@Model.HeaderLabel.ConsigneePartyIdentification</th>
+                <th class="value-cell">@Model.Header.ConsigneePartyIdentification</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.HeaderLabel.ReceivingDateHeader</th>
+                <th class="value-cell">@Model.Header.ReceivingDateHeader</th>
+                <th class="label-cell"></th>
+                <th class="value-cell">@Model.Header.ConsigneePartyName</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.HeaderLabel.DocumentNumberHeader</th>
+                <th class="value-cell">@Model.Header.DocumentNumberHeader</th>
+                <th class="label-cell"></th>
+                <th class="value-cell">@Model.Header.ConsigneeStreet</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.PositionNumber</th>
+                <th class="value-cell">@Model.LineItem.PositionNumber</th>
+                <th class="label-cell"></th>
+                <th class="value-cell">@Model.Header.ConsigneeAddress <br> @Model.Header.ConsigneeCountryName</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.CustomersItemMaterialNumber</th>
+                <th class="value-cell">@Model.LineItem.CustomersItemMaterialNumber</th>
+                <th class="label-cell">@Model.HeaderLabel.ConsigneeUnloadingPoint</th>
+                <th class="value-cell">@Model.Header.ConsigneeUnloadingPoint</th>
+            </tr>
+             <tr>
+                <th class="label-cell">@Model.LineItemLabel.SuppliersItemMaterialNumber</th>
+                <th class="value-cell">@Model.LineItem.SuppliersItemMaterialNumber</th>
+                <th class="label-cell">@Model.HeaderLabel.ConsigneeStorageLocation</th>
+                <th class="value-cell">@Model.Header.ConsigneeStorageLocation</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.Description</th>
+                <th class="value-cell">@Model.LineItem.Description</th>
+            </tr>
+             <tr>
+                <th class="label-cell">@Model.LineItemLabel.ModelYear</th>
+                <th class="value-cell">@Model.LineItem.ModelYear</th>
+            </tr>
+             <tr>
+                <th class="label-cell">@Model.LineItemLabel.LastASNNumber</th>
+                <th class="value-cell">@Model.LineItem.LastASNNumber</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.LastASNDate</th>
+                <th class="value-cell">@Model.LineItem.LastASNDate</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.CumulativeReceivedQuantity</th>
+                <th class="value-cell">@Model.LineItem.CumulativeReceivedQuantity</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.CumulativeScheduledQuantity</th>
+                <th class="value-cell">@Model.LineItem.CumulativeScheduledQuantity</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.LastReceivedQuantity</th>
+                <th class="value-cell">@Model.LineItem.LastReceivedQuantity</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.MaterialAuthorizationQuantity</th>
+                <th class="value-cell">@Model.LineItem.MaterialAuthorizationQuantity</th>
+            </tr>
+             <tr>
+                <th class="label-cell">@Model.LineItemLabel.MaterialAuthorizationDate</th>
+                <th class="value-cell">@Model.LineItem.MaterialAuthorizationDate</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.ProductionAuthorizationQuantity</th>
+                <th class="value-cell">@Model.LineItem.ProductionAuthorizationQuantity</th>
+            </tr>
+            <tr>
+                <th class="label-cell">@Model.LineItemLabel.ProductionAuthorizationDateTime</th>
+                <th class="value-cell">@Model.LineItem.ProductionAuthorizationDateTime</th>
+            </tr>
+        </table>
+        <div style="margin-top:10px">
+        <p style="font-size:8px">@Model.HeaderLabel.LegendFrequency</p>
+        <p style="font-size:8px">@Model.HeaderLabel.LegendStatus</p>
+        </div>
+        <table style="width:100%;">
+            <tr>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityFrequencyIdentifier</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityDeliveryPlanStatusIdentifier</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityRequestedShipmentDate</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityWeeklyPeriodEndDate</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityQuantity</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityCumulativeQuantity</th>
+                <th class="table-data-header">@Model.LineItemPlanLabel.PlanningQuantityUnitOfMeasure</th>
+            </tr>
+            @foreach(var item in Model.LineItemPlan)
+            {
+                <tr>
+                    <td class="table-data-cell">@item.PlanningQuantityFrequencyIdentifier</td>
+                    <td class="table-data-cell">@item.PlanningQuantityDeliveryPlanStatusIdentifier</td>
+                    <td class="table-data-cell">@item.PlanningQuantityRequestedShipmentDate</td>
+                    <td class="table-data-cell">@item.PlanningQuantityWeeklyPeriodEndDate</td>
+                    <td class="table-data-cell">@item.PlanningQuantityQuantity</td>
+                    <td class="table-data-cell">@item.PlanningQuantityCumulativeQuantity</td>
+                    <td class="table-data-cell">@item.PlanningQuantityUnitOfMeasure</td>
+                </tr>
+            }
+        </table>
+       <pre></pre>
+    }
+</body>
+</html>

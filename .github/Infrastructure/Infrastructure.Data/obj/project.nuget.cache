@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "0XdPuJ0RCCU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\haouiti\\Git-Sources\\back-v8\\ebas-back-v8\\Infrastructure\\Infrastructure.Data\\Infrastructure.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\haouiti\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\morelinq\\4.2.0\\morelinq.4.2.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\sourcegear.sqlite3\\3.50.4.2\\sourcegear.sqlite3.3.50.4.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\3.0.2\\sqlitepclraw.bundle_e_sqlite3.3.0.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\sqlitepclraw.config.e_sqlite3\\3.0.2\\sqlitepclraw.config.e_sqlite3.3.0.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\sqlitepclraw.core\\3.0.2\\sqlitepclraw.core.3.0.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\3.0.2\\sqlitepclraw.provider.e_sqlite3.3.0.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.data.sqlite\\2.0.2\\system.data.sqlite.2.0.2.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\haouiti\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

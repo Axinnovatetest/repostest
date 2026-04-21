@@ -1,0 +1,95 @@
+﻿@model Psz.Core.BaseData.Reporting.Models.StatisticsCartonsModel
+<html>
+<head>
+    <style>
+       @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 30;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        .header-cell{
+            font-weight: bold;
+            padding: 3px;
+            white-space: nowrap;
+            font-size: 10px;
+        }
+        .top-border{
+            border-top: 1px solid darkblue;
+        }
+        .bottom-border{
+            border-bottom: 1px solid darkblue;
+        }
+        table td, table td * {
+            padding: 5px 5px;
+            font-size: 10px;
+            white-space: nowrap;
+            vertical-align: top;
+            border-bottom: 1px solid black;
+            text-align: left;
+        }
+        table th{
+            text-align: left;
+            white-space: nowrap;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .normal {
+            font-weight: normal;
+        }
+        .bottom-border{
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    <p>Kartonagen Bedarfsermitlung</p>
+    <table style="width:100%">
+        <tr>
+            <th class="normal">Bedarfsberechnung für die Zeitraum</th>
+            <th class="normal">von</th>
+            <th class="bold">@Model.Headers.From</th>
+            <th class="normal">bis</th>
+            <th class="bold">@Model.Headers.To</th>
+        </tr>
+        <tr>
+            <th class="normal">Bedarfsberechnung für Lagerort</th>
+            <th class="bold">@Model.Headers.Lagerort</th>
+        </tr>
+    </table>
+    <table style="width:100%;margin-top:10px">
+        <tr>
+            <th class="header-cell">Artikelnummer</th>
+            <th class="header-cell">Bestand</th>
+            <th class="header-cell">Bedarf</th>
+            <th class="header-cell">Transfer Bestand</th>
+            <th class="header-cell">Bestellung-Nr</th>
+            <th class="header-cell">Anzahl</th>
+            <th class="header-cell">AB Termin</th>
+            <tr><td style="border-bottom:1px solid black" colspan="7"></td></tr>
+        </tr>
+        @foreach(var item in Model.Items)
+        {
+            <tr>
+               <td>@item.Artikelnummer_Umlauf</td>
+               <td>@item.Bestand</td>
+               <td>@item.SummevonBedarf</td>
+               <td>@item.Transfer_Bestand</td>
+               <td>@item.Bestellung_Nr</td>
+               <td>@item.Anzahl</td>
+               <td>@item.Bestatigter_Termin</td>
+            </tr>
+        }
+    </table>
+<pre></pre>
+</body>
+</html>
