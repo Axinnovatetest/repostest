@@ -1,2 +1,0 @@
-﻿ALTER TABLE [Protokolierung_Stücklisten_Bei_Aktion]
-ALTER COLUMN Status nvarchar(400);

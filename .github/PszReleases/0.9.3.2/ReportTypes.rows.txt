@@ -1,9 +1,0 @@
-﻿SET IDENTITY_INSERT [dbo].[__STG_OrderTypes] ON 
-
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (1, N'CONFIRMATION', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (2, N'FORECAST', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (3, N'CONTRACT', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (4, N'KANBAN', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (5, N'DELIVERY', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-INSERT [dbo].[__STG_OrderTypes] ([Id], [Type], [Description], [LastUpdateTime], [LastUpdateUserId]) VALUES (6, N'CREDIT', NULL, CAST(N'16.04.2020 12:56:23.293' AS DateTime), 51)
-SET IDENTITY_INSERT [dbo].[__STG_OrderTypes] OFF
