@@ -31,8 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.FinanceControl", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.SalesDistribution", "Core\Psz.Core.SalesDistribution\Psz.Core.SalesDistribution.csproj", "{D52F0E14-5246-424F-A967-2B2C03811EEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PszReleases", "PszReleases\PszReleases.csproj", "{CFCFB0E4-1A20-4244-B32C-C6F5248EB37C}"
-EndProject
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.MaterialManagement", "Core\Psz.Core.MaterialManagement\Psz.Core.MaterialManagement.csproj", "{143CAA53-376D-44A2-AA33-6AAA4E0D38CB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Psz.Core.CustomerService", "Core\Psz.Core.CustomerService\Psz.Core.CustomerService.csproj", "{570EDFDB-CEF3-4B63-8748-AA3BBB80AB23}"
