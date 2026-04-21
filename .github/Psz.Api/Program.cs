@@ -23,7 +23,7 @@ builder.Services.AddMemoryCache();
 try
 {
 	var _dbOptions = builder.Configuration
-		.GetSection("Telemetry:Database")
+		.GetSection("Telemetry:Database");
 		.Get<TelemetrySettings.BaseSettings>();
 
 	DbExecution.Enabled = _dbOptions?.Enabled ?? false;
