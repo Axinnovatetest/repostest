@@ -1,0 +1,22 @@
+name: Quality Check
+
+on:
+  pull_request:
+    branches: [ main ] # S'exécute lors d'une PR vers la branche main
+
+jobs:
+  build-and-test: # C'est ce nom que vous chercherez dans "Add checks"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x' # À adapter selon votre version
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
