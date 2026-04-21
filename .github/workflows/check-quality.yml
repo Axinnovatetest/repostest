@@ -1,0 +1,23 @@
+name: Quality Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        # Remplacez "NOM_DE_VOTRE_DOSSIER" par le nom du dossier qui contient votre .sln ou .csproj
+        run: dotnet restore ./NOM_DE_VOTRE_DOSSIER 
+
+      - name: Build
+        run: dotnet build ./NOM_DE_VOTRE_DOSSIER --no-restore
