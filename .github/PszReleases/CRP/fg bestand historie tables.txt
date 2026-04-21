@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS [stats].[__CRP_HistoryFG_Details];
+CREATE TABLE [stats].[__CRP_HistoryFG_Details](
+Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+HeaderId INT,
+CustomerNumber INT,
+CustomerName NVARCHAR(255),
+ArticleNumber NVARCHAR(25),
+ArticleDesignation1 NVARCHAR(255),
+ArticleDesignation2 NVARCHAR(255),
+ArticleReleaseStatus NVARCHAR(5),
+CsContact NVARCHAR(255),
+WarehouseId INT,/* in Excel import this will be set by the system accoriding to WarehouseName*/
+WarehouseName NVARCHAR(50),
+StockQuantity DECIMAL(20,3),
+TotalSalesPrice DECIMAL(20,3), /* VK Gesamt */
+TotalCostsWithCu DECIMAL(20,3), /* Kosten gesamt (mit CU) */
+TotalCostsWithoutCu DECIMAL(20,3), /* Kosten gesamt (ohne CU) */
+UnitSalesPrice DECIMAL(20,3), /* VKE */
+UBG BIT,
+VKE bit,
+EdiStandard BIT,
+);
+
+
+DROP TABLE IF EXISTS [stats].[__CRP_HistoryFG_Header];
+CREATE TABLE [stats].[__CRP_HistoryFG_Header](
+Id INT IDENTITY(1,1) PRIMARY KEY,
+CreateDate DATETIME, /* record */
+CreateUserId INT,
+ImportDate DATETIME,
+ImportType INT,
+)

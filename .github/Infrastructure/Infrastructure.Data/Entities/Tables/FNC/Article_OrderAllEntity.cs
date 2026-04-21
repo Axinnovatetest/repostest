@@ -1,0 +1,136 @@
+using System;
+using System.Data;
+
+namespace Infrastructure.Data.Entities.Tables.FNC
+{
+	public class Article_OrderAllEntity
+	{
+		public string Action_Article { get; set; }
+		public DateTime? Article_date { get; set; }
+		public string Currency_Article { get; set; }
+		public string Dept_name { get; set; }
+		public int Id_AO { get; set; }
+		public int Id_Article { get; set; }
+		public int? Id_Currency_Article { get; set; }
+		public int? Id_Dept { get; set; }
+		public int? Id_Land { get; set; }
+		public int Id_Order { get; set; }
+		public int? Id_Project { get; set; }
+		public int Id_User { get; set; }
+		public string Land_name { get; set; }
+		public int? Quantity { get; set; }
+		public double? TotalCost_Article { get; set; }
+		public double? Unit_Price { get; set; }
+		//Article Version
+		public string Action_Version_Article { get; set; }
+		public string Currency_Version_Article { get; set; }
+		public string Dept_name_VersionArticle { get; set; }
+		public int Id_AOV { get; set; }
+		public int? Id_Currency_Version_Article { get; set; }
+		public int? Id_Dept_VersionArticle { get; set; }
+		public int? Id_Land_VersionArticle { get; set; }
+		public int? Id_Level_VersionArticle { get; set; }
+		public int Id_Order_Version { get; set; }
+		public int? Id_Project_VersionArticle { get; set; }
+		public int? Id_Status_VersionArticle { get; set; }
+		public int? Id_Supplier_VersionArticle { get; set; }
+		public int Id_User_VersionArticle { get; set; }
+		public string Land_name_VersionArticle { get; set; }
+		public int? Quantity_VersionArticle { get; set; }
+		public double? TotalCost__VersionArticle { get; set; }
+		public double? Unit_Price_VersionArticle { get; set; }
+		public DateTime? Version_Article_date { get; set; }
+		//order vesion	
+		public int? Id_Currency_Order { get; set; }
+		public int? Id_Level { get; set; }
+		public int? Id_Status { get; set; }
+		public int? Id_Supplier_VersionOrder { get; set; }
+		public int Id_VO { get; set; }
+		public int? Nr_version_Order { get; set; }
+		public string Step_Order { get; set; }
+		public double? TotalCost_Order { get; set; }
+		public DateTime? Version_Order_date { get; set; }
+		//param Version Order
+		public int? Max_VO { get; set; }
+		public int? Nr_version_Order_param { get; set; }
+		public int? Id_Level_param { get; set; }
+		public int? Id_Status_param { get; set; }
+		public int? Id_Dept_param { get; set; }
+		public int? Id_Land_param { get; set; }
+		public string Dept_name_param { get; set; }
+		public string Land_name_param { get; set; }
+		public int? Id_Currency_Order_param { get; set; }
+		public int? Id_Supplier_VersionOrder_param { get; set; }
+		public double? TotalCost_Order_param { get; set; }
+		public string Step_Order_param { get; set; }
+		public int? Id_Project_param { get; set; }
+		public Article_OrderAllEntity() { }
+
+		public Article_OrderAllEntity(DataRow dataRow)
+		{
+			Action_Article = (dataRow["Action_Article"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Action_Article"]);
+			Article_date = (dataRow["Article_date"] == System.DBNull.Value) ? (DateTime?)null : Convert.ToDateTime(dataRow["Article_date"]);
+			Currency_Article = (dataRow["Currency_Article"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Currency_Article"]);
+			Dept_name = (dataRow["Dept_name"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Dept_name"]);
+			Id_AO = Convert.ToInt32(dataRow["Id_AO"]);
+			Id_Article = Convert.ToInt32(dataRow["Id_Article"]);
+			Id_Currency_Article = (dataRow["Id_Currency_Article"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Currency_Article"]);
+			Id_Dept = (dataRow["Id_Dept"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Dept"]);
+			Id_Land = (dataRow["Id_Land"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Land"]);
+			Id_Order = Convert.ToInt32(dataRow["Id_Order"]);
+			Id_Project = (dataRow["Id_Project"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Project"]);
+			Id_User = Convert.ToInt32(dataRow["Id_User"]);
+			Land_name = (dataRow["Land_name"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Land_name"]);
+			Quantity = (dataRow["Quantity"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Quantity"]);
+			TotalCost_Article = (dataRow["TotalCost_Article"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["TotalCost_Article"]);
+			Unit_Price = (dataRow["Unit_Price"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["Unit_Price"]);
+			//Article Version
+			Action_Version_Article = (dataRow["Action_Version_Article"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Action_Version_Article"]);
+			Currency_Version_Article = (dataRow["Currency_Version_Article"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Currency_Version_Article"]);
+			Dept_name_VersionArticle = (dataRow["Dept_name_VersionArticle"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Dept_name_VersionArticle"]);
+			Id_AOV = Convert.ToInt32(dataRow["Id_AOV"]);
+			Id_Currency_Version_Article = (dataRow["Id_Currency_Version_Article"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Currency_Version_Article"]);
+			Id_Dept_VersionArticle = (dataRow["Id_Dept_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Dept_VersionArticle"]);
+			Id_Land_VersionArticle = (dataRow["Id_Land_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Land_VersionArticle"]);
+			Id_Level_VersionArticle = (dataRow["Id_Level_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Level_VersionArticle"]);
+			Id_Order_Version = Convert.ToInt32(dataRow["Id_Order_Version"]);
+			Id_Project_VersionArticle = (dataRow["Id_Project_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Project_VersionArticle"]);
+			Id_Status_VersionArticle = (dataRow["Id_Status_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Status_VersionArticle"]);
+			Id_Supplier_VersionArticle = (dataRow["Id_Supplier_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Supplier_VersionArticle"]);
+			Id_User_VersionArticle = Convert.ToInt32(dataRow["Id_User_VersionArticle"]);
+			Land_name_VersionArticle = (dataRow["Land_name_VersionArticle"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Land_name_VersionArticle"]);
+			Quantity_VersionArticle = (dataRow["Quantity_VersionArticle"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Quantity_VersionArticle"]);
+			TotalCost__VersionArticle = (dataRow["TotalCost__VersionArticle"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["TotalCost__VersionArticle"]);
+			Unit_Price_VersionArticle = (dataRow["Unit_Price_VersionArticle"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["Unit_Price_VersionArticle"]);
+			Version_Article_date = (dataRow["Version_Article_date"] == System.DBNull.Value) ? (DateTime?)null : Convert.ToDateTime(dataRow["Version_Article_date"]);
+			//order vesion
+			Id_Currency_Order = (dataRow["Id_Currency_Order"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Currency_Order"]);
+			Id_Project = (dataRow["Id_Project"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Project"]);
+			Id_Status = (dataRow["Id_Status"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Status"]);
+			Id_Supplier_VersionOrder = (dataRow["Id_Supplier_VersionOrder"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Supplier_VersionOrder"]);
+			Id_VO = Convert.ToInt32(dataRow["Id_VO"]);
+			Nr_version_Order = (dataRow["Nr_version_Order"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Nr_version_Order"]);
+			Step_Order = (dataRow["Step_Order"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Step_Order"]);
+			TotalCost_Order = (dataRow["TotalCost_Order"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["TotalCost_Order"]);
+			Version_Order_date = (dataRow["Version_Order_date"] == System.DBNull.Value) ? (DateTime?)null : Convert.ToDateTime(dataRow["Version_Order_date"]);
+			//param Version Order
+			Dept_name_param = (dataRow["Dept_name_param"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Dept_name_param"]);
+			Id_Currency_Order_param = (dataRow["Id_Currency_Order_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Currency_Order_param"]);
+			Id_Dept_param = (dataRow["Id_Dept_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Dept_param"]);
+			Id_Land_param = (dataRow["Id_Land_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Land_param"]);
+			Id_Level_param = (dataRow["Id_Level_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Level_param"]);
+			Id_Project_param = (dataRow["Id_Project_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Project_param"]);
+			Id_Status_param = (dataRow["Id_Status_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Status_param"]);
+			Id_Supplier_VersionOrder_param = (dataRow["Id_Supplier_VersionOrder_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Id_Supplier_VersionOrder_param"]);
+			Max_VO = (dataRow["Max_VO"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Max_VO"]);
+			Land_name_param = (dataRow["Land_name_param"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Land_name_param"]);
+			Nr_version_Order_param = (dataRow["Nr_version_Order_param"] == System.DBNull.Value) ? (int?)null : Convert.ToInt32(dataRow["Nr_version_Order_param"]);
+			Step_Order_param = (dataRow["Step_Order_param"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Step_Order_param"]);
+			TotalCost_Order_param = (dataRow["TotalCost_Order_param"] == System.DBNull.Value) ? (double?)null : Convert.ToDouble(dataRow["TotalCost_Order_param"]);
+		}
+
+
+
+	}
+}
+

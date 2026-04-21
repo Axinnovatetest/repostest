@@ -1,0 +1,45 @@
+﻿/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__BSD_ArtikelProductionExtension
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	ArticleId int NOT NULL,
+	ProductionPlace1_Id int NULL,
+	ProductionPlace2_Id int NULL,
+	ProductionPlace3_Id int NULL,
+	ProductionPlace1_Name nvarchar(150) NULL,
+	ProductionPlace2_Name nvarchar(150) NULL,
+	ProductionPlace3_Name nvarchar(150) NULL,
+	AlternativeProductionPlace bit NULL,
+	CreateUserId int NULL,
+	CreateTime datetime NULL,
+	UpdateUserId int NULL,
+	UpdateTime datetime NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.__BSD_ArtikelProductionExtension ADD CONSTRAINT
+	DF___BSD_ArtikelProductionExtension_UpdateTime DEFAULT getdate() FOR UpdateTime
+GO
+ALTER TABLE dbo.__BSD_ArtikelProductionExtension ADD CONSTRAINT
+	PK___BSD_ArtikelProductionExtension PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__BSD_ArtikelProductionExtension SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__BSD_ArtikelProductionExtension', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelProductionExtension', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__BSD_ArtikelProductionExtension', 'Object', 'CONTROL') as Contr_Per 
+
+

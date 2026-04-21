@@ -1,0 +1,80 @@
+﻿CREATE TABLE [dbo].[capital_requests_header](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [datetime] NULL,
+	[Plant] [nvarchar](max) NULL,
+	[PlantId] [int] NULL,
+	[Fertigungsnummer] [int] NULL,
+	[Artikelnummer] [nvarchar](25) NULL,
+	[Status] [nvarchar](max) NULL,
+	[StatusId] [int] NULL,
+	[CloseDate] [datetime] NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](max) NULL,
+)
+
+CREATE TABLE [dbo].[capital_requests_log](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdRequest] [int] NULL,
+	[Plant] [nvarchar](max) NULL,
+	[PlantId] int NULL,
+	[Status] [nvarchar](max) NULL,
+	[StatusId] int NULL,
+	[IdPosition] [int] NULL,
+	[Changes] [nvarchar](max) NULL,
+	[User] [nvarchar](max) NULL,
+	[DateTime] [datetime] NULL,
+)
+
+CREATE TABLE [dbo].[capital_requests_positions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PositionId] [int] NULL,
+	[HeaderId] [int] NULL,
+	[IncidentCategoryId] [int] NULL,
+	[IncidentCategory] [nvarchar](max) NULL,
+	[IncidentDate] [datetime] NULL,
+	[IncidentDescription] [nvarchar](max) NULL,
+	[CapitalReply] [nvarchar](max) NULL,
+	[CapitalStatus] [bit] NULL,
+	[CapitalDate] [datetime] NULL,
+	[CapitalBOM] [bit] NULL,
+	[CapitalCP] [bit] NULL,
+	[CapitalFB] [bit] NULL,
+	[CapitalDOC] [bit] NULL,
+	[CapitalClose] [bit] NULL,
+	[EngeneeringValidation] [bit] NULL,
+	[EngeneeringValidationDate] [datetime] NULL
+)
+
+CREATE TABLE [dbo].[capital_requests_teams](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NULL,
+	[Username] [nvarchar](max) NULL,
+	[PlantId] [int] NULL,
+	[Team] [nvarchar](max) NULL,
+	[AddUser] [int] NULL,
+	[AddTime] [datetime] NULL,
+)
+
+CREATE TABLE [dbo].[__CPL_AccessProfile](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ModuleActivated] [bit] NULL,
+	[AccessProfileName] [nvarchar](max) NULL,
+	[CreationUserId] [int] NULL,
+	[CreationTime] [datetime] NULL,
+	[RequestCreation] [bit] NULL,
+	[RequestCapital] [bit] NULL,
+	[RequestEngeneering] [bit] NULL,
+	[RequestAdmin] [bit] NULL,
+)
+
+CREATE TABLE [dbo].[__CPL_AccessProfileUsers](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[AccessProfileId] [int] NULL,
+	[AccessProfileName] [nvarchar](max) NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](max) NULL,
+	[UserEmail] [nvarchar](max) NULL,
+	[CreationTime] [datetime] NULL,
+	[CreationUserId] [int] NULL,
+)
+

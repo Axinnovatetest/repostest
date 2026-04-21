@@ -1,0 +1,50 @@
+using System;
+using System.Data;
+
+namespace Infrastructure.Data.Entities.Tables.PRS
+{
+	public class OrderExtensionBuyerEntity
+	{
+		public string City { get; set; }
+		public string ContactFax { get; set; }
+		public string ContactName { get; set; }
+		public string ContactTelephone { get; set; }
+		public string CountryName { get; set; }
+		public string DUNS { get; set; }
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public string Name2 { get; set; }
+		public string Name3 { get; set; }
+		public int OrderId { get; set; }
+		public string PartyIdentification { get; set; }
+		public string PartyIdentificationCodeListQualifier { get; set; }
+		public string PostalCode { get; set; }
+		public string PurchasingDepartment { get; set; }
+		public string Street { get; set; }
+		public int OrderType { get; set; }
+
+		public OrderExtensionBuyerEntity() { }
+
+		public OrderExtensionBuyerEntity(DataRow dataRow)
+		{
+			City = (dataRow["City"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["City"]);
+			ContactFax = (dataRow["ContactFax"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["ContactFax"]);
+			ContactName = (dataRow["ContactName"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["ContactName"]);
+			ContactTelephone = (dataRow["ContactTelephone"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["ContactTelephone"]);
+			CountryName = (dataRow["CountryName"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["CountryName"]);
+			DUNS = (dataRow["DUNS"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["DUNS"]);
+			Id = Convert.ToInt32(dataRow["Id"]);
+			Name = (dataRow["Name"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Name"]);
+			Name2 = (dataRow["Name2"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Name2"]);
+			Name3 = (dataRow["Name3"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Name3"]);
+			OrderId = Convert.ToInt32(dataRow["OrderId"]);
+			OrderType = Convert.ToInt32(dataRow["OrderType"]);
+			PartyIdentification = (dataRow["PartyIdentification"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["PartyIdentification"]);
+			PartyIdentificationCodeListQualifier = (dataRow["PartyIdentificationCodeListQualifier"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["PartyIdentificationCodeListQualifier"]);
+			PostalCode = (dataRow["PostalCode"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["PostalCode"]);
+			PurchasingDepartment = (dataRow["PurchasingDepartment"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["PurchasingDepartment"]);
+			Street = (dataRow["Street"] == System.DBNull.Value) ? "" : Convert.ToString(dataRow["Street"]);
+		}
+	}
+}
+

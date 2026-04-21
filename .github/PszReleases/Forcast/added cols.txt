@@ -1,0 +1,17 @@
+﻿ForcastView
+ForcastCreat
+ForcastEdi
+ForcastDelet
+ForcastRepor
+ForcastLog
+ForcastPositionEdit
+
+
+alter table [__EDI_DLF_LineItem]
+add HeaderVersion int
+
+
+
+
+alter table [__EDI_DLF_LineItem]
+add HeaderPreviousVersion int

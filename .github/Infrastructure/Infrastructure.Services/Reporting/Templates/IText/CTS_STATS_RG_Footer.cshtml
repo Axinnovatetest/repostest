@@ -1,0 +1,124 @@
+﻿@model Infrastructure.Services.Reporting.Models.Itext.CTS_StatsRG_DocFooterModel
+
+<style>
+    table td, table td * {
+        vertical-align: top;
+        text-align: left;
+    }
+
+        table td.right, table td.right * {
+            text-align: left;
+        }
+
+    .hr {
+        height: 1px;
+        border-width: 0;
+        color: black;
+        background-color: black;
+        width: 100%;
+    }
+
+    .footer-container {
+        margin-left: 65px;
+        font-size: 8px;
+        width: 90%;
+        font-family: Helvetica, sans-serif;
+        border-top: 1px solid black;
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+@if (Model is not null)
+{
+    <div class="footer-container">
+        @if (Model.Lager == 1)
+        {
+            <div style=" width:25%;padding-top:5px">
+                <div>@Model.Footer1</div>
+                <br />
+                <div>@Model.Footer2</div>
+                <br />
+                <div>@Model.Footer3</div>
+                <br />
+                @if (Model.Footer4?.Contains("\\n") == true){
+                    var lines = Model.Footer4.Split("\\n");
+                    foreach (var line in lines)
+                    {
+                        <div>@line</div>
+                    }
+                }else{
+                    <div>@Model.Footer4</div>
+                }
+            </div>
+            <div style="width:25%;padding-top:5px">
+                <div>@Model.Footer5</div>
+                <br />
+                <div>@Model.Footer6</div>
+                <br />
+                <div>@Model.Footer7</div>
+                <br />
+                <div>@Model.Footer8</div>
+            </div>
+            <div style="width:30%;padding-top:5px">
+                <div>@Model.Footer9</div>
+                <br />
+                <div>@Model.Footer10</div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div>@Model.Footer11</div>
+                <br />
+            </div>
+            <div style="width:30%;padding-top:5px">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div>@Model.Footer12</div>
+            </div>
+        }
+        else
+        {
+            <div style=" width:25%;padding-top:5px">
+                <div>@Model.Footer1</div>
+                <div>@Model.Footer2</div>
+                <div>@Model.Footer3</div>
+                @if (Model.Footer4?.Contains("\\n") == true)
+                {
+                    var lines = Model.Footer4.Split("\\n");
+                    foreach (var line in lines)
+                    {
+                        <div>@line</div>
+                    }
+                }
+                else
+                {
+                    <div>@Model.Footer4</div>
+                }
+            </div>
+            <div style="width:25%;padding-top:5px">
+                <div>@Model.Footer5</div>
+                <div>@Model.Footer6</div>
+                <div>@Model.Footer7</div>
+                <br />
+                <div>@Model.Footer8</div>
+                <div>@Model.Footer9</div>
+            </div>
+            <div style="width:30%;padding-top:5px">
+                <div>@Model.Footer10</div>
+                <div>@Model.Footer11</div>
+                <div>@Model.Footer12</div>
+            </div>
+            <div style="width:20%;text-align:right;padding-top:5px">
+                <div style="text-align:left">@Model.Footer13</div>
+                <div style="text-align:left">@Model.Footer14</div>
+                <div style="text-align:left">@Model.Footer15</div>
+                <div style="text-align:left">@Model.Footer16</div>
+                <div style="text-align:left">@Model.Footer17</div>
+            </div>
+        }
+    </div>
+}

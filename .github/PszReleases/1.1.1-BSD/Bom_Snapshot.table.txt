@@ -1,0 +1,54 @@
+﻿
+/****** Object:  Table [dbo].[Stücklisten]    Script Date: 6/22/2021 8:52:24 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[__BSD_Stucklisten_Snapshot](
+	[Nr] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Position] [nvarchar](50) NULL,
+	[Artikel-Nr] [int] NULL,
+	[Artikel-Nr des Bauteils] [int] NULL,
+	[Artikelnummer] [nvarchar](250) NULL,
+	[Bezeichnung des Bauteils] [nvarchar](200) NULL,
+	[Anzahl] [real] NULL,
+	[Variante] [nvarchar](50) NULL,
+	[Vorgang_Nr] [smallint] NULL,
+	[upsize_ts] [timestamp] NULL,
+	[DocumentId] [int] NULL,
+	[BomVersion] [nvarchar](50) NOT NULL,
+	[SnapshotTime] [Datetime] NOT NULL Default GETDATE(),
+	[SnapshotUserId] [int] NOT NULL DEFAULT 0
+) ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[__BSD_StucklistenPositionAlt]    Script Date: 6/22/2021 9:04:39 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[__BSD_StucklistenPositionAlt_Snapshot](
+	[Nr] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Position] [nvarchar](50) NULL,
+	[ParentArtikelNr] [int] NOT NULL,
+	[ArtikelNr] [int] NULL,
+	[ArtikelNummer] [nvarchar](250) NULL,
+	[ArtikelBezeichnung] [nvarchar](200) NULL,
+	[Anzahl] [numeric](18, 3) NULL,
+	[upsize_ts] [timestamp] NULL,
+	[OriginalStucklistenNr] [int] NOT NULL,
+	[LastUpdateTime] [datetime] NULL,
+	[LastUpdateUserId] [int] NULL,
+	[DocumentId] [int] NULL,
+	[BomVersion] [nvarchar](50) NOT NULL,
+	[SnapshotTime] [Datetime] NOT NULL Default GETDATE(),
+	[SnapshotUserId] [int] NOT NULL DEFAULT 0
+ ) ON [PRIMARY]
+GO
+
+

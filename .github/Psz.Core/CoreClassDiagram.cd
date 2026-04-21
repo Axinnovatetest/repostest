@@ -1,0 +1,1958 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Psz.Core.Apps.EDI.Enums.OrderElementEnums" Collapsed="true">
+    <Position X="4.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Enums\OrderElementEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Enums.OrderEnums" Collapsed="true">
+    <Position X="11.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Enums\OrderEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Events.ImportedOrdersNotificationEventArgs" Collapsed="true">
+    <Position X="11.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Events\NewNotificationEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.Customers" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQgAAAAABBAAAAAAAAABAAAAAQAAAAACAAgAGA=</HashCode>
+      <FileName>Apps\EDI\Handlers\Customers\Users\Get.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.Order" Collapsed="true">
+    <Position X="29.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABUAAJALIBCAAAJBAAMAAAACBCEJSkAoACMEAAIIIgY=</HashCode>
+      <FileName>Apps\EDI\Handlers\Order\Change\AcceptGlobal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.OrderElementExtension" Collapsed="true">
+    <Position X="8.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Handlers\Order\Element\SetStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.ValidateHistoryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Handlers\Order\ValidateHistory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.ValidateHistoryElementHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Handlers\Order\ValidateHistoryElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.StorageLocation" Collapsed="true">
+    <Position X="31" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Handlers\StorageLocation\Get.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Handlers.OrderError.OrderError" Collapsed="true">
+    <Position X="15.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAACAAARAAAAAAAAAAAAADAAgAAEAAAACAAA=</HashCode>
+      <FileName>Apps\EDI\Handlers\OrderError\Get.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Helpers.CalculationHelper" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIAAAAAAAAIAAAAEAAAAAAAgAAAAAAACAgAAAA=</HashCode>
+      <FileName>Apps\EDI\Helpers\CalculationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Helpers.ItemHelper" Collapsed="true">
+    <Position X="24" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Helpers\ItemHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Locks" Collapsed="true">
+    <Position X="3" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Locks\Locks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.Users.UserModel" Collapsed="true">
+    <Position X="11.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAABAAAgAEAAAAAAAAQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\Users\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.AddReplacementModel" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAQAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\AddReplacementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.CustomerModel" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgCAQABCAKAAAQAQAEAIAAAAACQIAsAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\CustomerModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.CustomerOrderErrorsCountModel" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAAAAQAAAAAAAAAQAAAEAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\CustomerOrderErrorsCountModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.CustomerOrdersCountModel" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAQAACAKAAAAAQAEAAAAAAACQAAkAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\CustomerOrdersCountModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.CustomerUsersModel" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\CustomerUsersModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.DeleteReplacementModel" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAQAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\DeleteReplacementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.PrimaryUserModel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAAAAAAAAAAQAQAAAABAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\PrimaryUserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.ReplacementModel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\ReplacementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.SetPrimaryUserModel" Collapsed="true">
+    <Position X="11.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\SetPrimaryUserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.SetReplacementsModel" Collapsed="true">
+    <Position X="13.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAE=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\SetReplacementsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Customers.UpdateReplacementModel" Collapsed="true">
+    <Position X="4.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAQAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Customers\UpdateReplacementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.HubMessage.ImportedOrdersNotificationModel" Collapsed="true">
+    <Position X="13.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\HubMessage\HubMessageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Change.CreateItemModel" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAIAAAAAgAAIAACCAAACwAABARAAAAAAgAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Change\CreateItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Change.CreateModel" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQoAABAQKASACBGAhAQAAAEkIAQAgAEVNCAIEgBAAgA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Change\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Change.OrderItemsChangesModel" Collapsed="true">
+    <Position X="20.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Change\OrderItemsChangesModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Element.NotCalculatedElementModel" Collapsed="true">
+    <Position X="18.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAgAIACAAAgCEIAACCACACwAABABAAAAAAoAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Element\CreateElementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Element.NotCalculatedOrderElementsModel" Collapsed="true">
+    <Position X="20.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Element\CreateOrderElementsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Element.DeleteElementModel" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Element\DeleteElementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.Element.OrderElementModel" Collapsed="true">
+    <Position X="10" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MABCAgoCAAJAKKUgjwEoKAKCoDAB4wCBAhAAAACCABA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\Element\OrderElementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ConsigneeModel" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAQCACAABAAhAQAAAAgIAAAAAEUBAAAEAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ConsigneeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.CreateModel" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAABAQKASAABGAhAQQFAEkIAQAiAEUNCAIEgBAAgA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.OrderModel" Collapsed="true">
+    <Position X="24" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgBDABBgRACQAKiArJCQEA2GEMwAAdgBCQAAkCABKiA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\OrderModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.UpdateElementItemModel" Collapsed="true">
+    <Position X="18.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\UpdateElementItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.UpdateElementModel" Collapsed="true">
+    <Position X="20.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAgADACAEABAAoAACCACABwAABAgAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\UpdateElementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelIndustryMessage" Collapsed="true">
+    <Position X="25.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelBusinessDocumentHeader" Collapsed="true">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelBusinessDocumentHeaderInterchangeHeader" Collapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAkAAAAAAAAAEASSAAAAQAAAAAIAAMAAI=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelBusinessDocumentHeaderInterchangeHeaderSender" Collapsed="true">
+    <Position X="22.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelBusinessDocumentHeaderInterchangeHeaderRecipient" Collapsed="true">
+    <Position X="20.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.ErpelBusinessDocumentHeaderInterchangeHeaderDateTime" Collapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAIAAAgAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.Document" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAAAAAABAAAAAAAAAAAAAAgAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeader" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABIACAAAYAAACAAAAAAQAABAiAAQAAAAAAACAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderFreeText" Collapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAABAABCAAAAAACAAAAAAACAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderMessageHeader" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBeginningOfMessage" Collapsed="true">
+    <Position X="8.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAwA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderDates" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAACAAAAgAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderDatesDocumentDate" Collapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAAAAAAAAAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderDatesDate" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAAAAAAAAAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderReferencedDocuments" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderReferencedDocumentsPurchaseOrderReferenceNumber" Collapsed="true">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAgAAAAAAAAAJAAAAAAAAYAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderReferencedDocumentsPurchaseOrderReferenceNumberDate" Collapsed="true">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAAAAAAAAAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntities" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAACAAAAAAAIAAgAAQAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesBuyer" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAEAAAAABAAIKAQAAAAAAAAACIABAGKJggAAAAE=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesBuyerContact" Collapsed="true">
+    <Position X="13.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAgAAAAAAAAIAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesSupplier" Collapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAEAAAAABAAACAAAAAAAAAIAAAABAECIAgAAAAE=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesSupplierCountry" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesConsignee" Collapsed="true">
+    <Position X="15.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAEAAAAgBAAIqAQAABAAACIACIABAGKJggAAAAE=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesConsigneeCountry" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentHeaderBusinessEntitiesConsigneeContact" Collapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAgAAAAAAAAIAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetails" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAIAAgAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItem" Collapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASiAACCAsEAAIAABAAAIAAAAAAAWwgABARZAAAAAoAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemFreeText" Collapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAABAABCAAAAAACAAAAAAACAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemReferences" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemReferencesOrderReference" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAIAgAAAAEAAAAJAAAAAAAAYAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemReferencesOrderReferenceDate" Collapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAAAAAAAAAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemOrdersScheduleLine" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAAAAAAABAAAAAAAAAAAAAAAAAAACAAgAAAg=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsOrdersLineItemOrdersScheduleLineScheduledQuantityDate" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAAAAAAAAAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsDispatchData" Collapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsDispatchDataConsignmentPackagingSequence" Collapsed="true">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentDetailsDispatchDataConsignmentPackagingSequenceDeliveryLineItems" Collapsed="true">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAABAAACAAAAAiAAQAAQEAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentFooter" Collapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentFooterInvoiceFooter" Collapsed="true">
+    <Position X="3" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.Order.ImportedFileModel.DocumentFooterInvoiceFooterInvoiceTotals" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAgAABgAAA=</HashCode>
+      <FileName>Apps\EDI\Models\Order\ImportedFileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderError.OrderErrorModel" Collapsed="true">
+    <Position X="17" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAIAAACAAQCAgAAAAAAAAAgAAAAAQABAkAAAIAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderError\OrderErrorModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.CreateModel" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Sender" Collapsed="true">
+    <Position X="10" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Recipient" Collapsed="true">
+    <Position X="18.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.DateTime" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAQA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.InterchangeHeader" Collapsed="true">
+    <Position X="17" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAQCAAAAQAAAAAAAAMAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ErpelBusinessDocumentHeader" Collapsed="true">
+    <Position X="13.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.MessageHeader" Collapsed="true">
+    <Position X="17" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.BeginningOfMessage" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.DocumentDate" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Date" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Dates" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.PurchaseOrderReferenceNumber" Collapsed="true">
+    <Position X="13.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAIAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ReferencedDocument" Collapsed="true">
+    <Position X="20.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAIAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ReferencedDocuments" Collapsed="true">
+    <Position X="22.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Contact" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Buyer" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAAAAAAAICAAAAAAAAAIAAIAAAEKBgAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Country" Collapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Supplier" Collapsed="true">
+    <Position X="8.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAAAAAAAACAAAAAAAAAIAAAAAAECAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Consignee" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAAAgAAAICAAAAAAAACIAAIAAAEKBgAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.BusinessEntities" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAgAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Header" Collapsed="true">
+    <Position X="6.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAYAAAAAAAAAAAAABAgAAAAAAAAAACAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.FreeText" Collapsed="true">
+    <Position X="4.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAABAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.OrderReference" Collapsed="true">
+    <Position X="25.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAIAAAAAAAAAAABAAAAAAAAIAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.References" Collapsed="true">
+    <Position X="24" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ScheduledQuantityDate" Collapsed="true">
+    <Position X="4.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.OrdersScheduleLine" Collapsed="true">
+    <Position X="4.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.AllowancesAndCharges" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.OrdersLineItem" Collapsed="true">
+    <Position X="3" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQgEAAAAAAgCAIAAAAAAASwgABABAAAAAAoAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.OrdersData" Collapsed="true">
+    <Position X="31" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.DeliveryLineItems" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAiAAQAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ConsignmentPackagingSequence" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.DispatchData" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Details" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.InvoiceTotals" Collapsed="true">
+    <Position X="20.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAgAABAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.InvoiceFooter" Collapsed="true">
+    <Position X="18.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Footer" Collapsed="true">
+    <Position X="31" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.Document" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Models.OrderResponse.ErpelIndustryMessage" Collapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAIAAABAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Models\OrderResponse\ResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Tools.Converts" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Apps\EDI\Tools\Converts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Tools.FileWatcher" Collapsed="true">
+    <Position X="29.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAEAAIAAAAAABAAAAkAAAAAAAAAAQEA=</HashCode>
+      <FileName>Apps\EDI\Tools\FileWatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Tools.OrderChangeFileDeserializer" Collapsed="true">
+    <Position X="3" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBAAiIAAAAIAAAAAAAABAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Apps\EDI\Tools\OrderChangeFileDeserializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Tools.OportedOrdersHandler" Collapsed="true">
+    <Position X="27.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBAAiIAAAAIAAAAAAAAAAAAIAAAAAAIAAAAA=</HashCode>
+      <FileName>Apps\EDI\Tools\OrderFileDeserializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.EDI.Tools.XMLFile" Collapsed="true">
+    <Position X="4.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAgAAABAAAAAAAAAAAACEAAAAAAAA=</HashCode>
+      <FileName>Apps\EDI\Tools\XMLFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Inventory.Handlers.StorageLocation" Collapsed="true">
+    <Position X="3" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Inventory\Handlers\StorageLocation\Get.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Inventory.Models.StorageLocation.StorageLocationModel" Collapsed="true">
+    <Position X="4.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Inventory\Models\StorageLocation\StorageLocationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Main.Handlers.Security.TokensManager" Collapsed="true">
+    <Position X="11.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAFAAAAAAAAAAAAAAgAAACCAAEAABAAAAAAA=</HashCode>
+      <FileName>Apps\Main\Handlers\Security\TokensManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Main.Handlers.Users" Collapsed="true">
+    <Position X="18.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Main\Handlers\Users\CheckUserCredentials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Main.Models.UserModel" Collapsed="true">
+    <Position X="13.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAQAAAAQAAAAAAAAAAIAAgAAAAAA=</HashCode>
+      <FileName>Apps\Main\Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Enums.OrderElementEnums" Collapsed="true">
+    <Position X="6.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Enums\OrderElementEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Enums.OrderEnums" Collapsed="true">
+    <Position X="13.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Enums\OrderEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Analyse" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Analyse\CalculateTurnover.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Order" Collapsed="true">
+    <Position X="31" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAEAgAIAFQAABAAAEgAkDAACEEKUAJAAEBAAAgAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Order\Item\CalculateItemsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.GetAllHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\OrderReport\GetAllHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.GetSingleHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\OrderReport\GetSingleHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.UpdateComapnyLogoHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\OrderReport\UpdateCompanyLogoHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.UpdateHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\OrderReport\UpdateHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.UpdateImportLogoHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\OrderReport\UpdateImportLogoHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.GetLanguagesHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\GetLanguagesHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.GetOrderTypesHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\GetOrderTypesHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.CustomerService.GetReportHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAiAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\CustomerService\GetReportHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.DeliveryNote.CreateHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAABAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\DeliveryNote\CreateHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.DeliveryNote.GetAllHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\DeliveryNote\GetAllHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.DeliveryNote.GetHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\DeliveryNote\GetHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.DeliveryNote.GetItemsHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\DeliveryNote\GetItemsHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.DeliveryNote.ValideHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABASAAAAQAAABAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\DeliveryNote\ValidateHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.Reporting.GenerateReportHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAACAIgBCAIAAAAAAAAAACIIAAAAAAIAAAIA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\Reporting\GenerateReportHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.CancelCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\CancelCommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.GetManufacturingFacilitiesHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\GetManufacturingFacilitiesHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.GetOriginalAritclesHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\GetOriginalAritclesHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.GetPositionManufacturingFacilityHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAAAAAAAAAIIAAAAAAgAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\GetPositionManufacturingFacilityHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Production.ValidateCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBACAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Production\ValidateCommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Handlers.Reporting.CreateHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Handlers\Reporting\CreateHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Helpers.CalculationHelper" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIAAAAAAAAIAAAAEAAAAAAAgAAAAAAACAgAAAA=</HashCode>
+      <FileName>Apps\Purchase\Helpers\CalculationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Helpers.ItemHelper" Collapsed="true">
+    <Position X="22.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Helpers\ItemHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Locks" Collapsed="true">
+    <Position X="29.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAEAACAAAAAAQAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Locks\Locks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Analyse.CalculateTurnoverRequestModel" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Analyse\CalculateTurnoverRequestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Analyse.CalculateTurnoverResponseModel" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAAAQAAAQAAAAAAgAAAAAEIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Analyse\CalculateTurnoverResponseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.OrderReport.CreateModel" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>7P9HgBYVTQBjQPsjIigEkPz/EgAAAkB/gADU/08UCAQ=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\OrderReport\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.OrderReport.LogoImageModel" Collapsed="true">
+    <Position X="10" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAQAAIAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\OrderReport\LogoImageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.OrderReport.RequestModel" Collapsed="true">
+    <Position X="31" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\OrderReport\RequestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.LanguageModel" Collapsed="true">
+    <Position X="27.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\LanguageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.OrderTypeModel" Collapsed="true">
+    <Position X="6.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\OrderTypeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.CustomerService.OrderReportRequestModel" Collapsed="true">
+    <Position X="27.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\CustomerService\ReportRequestModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.DeliveryNote.CreateModel" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\DeliveryNote\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.DeliveryNote.CreateResponseModel" Collapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAACQAAAAAAAAAAIACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\DeliveryNote\CreateResponseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.DeliveryNote.GetModel" Collapsed="true">
+    <Position X="18.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAIACCAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\DeliveryNote\GetModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.DeliveryNote.ItemModel" Collapsed="true">
+    <Position X="25.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAUAAAAAAAAAIAEEAQhAAAAACAIAAAAAACAAAAABA=</HashCode>
+      <FileName>Apps\Purchase\Models\DeliveryNote\ItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.DeliveryNote.ValidateModel" Collapsed="true">
+    <Position X="27.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAACQAAAEAAAAABIACAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\DeliveryNote\ValidateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.Element.CreateItemModel" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAIAAAAAgAAAAACCACACwAABABAAAAAAggA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\Item\CreateItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.Element.NotCalculatedOrderElementsModel" Collapsed="true">
+    <Position X="22.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\Item\CreateOrderItemsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.Element.DeleteItemModel" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\Item\DeleteItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.Element.OrderItemModel" Collapsed="true">
+    <Position X="18.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MABCAgoCAAJAIKUgjwAoKAKCoCABwwABAhAAAACCAhA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\Item\OrderItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.Element.QuickCreateItemModel" Collapsed="true">
+    <Position X="15.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAACAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\Item\QuickCreateItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.ChangeCustomerModel" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\ChangeCustomerModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.ConsigneeModel" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAQCACAABAAhAQAAAAgIAAAAAEUBAAAEAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\ConsigneeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.ConvertToDNModel" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAAAAAAABAAABABAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\ConvertToDNModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.CreateModel" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAABAQKASAABGAhAQQBAEmIAQAgAEUNCAIEgBAAgA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.OrderModel" Collapsed="true">
+    <Position X="22.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MgBDABBgRACQAKiArJCQEA2GEMwAAdgBCQAAkCCBKiA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\OrderModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.QuickCreateModel" Collapsed="true">
+    <Position X="17" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\QuickCreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.SearchModel" Collapsed="true">
+    <Position X="6.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAAAAgAAQAAAAAEAAABAAQAAEAAAAAAQAAAEAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\SearchModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.SearchResponseModel" Collapsed="true">
+    <Position X="8.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAQAAAAAAAAABAAAAAAEAAAAAIAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\SearchResponseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.UpdateElementItemModel" Collapsed="true">
+    <Position X="17" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\UpdateElementItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.UpdateItemModel" Collapsed="true">
+    <Position X="27.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAACAAAAgADAAAEABAAoAACCAAABwAABBgAAAAAAAgA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\UpdateElementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Order.UpdateGlobalDataModel" Collapsed="true">
+    <Position X="22.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABCAAAAQACQACAALJCAAAQCEAQAAAABCAAAgAABAiA=</HashCode>
+      <FileName>Apps\Purchase\Models\Order\UpdateGlobalDataModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Production.Reporting.StandardReportModel" Collapsed="true">
+    <Position X="27.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Apps\Purchase\Models\Production\Reporting\StandardReportModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Production.Reporting.TechnicalReportModel" Collapsed="true">
+    <Position X="10" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Apps\Purchase\Models\Production\Reporting\TechnicalReportModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Production.ManufacturingFacilityModel" Collapsed="true">
+    <Position X="13.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Production\ManufacturingFacilityModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Production.OriginalArticleModel" Collapsed="true">
+    <Position X="8.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAgAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Production\OriginalArticleModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Purchase.Models.Production.ValidateCommandModel" Collapsed="true">
+    <Position X="22.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAAUAEgAAAAAAAAAAAAACAAAABAAAgAAAgAAA=</HashCode>
+      <FileName>Apps\Purchase\Models\Production\ValidateCommandModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Handlers.AccessProfiles" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAgAFAAAAAACAAAAEAAEAAAABAAACAAAA=</HashCode>
+      <FileName>Apps\Settings\Handlers\AccessProfiles\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Handlers.Users" Collapsed="true">
+    <Position X="17" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACAEAgABAAAAAAAAAAAAABEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Handlers\Users\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Locks" Collapsed="true">
+    <Position X="4.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Locks\Locks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.AccessProfileModel" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAQAACAQAAAAgQAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\AccessProfileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.AccessTreeBranchModel" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\AccessTreeBranchModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.CreationModel" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAQAAAAQAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.PurchaseAccessModel" Collapsed="true">
+    <Position X="11.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAAAhAgAAEAJEIAAAAAAAAAEBAAAAQAAAAoAAAI=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\EdiAccessModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.SettingsAccessModel" Collapsed="true">
+    <Position X="15.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACgAACAEAAAAEIACACAAAAIAAAAAAQAAAAAAAAY=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\SettingAccessModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.UpdateModel" Collapsed="true">
+    <Position X="31" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAQAAAAQAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\UpdateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.AccessProfiles.WorkPlanAccessModel" Collapsed="true">
+    <Position X="10" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAQAAJDECEECEUJAAJRAAAAIwhABMASAIUgQAAUA=</HashCode>
+      <FileName>Apps\Settings\Models\AccessProfiles\WorkPlanAccessModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.Users.CreateModel" Collapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\Settings\Models\Users\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.Users.CreateWPLModel" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAARAAAQQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\Settings\Models\Users\CreateWPLModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.Users.UpdateModel" Collapsed="true">
+    <Position X="29.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\Settings\Models\Users\UpdateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.Models.Users.UserModel" Collapsed="true">
+    <Position X="10" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\Settings\Models\Users\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.Settings.StaticData.AccessRightsCodes" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\Settings\StaticData\AccessRightsCodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Enums.LogEnums" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Enums\LogEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Enums.WorkStationMachineEnums" Collapsed="true">
+    <Position X="29.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Enums\WorkStationMachineEnums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.Article.Article" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\Article\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.Country.Country" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\Country\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.Department" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\Department\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.Helpers" Collapsed="true">
+    <Position X="8.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\Department\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.StandardOperation" Collapsed="true">
+    <Position X="20.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\StandardOperation\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.StandardOperationDescription" Collapsed="true">
+    <Position X="22.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\StandardOperationDescription\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.User" Collapsed="true">
+    <Position X="6.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\User\Get.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.WorkSchedule" Collapsed="true">
+    <Position X="15.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQBgAABAAAEAQAAAAAAAAAAAEACUCAAAAAAAAAAQAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\WorkSchedule\ExportToExcel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.Hall.Hall" Collapsed="true">
+    <Position X="29.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\Hall\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.WorkArea.WorkArea" Collapsed="true">
+    <Position X="3" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\WorkArea\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.WorkPlan.WorkPlan" Collapsed="true">
+    <Position X="8.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\WorkPlan\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Handlers.WorkStationMachine.WorkStationMachine" Collapsed="true">
+    <Position X="27.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Handlers\WorkStationMachine\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Helpers.DeleteCheck" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAAABAAAAAAABAAARAAAAAAAAADAAAAAAAAAAAACA=</HashCode>
+      <FileName>Apps\WorkPlan\Helpers\DeleteCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Helpers.User" Collapsed="true">
+    <Position X="8.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAAAASAAAgFAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Helpers\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Helpers.WorkSchedule" Collapsed="true">
+    <Position X="13.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Helpers\WorkSchedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Article.ArticleModel" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAACAAAAAAAAAAyAIAAAAAAAAAACgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Article\ArticleModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Article.ArticleViewModel" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAACAACAAAAAAAAAAwAIAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Article\ArticleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Article.ArtikelModel" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>fBACxzo/KPAGCCVmpAbhOCgSSUAkCwOCAAnETIhcGKw=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Article\ArtikelModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Country.CountryViewModel" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAgAAAAQAIAAIAgAAAAAAgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Country\CountryViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Country.CountryModel" Collapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAQARAIAAgAgAAAAACgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Country\CoutryModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Department.DepartementViewModelXXX" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAACAAAAAAAAgAAQAQAIAAIAAAAAAAEgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Department\DepartementViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Department.CreateModel" Collapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAACAAAAAAAAkAAQARAIAAoAAAAAAAGgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Department\DepartmentModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Hall.HallModel" Collapsed="true">
+    <Position X="31" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAQARAIAgwAAAAAAACgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Hall\HallModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Hall.HallViewModel" Collapsed="true">
+    <Position X="3" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAACAAAAAAAAgAAAAQAIAgYAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\Hall\HallViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.StandardOperation.CreateModel" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAICAAAAAAAAkAAQAQAIAAYAAAAAAQEgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\StandardOperation\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.StandardOperation.StandardOperationModel" Collapsed="true">
+    <Position X="25.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAAAEAAQARAIAAwAAAAAAQGgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\StandardOperation\StandardOperationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.StandardOperation.StdOperationDescriptionViewModel" Collapsed="true">
+    <Position X="29.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAICAAgAAAAAgAAQAAAYAAIAAAAAAAEgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\StandardOperation\StandardOperationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.StandardOperationDescription.CreateModel" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAgAAAAAkAAQABAYAAoAAAAAAAGgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\StandardOperationDetails\CreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.StandardOperationDescription.StandardOperationDescriptionModel" Collapsed="true">
+    <Position X="24" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAgAAAAAEAAQABAYAAgAAAAAAAGgAAAAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\StandardOperationDetails\StandardOperationDetailsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.User.UpdatePermissionsModel" Collapsed="true">
+    <Position X="3" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\User\UpdatePermissionsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.User.UserModel" Collapsed="true">
+    <Position X="15.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAAAAARAAAQQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\User\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkArea.WorkAreaModel" Collapsed="true">
+    <Position X="4.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAAAAAAEAAQARAIAAwAAAAAAACgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkArea\WorkAreaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkArea.WorkAreaViewModel" Collapsed="true">
+    <Position X="6.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBACAAAACAAAAAAAAgAAAAQAIAgYAAAAAQAAgAAAgAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkArea\WorkAreaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkPlan.WorkPlanModel" Collapsed="true">
+    <Position X="11.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAAAAAEEAAAARAIAAAAAAAgAAAgAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkPlan\WorkPlanModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkPlan.WorkScheduleViewModel" Collapsed="true">
+    <Position X="25.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAACAACAAAAEAAAAAwAIAAAAAAAgAAAgAAAgAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkPlan\WorkScheduleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkSchedule.ImportModel" Collapsed="true">
+    <Position X="15.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\ImportModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkScheduleDetails.WorkScheduleDetailsOpNumber" Collapsed="true">
+    <Position X="18.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\WorkScheduleDetailsOpNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkScheduleDetails.WorkScheduleDetailsOpNumbers" Collapsed="true">
+    <Position X="20.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\WorkScheduleDetailsOpNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkScheduleDetails.WorkScheduleDetailsViewModel" Collapsed="true">
+    <Position X="22.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAACAAAEAAgAAEABAEgQiBCAQABQBGAABgQAAAAQAgA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\WorkScheduleDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkScheduleDetails.WorkscheduleOrder" Collapsed="true">
+    <Position X="24" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\WorkscheduleOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkScheduleDetails.WorkScheduleDetailOrder" Collapsed="true">
+    <Position X="17" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkSchedule\WorkscheduleOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkStationMachine.WorkStationMachineModel" Collapsed="true">
+    <Position X="31" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAAAAAAEAAQARAIAAQAAAAAQAChAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkStationMachine\WorkStationMachineModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.WorkStationMachine.WorkStationMachineViewModel" Collapsed="true">
+    <Position X="3" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAACAAAACAAAAAAAAgAAQAQAIAAZBBAAAQAAgAAAgAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\WorkStationMachine\WorkStationMachineViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.Log.LogViewModel" Collapsed="true">
+    <Position X="11.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAQ=</HashCode>
+      <FileName>Apps\WorkPlan\Models\LogViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Apps.WorkPlan.Models.OrderRepos" Collapsed="true">
+    <Position X="29.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAASAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Apps\WorkPlan\Models\OrderRepos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Exceptions.NotFoundException" Collapsed="true">
+    <Position X="24" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Exceptions.UnauthorizedException" Collapsed="true">
+    <Position X="13.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\UnauthorizedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.WebServices.ConvertHelper" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAgAAAEIAAAAAAAAAAAAIAAAIggAAAQBAA=</HashCode>
+      <FileName>Helpers\WebServices\ConvertHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.WebServices.RequestHelper" Collapsed="true">
+    <Position X="29.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Helpers\WebServices\RequestHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.DateTimeHelper" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEAAAAAAIAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DateTimeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.SMTP" Collapsed="true">
+    <Position X="17" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAAAAAAAAAIAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EmailHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.EmailModel" Collapsed="true">
+    <Position X="8.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAIABACAAAAgAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Helpers\EmailHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.SmtpServerSettings" Collapsed="true">
+    <Position X="18.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAEAQAAAAAACCgACAACAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EmailHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.EnumerationsHelper" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Helpers\EnumerationsHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.EnumsHelper" Collapsed="true">
+    <Position X="11.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EnumsHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.ImageFileHelper" Collapsed="true">
+    <Position X="10" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ImageFileHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.MathHelper" Collapsed="true">
+    <Position X="15.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIACAAAAEAEAAAAAAgAAAAAIAAAAAAAAAAIAA=</HashCode>
+      <FileName>Helpers\MathHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.ReferencesHelper" Collapsed="true">
+    <Position X="25.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ReferencesHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.RegexHelpers" Collapsed="true">
+    <Position X="27.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Helpers\RegexHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Helpers.StringHelpers" Collapsed="true">
+    <Position X="6.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAACAAACAAAACAA=</HashCode>
+      <FileName>Helpers\StringHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Business.Helpers.FilesHelper" Collapsed="true">
+    <Position X="27.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\FilesHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Locks" Collapsed="true">
+    <Position X="31" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Locks\Locks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Program" Collapsed="true">
+    <Position X="10" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgIKAYAAAIQAAIgCAABAAGAAAAAAAQAAQAAAAAAIAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Models.AnalyseTimePointModel" Collapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBAIAAAAAAAAAAAAAAAEAAAAEAAAAAICAAAA=</HashCode>
+      <FileName>Models\AnalyseTimePointModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Models.ResponseModel&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAgAggQAAAAABAAAAAgAEAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\ResponseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Models.ValueTextModel" Collapsed="true">
+    <Position X="31" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>Models\ValueTextModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Tools.ActiveDirectoryManager" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQggBAAAAAKAACAAAAAAAAAAAAAAAAAEAIAAAAAAAA=</HashCode>
+      <FileName>Tools\ActiveDirectoryManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Tools.BillCalculator" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\BillCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Tools.Formatter" Collapsed="true">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\Formatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Tools.Hasher" Collapsed="true">
+    <Position X="4.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Tools\Hasher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Infrastructure.Services.Logging.Logger" Collapsed="true">
+    <Position X="8.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Tools\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Psz.Core.Tools.Notifier" Collapsed="true">
+    <Position X="25.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\Notifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
