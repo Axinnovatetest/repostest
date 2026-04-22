@@ -1,0 +1,3 @@
+﻿alter table [__FNC_AccessProfile]
+add [Statistics] bit null default 0,
+[StatisticsViewAll] bit null default 0

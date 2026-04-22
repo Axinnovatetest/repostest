@@ -1,0 +1,169 @@
+﻿@model IEnumerable<Psz.Core.CRP.Reporting.Models.FAStapelFinalReportModel>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @@page {
+            margin-top: 20;
+            margin-bottom: 0;
+            margin-left: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .table-cell {
+            color: black;
+            padding: 5px 5px;
+            text-align: left;
+            font-size:10px;
+        }
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .no-wrap
+        {
+            white-space: nowrap !important;
+        }
+        .left{
+            text-align: left !important;
+        }
+        .center{
+            text-align: center !important;
+        }
+        .left {
+            text-align: left !important;
+        }
+        .right{
+            text-align: right !important;
+        }
+        .big{
+            font-size: 18px !important;
+        }
+        .medium{
+            font-size: 14px !important;
+        }
+
+        .small {
+            font-size: 10px !important;
+        }
+        .blue{
+            color: #00006C;
+        }
+        .bold{
+            font-weight: bold !important;
+        }
+        .normal{
+            font-weight: normal !important;
+        }
+        .gray{
+            background-color:gainsboro
+        }
+        .border-bottom{
+            border-bottom: 1px solid black !important;
+        }
+        .max-80
+        {
+            max-width: 150px !important;
+        }
+        .vertival-top{
+            vertical-align: top !important;
+        }
+
+        .vertival-middle {
+            vertical-align: middle !important;
+        }
+
+        .blue-cell{
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            font-size:10px;
+        }
+        .bordered{
+            border: 1px solid black;
+        }
+        .bottom-dotted{
+            border-bottom: 1px dotted black !important;
+        }
+        .rectangle{
+            border: 1px solid black;
+            width: 200px;
+            height: 20px;
+            margin:auto;
+        }
+        .square{
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+        .padding-10{
+            padding:10px;
+        }
+        .underline{
+            text-decoration: underline !important;
+        }
+        .green{
+            color: green !important;
+        }
+        .red {
+            color: red !important;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    <table style="width:100%">
+        <tr>
+            <th class="left"><img src="@Model.Logo" style="width:150px" /></th>
+        </tr>
+        <tr>
+            <th class="left">
+                <div class="gray small center" style="width:70%;margin:auto">PSZ electronic GmbH - Im Gstaudah 6 - 92684 Vohenstrauß</div>
+            </th>
+        </tr>
+        <tr>
+            <th class="small blue left bold underline">Übersicht Fertigungsdruckstapel</th>
+        </tr>
+        <tr>
+            <th colspan="2" class="small normal underline right">Druckdatum @(DateTime.Now)</th>
+        </tr>
+    </table>
+    <br />
+    <table style="width:100%">
+        <tr>
+            <th class="blue-cell left small bold">Fertigunsnummer</th>
+            <th class="blue-cell left small bold">Artikelnummer</th>
+            <th class="blue-cell left small bold">Termin bestätigt</th>
+        </tr>
+        @if(Model!=null && Model.Count()>0)
+        {
+            foreach(var item in Model)
+            {
+                <tr>
+                    <td class="small normal left">@item.Fertigunsnummer</td>
+                    <td class="small normal left">@item.Artikelnummer</td>
+                    <td class="small normal left">@item.Termin_bestatigt</td>
+                </tr>
+            }
+        }
+    </table>
+    <pre></pre>
+</body>
+</html>

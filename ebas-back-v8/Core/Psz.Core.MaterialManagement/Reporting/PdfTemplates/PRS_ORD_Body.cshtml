@@ -1,0 +1,312 @@
+﻿@model Psz.Core.MaterialManagement.Reporting.Models.OrderModel
+@using Psz.Core.MaterialManagement.Reporting.Helpers
+@{
+    var bestellung= Model.Bestellung.Split("\n").ToList();
+}
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 70;
+            margin-bottom: 180;
+            margin-left: 70;
+            margin-right: 70;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .invoiceHeaders {
+            vertical-align: top;
+            border: 0px;
+            /*background-color: lightgray;*/
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /*text-align:left;*/
+        }
+
+        .bgGrey {
+            background-color: lightgray;
+        }
+
+        .borderTop {
+            border-top: 1px solid #333;
+        }
+
+        .borderBottom {
+            border-bottom: 1px solid #999;
+        }
+
+        table tr td th {
+            page-break-inside: avoid;
+        }
+
+        table td, table td * {
+            vertical-align: top;
+            border-width: 0px;
+        }
+
+        .hr {
+            height: 0.5px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .hr-2 {
+            height: 1px;
+            border-width: 0;
+            color: black;
+            background-color: black;
+        }
+
+        .firstItemPadding {
+            padding-left: 30px;
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+
+        .textJustified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        td.smCell:first-child {
+            width: 4%;
+        }
+
+        td.mdCell, td.mdCell:first-child {
+            width: 14%;
+        }
+
+        table.pr-2 th, table.pr-2 td {
+            padding: 0 5px;
+        }
+
+        .pt-2 {
+            padding-top: 5px !important;
+        }
+        .right{
+            text-align: right;
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    <div style="width:100%;text-align:right;">
+        <img style='height:70px;border:0px solid red;' src="@Model._Logo">
+    </div>
+    <div style="margin-top:0px;">
+        <span class='invoiceHeaders' style="font-size:10px; width:100%;display:block;;">PSZ electronic GmbH • Im Gstaudach 6 • 92648 Vohenstrauß</span>
+        <hr style='margin-top:0;' class="hr">
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <table>
+                        <tr><td class="nobr">@Model.Anrede</td></tr>
+                        <tr><td class="nobr">@Model.Vorname_NameFirma</td></tr>
+                        <tr><td class="nobr">@Model.Strasse_Postfach</td></tr>
+                        <tr><td class="nobr">@Model.Land_PLZ_Ort</td></tr>
+                        <tr><td class="nobr">Tel.: @Model.Telefon</td></tr>
+                        <tr><td class="nobr">Fax: @Model.Fax</td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td align='right' class="nobr mdCell right">@Model.Name</td><td>- Kontakt</td></tr>
+                        <tr><td align='right' class="nobr mdCell right">@Model.Telefonnummer</td><td>- Telefon</td></tr>
+                        <tr><td align='right' class="nobr mdCell right">@Model.Faxnummer</td><td>- Fax</td></tr>
+                        <tr><td align='right' class="nobr mdCell right">@Model.Email</td><td>- Email</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr class="hr">
+    <table>
+        <tr>
+            <td colspan=2><b>
+                @foreach (var line in bestellung)
+                {
+                    @line <br />
+                }
+            </b>
+            <td>
+            <td>
+            <td>
+        </tr>
+    </table>
+
+    <table style="font-size:12px">
+        <tr>
+            <td colspan=2><h2 class='nobr'>@Model.Typ</h2>
+            <td>
+            <td colspan=2 align='center' style="vertical-align:middle"><h4 style="padding:6px 60px; border:2px solid #9e9e9e;" class='nobr'>@Model.Lager<h4>
+            <td>
+        </tr>
+        <tr><td colspan=8 align='center' style="padding-bottom:10px;"><b><u>Komplette Bestellnummer muß auf Auftragsbestätigung / Lieferschein / Rechnung immer angegeben werden!</u></b></td></tr>
+        <tr>
+            <td align='right' class="nobr">Ihr Zeichen/Customer # :
+            <td>
+            <td>@Model.Ihr_Zeichen
+            <td>
+            <td align='right' class="nobr">Versandart/Delivery Term :
+            <td>
+            <td>@Model.Versandart
+            <td>
+        </tr>
+        <tr>
+            <td align='right' class="nobr">Unser Zeichen/Supplier # :
+            <td>
+            <td>@Model.Unser_Zeichen
+            <td>
+            <td align='right' class="nobr">Zahlungsweise/Payment :
+            <td>
+            <td>@Model.Zahlungsweise
+            <td>
+        </tr>
+        <tr>
+            <td align='right' class="nobr">Datum/Date :
+            <td>
+            <td>@Model.Datum
+            <td>
+            <td align='right' class="nobr">Zahlungsziel/Payment Term :
+            <td>
+            <td>@Model.Konditionen
+            <td>
+        </tr>
+    </table>
+    <p style="margin-top:15px;margin-bottom:8px;"><b>@Model.Freitext</b></p>
+    <p style="margin-top:15px;margin-bottom:8px;"><b>Wir erwarten für folgende Positionen Ihre verbindliche Auftragsbestätigung mit Angabe der Zolltarifnummer und des Ursprungslandes je Position:</b></p>
+    <table class='pr-2' style='width: 100%;font-size:12px;table-layout:fixe-d;'>
+        <tr><td><hr class='hr-2'></td></tr>
+    </table>
+    <div>
+        <table class='pr-2' style='width: 100%;font-size:12px;table-layout:fixe-d;'>
+            <tr>
+                <td class='smCell'>Pos<br /></td>
+                <td>Artikelnummer<br />Part Number</td>
+                <td>Bezeichnung<br />Description</td>
+                <td>Anzahl<br />Quantity</td>
+                <td>Einheit<br />UOM</td>
+                <td>Preiseinheit<br />Price UOM</td>
+                <td class='smCell'>UST<br />VAT</td>
+                <td>Einzelpreis<br />Price/UOM</td>
+                <td align='right'>Gesamtpreis<br />Total</td>
+            </tr>
+            <tr><td colspan='9'><hr class='hr-2'></td></tr>
+            @foreach (var itemData in Model.PositionItems)
+            {
+                <tr>
+                    <td class='smCell'>@itemData.Position</td>
+                    <td>@itemData.Artikelnummer</td>
+                    <td>@itemData.Bezeichnung_1</td>
+                    <td>@FormatHelper.FormatDecimal(itemData.StartAnzahl,2)</td>
+                    <td>@itemData.Einheit</td>
+                    <td>@FormatHelper.FormatDecimal(itemData.Preiseinheit,2) @itemData.Symbol</td>
+                    <td class='smCell'>@FormatHelper.FormatDecimal(itemData.Umsatzsteuer,2)%</td>
+                    <td>@FormatHelper.FormatDecimal(itemData.Einzelpreis,3) </td>
+                    <td align='right' style='width:100%'>@FormatHelper.FormatDecimal((itemData.StartAnzahl * (decimal.TryParse(itemData.Einzelpreis, out var y) ? y : 0)),3) @itemData.Symbol</td>
+                </tr>
+                <tr>
+                    <td class='smCell'></td>
+                    <td></td>
+                 <td colspan='7'>Ihre Artikel-Nr/Your Part Number: @itemData.Bestellnummer
+					<br/>Liefertermin/Due Date: 
+                    <b>@itemData.LT</b> ins Lager: @itemData.Lagerort_id
+                    @if(string.IsNullOrWhiteSpace(Model.RahmenBezug)){}
+                    else{
+                        <br/><p>Rahmen Nr.: </p>@Model.RahmenBezug
+                        }
+                        @if (itemData.StartAnzahl == itemData.Anzahl){}
+                        else{
+                            <br /><p>Geliefert/Delivered:</p>  @FormatHelper.FormatDecimal((itemData.StartAnzahl - itemData.Anzahl), 2)
+                        }
+					<b>
+                     @if(itemData.MHD){<br/>}@(itemData.MHD ?$"Mindesthaltbarkeitsdatum beachten: {itemData.Zeitraum_MHD} Tage ab Lieferdatum" : "") 
+                     @if(itemData.COF_Pflichtig){<br/>}@(itemData.COF_Pflichtig ? $"Bitte CoC-Bestätigung bei Lieferung (Werksbescheinigung 2.1)" : "") 
+                     @if(itemData.EMPB){<br/>}@(itemData.EMPB ? $"Bitte EMPB - Vermessung nach Zeichnung den Teilen beilegen und an die Technik senden" : "") 
+                     @if(itemData.ESD_Schutz){<br/>}@(itemData.ESD_Schutz ? $"Bitte liefern Sie ESD gefährdete Bauteile normgerecht verpackt nach DIN EN 61340-5-1 / EN 61340-5-3 an." : "") 
+                     @if(!string.IsNullOrWhiteSpace(itemData.RahmenBezug)){<br/>}@(!string.IsNullOrWhiteSpace(itemData.RahmenBezug) ? $"Rahmennummer :{itemData.RahmenBezug}" : "")
+                    </b>
+                 </td>
+                 </tr>
+                    <tr>
+                        <td colspan='9'><hr class='hr'></td>
+                    </tr>
+            }
+            @{
+                    var sum = Model.PositionItems?.Sum(x => x.TotalPrice) ?? 0;
+                    var ust = Model.PositionItems?.Sum(x => x.TotalPrice * (decimal.TryParse(x.Umsatzsteuer, out var _u) ? _u : 0)) ?? 0;
+
+                    <tr>
+                       <td colspan='7'></td>
+					   <td align='right'>Summe/Subtotal:</td>
+                       <td align='right' style='width:100%'>@FormatHelper.FormatDecimal(sum,3) @Model.Symbol</td>
+					</tr>
+					<tr>
+                        <td colspan='7'></td>
+					    <td align='right'>Ust/VAT:</td>
+                        <td align='right' style='width:100%'>@FormatHelper.FormatDecimal(ust,3) @Model.Symbol</td>
+					</tr>
+					<tr>
+                        <td colspan='8'></td><td class='hr'></td>
+                    </tr>
+					<tr>
+                        <td colspan='7'></td>
+					    <td align='right' class='pt-2'><b>Gesamtpreis/Total:</b></td>
+                        <td align='right' class='pt-2' style='width:100%'>@FormatHelper.FormatDecimal((sum + ust),3) @Model.Symbol</td>
+					</tr>
+					<tr>
+                        <td colspan='8'></td><td class='hr'></td>
+                    </tr>
+					<tr>
+                        <td colspan='8'></td><td class='hr'></td>
+                    </tr>
+            }
+        </table>
+    </div>
+    <br />
+    <div style="font-size:12px"><b>@(Model.IsKanban == true?"Bitte liefern Sie ESD gefährdete Bauteile normgerecht verpackt nach DIN EN 61340-5-1 / EN 61340-5-3 an.":"")</b></div><br />
+    <table>
+        <tr>
+            <td align='right'>Wir bitten um eine Auftragsbestätigung bis:<br />Please send us your Order Acknowledgement latest till:</td>
+            <td style="vertical-align:middle">&nbsp;&nbsp;<b>@Model.Bestellbestatigung_erbeten_bis</b></td>
+        </tr>
+    </table>
+    <br />
+    <div style="font-size:12px">@(string.IsNullOrWhiteSpace(Model.AbEmailAddress) ? "" : $"Wir bitten Sie Ihre Auftragsbestätigung an die <b>{Model.AbEmailAddress}</b> zu senden.<br/>Please send your Order confirmation to <b>{Model.AbEmailAddress}<b/>.")</div>
+    <br />
+    <div>
+        @if (Model.IsKanban)
+        {
+            <p><b>Bitte beachten Sie außerdem folgende Punkte, welche unbedingt einzuhalten sind:</b></p>
+			<ul>
+            <li><b>CMS verpflichtet sich, die via E-Mail 2x wöchentlich abgerufene KANBAN-Behälter zum vereinbarten Anliefertermin, jeweils Donnerstag und Montag, als volle Behälter anzuliefern.</b></li>
+			<li><b>CMS schickt innerhalb von 24h eine Bestätigung.</b></li>
+			<li><b>1 Kanban Behälter = 36 Stück.</b></li>
+           </ul>
+           <br/>
+        }
+    </div>
+
+    <ul>
+        <li>Bestellung wurde elektronisch erstellt und ist ohne Unterschrift gültig</li>
+        <li>Für unsere Bestellungen gelten ausschließlich unsere allgemeinen Einkaufsbedingungen.li>
+        <li>Einsicht möglich unter www.psz-electronic.com</li>
+    </ul>
+    <div>Wir sind gemäß Art.13 DSGVO verpflichtet, Sie als Geschäftskunde über unsere Datenschutzmaßnahmen zu informieren. Unsere Datenschutzerklärung finden Sie auf unserer Website unter folgenden Link:</div>
+    <a href='https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf' style="font-size:9.25px" class='nobr'>
+        https://www.psz-electronic.com/wp-content/uploads/2019/02/19-02-04-PSZ_Informationspflicht-Datenschutz-Art.13_Gesch%C3%A4ftspartnerBewerber.pdf
+    </a>
+    <pre></pre>
+    <br />
+</body>
+</html>

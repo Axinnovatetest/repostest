@@ -1,0 +1,138 @@
+﻿@model Psz.Core.CustomerService.Reporting.Models.ExportReportModel
+@using Psz.Core.CustomerService.Reporting.Helpers
+<html>
+<head>
+    <style>
+        @@page {
+            margin-top: 50;
+            margin-bottom: 80;
+            margin-left: 20;
+            margin-right: 50;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, tr,td {
+            padding: 5px 5px 0 0;
+            text-align: left;
+            font-size:12px;
+        }
+        .header-title
+        {
+            font-size:20px;
+            font-weight:bold;
+        }
+        .header-value
+        {
+            font-size: 16px;
+            font-weight:normal;
+        }
+        .hr {
+            height: 1px;
+            border-widtd: 0;
+            color: navy;
+            background-color: navy;
+        }
+        .bold
+        {
+            font-weight: bold;
+        }
+        .normal{
+            font-weight: normal;
+        }
+        .no-br{
+            white-space: nowrap;
+        }
+        .max-wide{
+            max-width: 200px
+        }
+    </style>
+</head>
+<body style="font-size:14px;">
+    @if(Model is not null)
+    {
+     <table style="widtd:60%">
+        <tr>
+            <td class="header-title">Auslieferlistübersicht</td>
+            <td class="header-value">von</td>
+            <td class="header-title">@Model.Header.Von</td>
+            <td class="header-value">bis</td>
+            <td class="header-title">@Model.Header.Bis</td>
+        </tr>
+    </table>
+        <hr class='hr'>
+    <table style="width:100%">
+        <tr>
+                <td class="bold">Datum</td>
+                <td class="bold">Artikelnummer</td>
+                <td class="normal no-br">FA-Nummer</td>
+                <td class="normal">Auftragsmenge</td>
+                <td class="normal">Kennzeichen</td>
+                <td class="bold">Gesamtpreis</td>
+                <td class="normal">Auftragsbemerkung</td>
+                <td class="normal">verpackt von</td>
+                <td class="normal no-br">aus Fertigung</td>
+                <td class="normal no-br">CS Mitarbeiter</td>
+        </tr>
+        <tr>
+                <td class="normal">Aktualisert</td>
+                <td class="normal">Bezeichung</td>
+                <td class="normal"></td>
+                <td class="bold">Liefermenge</td>
+                <td class="normal"></td>
+                <td class="normal">Kartonanzahl</td>
+                <td class="normal"></td>
+                <td class="normal">Bemerkung</td>
+                <td class="normal"></td>
+                <td class="normal"></td>
+        </tr>
+        <tr>
+            <td colspan="10" style="border-bottom:2px solid navy"></td>
+        </tr>
+            @foreach (var item in Model.Details)
+            {
+                <tr>
+                    <td class="bold">@item.Datum</td>
+                    <td class="bold">@item.Artikelnummer</td>
+                    <td class="normal">@item.Fertigungsnummer</td>
+                    <td class="normal">@item.Anzahl_Auftrag</td>
+                    <td class="normal">@item.Kennzeichen</td>
+                    <td class="bold">@FormatHelper.FormatDecimal(item.Gesamtpreis,2) €</td>
+                    <td class="normal max-wide">@item.Auftragsbemerkung</td>
+                    <td class="normal">@item.Mitarbeiter_Name</td>
+                    <td class="normal">@item.Lagerort</td>
+                    <td class="normal no-br">@item.CS_Kontakt</td>
+                </tr>
+                <tr>
+                    <td class="normal no-br">@item.Uhrzeit</td>
+                    <td class="normal">@item.Bezeichnung</td>
+                    <td class="normal"></td>
+                    <td class="bold">@item.Liefermenge_QRCode</td>
+                    <td class="normal"></td>
+                    <td class="normal">@item.Anzahl_Kartons</td>
+                    <td class="normal"></td>
+                    <td class="normal">@item.Bemerkung</td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <td colspan="10" style="border-bottom:2px solid navy"></td>
+                </tr>
+            }
+    </table>
+    <table style="width:100%">
+            <tr>
+                <td colspan="10" class="bold" style="font-size:14px;text-align:center">@FormatHelper.FormatDecimal(Model.Header.SummGesamtpreis,2) €</td>
+            </tr>
+    </table>
+    }
+<pre></pre>
+</body>
+</html>

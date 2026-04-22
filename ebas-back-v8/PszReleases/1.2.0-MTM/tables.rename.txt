@@ -1,0 +1,18 @@
+﻿
+
+EXEC sp_rename 'dbo.__CRP_ArticleProduction', '__MTM_CRP_ArticleProduction';
+  EXEC sp_rename 'dbo.__CRP_Capacity', '__MTM_CRP_Capacity';
+  EXEC sp_rename 'dbo.__CRP_CapacityPlan', '__MTM_CRP_CapacityPlan';
+  EXEC sp_rename 'dbo.__CRP_CapacityPlan_Validation', '__MTM_CRP_CapacityPlan_Validation';
+  EXEC sp_rename 'dbo.__CRP_CapacityPlan_ValidationLog', '__MTM_CRP_CapacityPlan_ValidationLog';
+  EXEC sp_rename 'dbo.__CRP_CapacityPlan_ValidationUser', '__MTM_CRP_CapacityPlan_ValidationUser';
+  EXEC sp_rename 'dbo.__CRP_ConfigurationDetails', '__MTM_CRP_ConfigurationDetails';
+  EXEC sp_rename 'dbo.__CRP_ConfigurationHeader', '__MTM_CRP_ConfigurationHeader';
+  EXEC sp_rename 'dbo.__CRP_Holiday', '__MTM_CRP_Holiday';
+  EXEC sp_rename 'dbo.__CRP_RequiredCapacity', '__MTM_CRP_RequiredCapacity';
+
+  EXEC sp_rename 'dbo.__CRP_UserCountryAuthorization', '__MTM_CRP_UserCountryAuthorization';
+  EXEC sp_rename 'dbo.__CRP_UserDepartementAuthorization', '__MTM_CRP_UserDepartementAuthorization';
+  EXEC sp_rename 'dbo.__CRP_UserHallAuthorization', '__MTM_CRP_UserHallAuthorization';
+  EXEC sp_rename 'dbo.__CRP_UserWorkStationAuthorization', '__MTM_CRP_UserWorkStationAuthorization';
+  EXEC sp_rename 'dbo.__CRP_WorkAreaAuthorization', '__MTM_CRP_WorkAreaAuthorization';

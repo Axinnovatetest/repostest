@@ -1,0 +1,264 @@
+﻿/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__EDI_OrderChange
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	OrderId int NOT NULL,
+	Reference nvarchar(50) NOT NULL,
+	GlobalStatus int NOT NULL,
+	DocumentName nvarchar(250) NOT NULL,
+	DocumentNumber nvarchar(150) NOT NULL,
+	Duns int NOT NULL,
+	Notes nvarchar(MAX) NULL,
+	CustomerContactName nvarchar(250) NULL,
+	CustomerName nvarchar(250) NULL,
+	CustomerPurchasingDepartment nvarchar(250) NULL,
+	CustomerStreetPostalCode nvarchar(250) NULL,
+	CustomerStreetCityPostalCode nvarchar(250) NULL,
+	ConsigneeContactName nvarchar(250) NULL,
+	ConsigneeName nvarchar(250) NULL,
+	ConsigneePurchasingDepartment nvarchar(250) NULL,
+	ConsigneeStreetPostalCode nvarchar(250) NULL,
+	ConsigneeUnloadingPoint nvarchar(250) NULL,
+	CreationTime datetime NOT NULL,
+	ActionTime datetime NULL,
+	ActionUserId int NULL,
+	ActionUserName nvarchar(150) NULL,
+	MessageReferenceNumber nvarchar(150) NULL,
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE dbo.__EDI_OrderChange ADD CONSTRAINT
+	PK___EDI_OrderChange PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX IX___EDI_OrderChange ON dbo.__EDI_OrderChange
+	(
+	OrderId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX IX___EDI_OrderChange_1 ON dbo.__EDI_OrderChange
+	(
+	CreationTime
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX IX___EDI_OrderChange_2 ON dbo.__EDI_OrderChange
+	(
+	GlobalStatus
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX IX___EDI_OrderChange_3 ON dbo.__EDI_OrderChange
+	(
+	Reference
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE dbo.__EDI_OrderChange SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__EDI_OrderChange', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__EDI_OrderChange', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__EDI_OrderChange', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+CREATE TABLE dbo.__EDI_OrderChangeItem
+	(
+	Id int NOT NULL IDENTITY (1, 1),
+	OrderChangeId int NOT NULL,
+	OrderId int NOT NULL,
+	OrderReference nvarchar(50) NOT NULL,
+	Type int NOT NULL,
+	Status int NOT NULL,
+	CreationTime datetime NOT NULL,
+	ItemNumber nvarchar(250) NULL,
+	CustomerItemNumber nvarchar(250) NULL,
+	Notes nvarchar(MAX) NULL,
+	DesiredDate datetime NOT NULL,
+	ItemDescription nvarchar(250) NULL,
+	MeasureUnitQualifier nvarchar(50) NOT NULL,
+	CurrentItemPriceCalculationNet decimal(20, 7) NOT NULL,
+	OrderedQuantity decimal(20, 7) NOT NULL,
+	PositionNumber int NOT NULL,
+	UnitPriceBasis decimal(20, 7) NOT NULL,
+	ActionTime datetime NULL,
+	ActionUserId int NULL,
+	ActionUsername nvarchar(250) NULL
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE dbo.__EDI_OrderChangeItem ADD CONSTRAINT
+	PK___EDI_OrderChangeItem PRIMARY KEY CLUSTERED 
+	(
+	Id
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.__EDI_OrderChangeItem SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.__EDI_OrderChangeItem', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.__EDI_OrderChangeItem', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.__EDI_OrderChangeItem', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.EDI_OrderError ADD
+	CustomerNumber nvarchar(250) NULL,
+	CustomerId nvarchar(250) NULL,
+	OrderId nvarchar(250) NULL,
+	OrderNumber nvarchar(250) NULL,
+	CreationTime datetime NOT NULL CONSTRAINT DF_EDI_OrderError_CreationTime DEFAULT GETDATE()
+GO
+ALTER TABLE dbo.EDI_OrderError SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.EDI_OrderError ADD
+	CustomerName nvarchar(250) NULL
+GO
+ALTER TABLE dbo.EDI_OrderError SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'CONTROL') as Contr_Per 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To prevent any potential data loss issues, you should review this script in detail before running it outside the context of the database designer.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.EDI_OrderError
+	DROP COLUMN CustomerId
+GO
+ALTER TABLE dbo.EDI_OrderError SET (LOCK_ESCALATION = TABLE)
+GO
+COMMIT
+select Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'ALTER') as ALT_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'VIEW DEFINITION') as View_def_Per, Has_Perms_By_Name(N'dbo.EDI_OrderError', 'Object', 'CONTROL') as Contr_Per 
+
+
+

@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Forcasts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[kundennummer] [int] NULL,
+	[kunden] [varchar](max) NULL,
+	[Type] [varchar](max) NULL,
+	[TypeId] [int] NULL,
+	[Datum] [datetime] NULL,
+	[UserId] [int] NULL,
+	[DateCreation] [datetime] NULL,
+	[Version] [int] NULL
+);
+
